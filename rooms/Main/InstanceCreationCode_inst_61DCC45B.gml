@@ -1,0 +1,2 @@
+destination = Board;
+label = "Play";
