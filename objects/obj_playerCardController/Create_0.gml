@@ -53,7 +53,7 @@ function init() {
 	hand = instance_create_depth(x, y, 0, obj_handZone);
 	board = instance_create_depth(x, y, 0, obj_boardZone);
 	
-	for (var i=0; i < 10; i++) {
+	for (var i=0; i < deck.maxSize; i++) {
 		//show_message("controller adding card: " + string(i));
 		deck.addCard(instance_create_depth(x, y, 0, obj_playCard));
 	}
