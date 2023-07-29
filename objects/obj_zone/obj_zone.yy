@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Zones",
-    "path": "folders/Objects/Zones.yy",
+    "name": "Zone",
+    "path": "folders/Objects/Zone.yy",
   },
   "parentObjectId": null,
   "persistent": false,

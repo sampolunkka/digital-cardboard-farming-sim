@@ -19,8 +19,10 @@ function pick() {
 }
 
 function place() {
-	if (collision_point(mouse_x, mouse_y, obj_boardZone, true, true)) {
+	if (collision_point(mouse_x, mouse_y, board, true, true)) {
 		drag.dragTo(board);
+	} else if (collision_point(mouse_x, mouse_y, hand, false, true)) {
+		hand.moveCardToXCoord(drag.getCard(), mouse_x, drag);
 	}
 }
 

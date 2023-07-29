@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-/// @Override
+// Override
 maxSize = 1;
 face = CardFace.Up;
 hidden = false;
@@ -21,5 +21,12 @@ function getCard() {
 function dragTo(zone) {
 	if (getCard() != noone) {
 		moveCard(getCard(), zone);
+	}
+}
+
+// Override
+refresh() {
+	if(getSize() > 0) {
+		card[0].depth += 100;
 	}
 }

@@ -13,6 +13,9 @@ movementSnapDistance = 2;
 movementSpeedMultiplier = 0.8;
 movementMode = CardMovementMode.Instant;
 
+// only for placeholder card
+isPlaceholder = false;
+
 function setFace(face) {
 	self.face = face;
 }

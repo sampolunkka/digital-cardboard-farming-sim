@@ -17,9 +17,6 @@ face = CardFace.Up;
 name = "Hand";
 movementMode = CardMovementMode.Slow;
 
-x = 50;
-y = 50;
-
 // Arc params
 verticalOffset = 0;
 horizontalOffset = 20;
@@ -47,7 +44,6 @@ function createArcPortion() {
 	var angleEnd = angleEndMax - min(20 , (20 + (angleEndMax - angleStartMax)/2)/n);
 	var deg = angleEnd-angleStart; //original
 	
-	
 	for (var i = 0; i < n; i++) {
 		var theta = (deg/n) * i;
 		theta += 3 + angleStart;
@@ -62,10 +58,18 @@ function createArcPortion() {
 		}
 		card.baseX = round(tx - card.sprite_width * 0.5);
 		card.baseY = round(ty - card.sprite_height);
-		//card.baseY = card.y;
-		//card.baseX = card.x;
-		card.handIndex = i;
 		card.depth = -i;
+	}
+	
+	// set hand bounding box for collisions
+	if (getSize() > 0) {
+		depth = 1;
+		x = cards[0].baseX;
+		y = cards[0].baseY - 5;
+		image_yscale = 40;
+		image_xscale = cards[max(0, getSize() - 1)].baseX
+			- cards[0].baseX 
+			+ cards[max(0, getSize() - 1)].sprite_width;
 	}
 }
 
@@ -118,6 +122,42 @@ function findHandCircle(topPointY, topPointX) {
 	x = h;
 	y = k + (10 - getSize()) * 2;
 	handRadius = r;
+}
+
+function createGap() {
+	if (isFull()) {
+		return;
+	}
+	// where to create gap
+	refresh();
+	for (var i=0; i<getSize(); i++) {
+		var card = cards[i];
+		card.baseY += 2;
+		if (mouse_x > getCardCenterX(card)) {
+			card.baseX -= 3;
+		} else {
+			card.baseX += 3;
+		}
+	}
+}
+
+function moveCardToXCoord(card, xCoord, zone) {
+	if (isFull()) {
+		return;
+	}
+	var index = 0;
+	//show_message("size: " + string(getSize()));
+	for (var i=0; i<getSize(); i++) {
+		var cardInHand = cards[i];
+		//show_message("card center: " + string(getCardCenterX(cardOnBoard)));
+		if (mouse_x > getCardCenterX(cardInHand)) {
+			index++;
+		} else {
+			break;
+		}
+	}
+	insertCard(card, index);
+	zone.removeCard(zone.getCardIndex(card));
 }
 
 function init() {

@@ -37,6 +37,19 @@ function addCard(card) {
 	refresh();
 }
 
+function swapCard(card, replacement, zone) {
+	// may cause index = -1, therefore use max(0, ind)
+	self.insertCard(replacement, max(0, self.getCardIndex(card)));
+	self.removeCard(max(0, self.getCardIndex(card)));
+	zone.insertCard(card, max(0, zone.getCardIndex(replacement)));
+	zone.removeCard(max(0, zone.getCardIndex(replacement)));
+}
+
+function insertCard(card, index) {
+	array_insert(cards, index, card);
+	refresh();
+}
+
 function removeCard(cardIndex) {
 	array_delete(cards, cardIndex, 1);
 	refresh();
@@ -66,6 +79,9 @@ function isEmpty() {
 	return array_length(cards) < 1;
 }
 
+function hasCard(card) {
+	return getCardIndex(card) > -1;
+}
 
 function refresh() {
 	
