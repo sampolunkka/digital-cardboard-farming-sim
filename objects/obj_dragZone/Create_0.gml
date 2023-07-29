@@ -18,12 +18,6 @@ function getCard() {
 	return cards[0];
 }
 
-function dragTo(zone) {
-	if (getCard() != noone) {
-		moveCard(getCard(), zone);
-	}
-}
-
 // Override
 refresh() {
 	if(getSize() > 0) {

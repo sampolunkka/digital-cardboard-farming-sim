@@ -1,5 +1,14 @@
 # Digital cardboard farming sim
 
+## 30.7.2023
+### Placeholder
+- Add placeholder controller
+	- Draggin a card to an eligible zone creates a temporary placeholder
+	- Placeholder creates (visual) space in the position where card would be placed
+	
+### Housekeeping
+- Remove unused functions
+
 ## 29.7.2023
 ### Hand
 - Add function to place card in hand to player determined position

@@ -10,6 +10,7 @@ function draw() {
 	deck.moveCard(deck.getTopCard(), hand);
 }
 
+// TODO: Pick could create placeholder instance. Needs research..
 function pick() {
 	var card = getTopmostHoveredCard();
 	if (card == noone) {
@@ -20,12 +21,34 @@ function pick() {
 
 function place() {
 	if (collision_point(mouse_x, mouse_y, board, true, true)) {
-		drag.dragTo(board);
+		placeAtPlaceholder(board);
 	} else if (collision_point(mouse_x, mouse_y, hand, false, true)) {
-		hand.moveCardToXCoord(drag.getCard(), mouse_x, drag);
+		placeAtPlaceholder(hand);
 	}
 }
 
+function placeAtPlaceholder(zone) {
+	if (instance_exists(obj_placeholderCard)) {
+		var card = drag.getCard();
+		card.setMovement(zone.movementMode);
+		zone.insertCard(drag.getCard(), zone.getIndexAtX(mouse_x));
+		drag.removeCard(0);
+		instance_destroy(obj_placeholderController);
+	}
+}
+
+function createPlaceholderController(zone) {
+	if (zone.isFull()) {
+		return;
+	}
+	if (!instance_exists(obj_placeholderController)) {
+		var ph = instance_create_depth(x, y, 0, obj_placeholderController);
+		ph.zone = zone;
+		ph.createPlaceholder();
+	}
+}
+
+// TODO: Return to placeholder
 function returnToHand() {
 	drag.moveCard(drag.getCard(), hand);
 }

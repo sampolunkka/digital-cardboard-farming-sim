@@ -55,6 +55,11 @@ function removeCard(cardIndex) {
 	refresh();
 }
 
+function deleteCard(card) {
+	removeCard(getCardIndex(card));
+	instance_destroy(card);
+}
+
 function popCard() {
 	return array_pop(cards);
 }
@@ -67,8 +72,32 @@ function getCardIndex(card) {
 	return array_get_index(cards, card);
 }
 
+function getIndexAtX(tx) {
+	if (getSize() < 1) {
+		return 0;
+	}
+	var index = 0;
+	for (var i = 0; i < getSize(); i++) {
+		if (tx > cards[i].baseX) {
+			index = i;
+		} else {
+			break;
+		}
+	}
+	return index;
+}
+
 function getSize() {
 	return array_length(cards);
+}
+
+function getIndex(index) {
+	if (getSize() < index + 1) {
+		return noone;
+	} else if (getSize() < 1) {
+		return noone;
+	}
+	return cards[index];
 }
 
 function isFull() {

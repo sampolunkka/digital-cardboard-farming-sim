@@ -86,6 +86,7 @@
     {"id":{"name":"spr_font_card_title","path":"sprites/spr_font_card_title/spr_font_card_title.yy",},},
     {"id":{"name":"spr_cardLarge","path":"sprites/spr_cardLarge/spr_cardLarge.yy",},},
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
+    {"id":{"name":"obj_placeholderController","path":"objects/obj_placeholderController/obj_placeholderController.yy",},},
     {"id":{"name":"spr_windmill","path":"sprites/spr_windmill/spr_windmill.yy",},},
     {"id":{"name":"obj_zone","path":"objects/obj_zone/obj_zone.yy",},},
     {"id":{"name":"spr_menuFrame","path":"sprites/spr_menuFrame/spr_menuFrame.yy",},},

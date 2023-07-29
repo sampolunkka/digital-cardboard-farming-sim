@@ -61,6 +61,7 @@
     {"name":"spr_font_card_title","order":2,"path":"sprites/spr_font_card_title/spr_font_card_title.yy",},
     {"name":"spr_cardLarge","order":20,"path":"sprites/spr_cardLarge/spr_cardLarge.yy",},
     {"name":"Sprite13","order":13,"path":"sprites/Sprite13/Sprite13.yy",},
+    {"name":"obj_placeholderController","order":2,"path":"objects/obj_placeholderController/obj_placeholderController.yy",},
     {"name":"spr_windmill","order":14,"path":"sprites/spr_windmill/spr_windmill.yy",},
     {"name":"obj_deckZone","order":7,"path":"objects/obj_deckZone/obj_deckZone.yy",},
     {"name":"obj_hud","order":6,"path":"objects/obj_hud/obj_hud.yy",},

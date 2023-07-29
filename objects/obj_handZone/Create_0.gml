@@ -124,42 +124,6 @@ function findHandCircle(topPointY, topPointX) {
 	handRadius = r;
 }
 
-function createGap() {
-	if (isFull()) {
-		return;
-	}
-	// where to create gap
-	refresh();
-	for (var i=0; i<getSize(); i++) {
-		var card = cards[i];
-		card.baseY += 2;
-		if (mouse_x > getCardCenterX(card)) {
-			card.baseX -= 3;
-		} else {
-			card.baseX += 3;
-		}
-	}
-}
-
-function moveCardToXCoord(card, xCoord, zone) {
-	if (isFull()) {
-		return;
-	}
-	var index = 0;
-	//show_message("size: " + string(getSize()));
-	for (var i=0; i<getSize(); i++) {
-		var cardInHand = cards[i];
-		//show_message("card center: " + string(getCardCenterX(cardOnBoard)));
-		if (mouse_x > getCardCenterX(cardInHand)) {
-			index++;
-		} else {
-			break;
-		}
-	}
-	insertCard(card, index);
-	zone.removeCard(zone.getCardIndex(card));
-}
-
 function init() {
 	createArcPortion();
 }
