@@ -5,12 +5,12 @@ if (zone != noone) {
 		var ind = zone.getIndexAtX(mouse_x);
 		var card = zone.getIndex(ind);
 		if (card != noone) {
-			if (!card.isPlaceholder) {
+			if (!card.isPlaceholder()) {
 				zone.deleteCard(placeholder);
 				index = ind;
 				placeholder = instance_create_depth(
-					card.baseX,
-					card.baseY,
+					card.anchorX,
+					card.anchorY,
 					0,
 					obj_placeholderCard
 				);

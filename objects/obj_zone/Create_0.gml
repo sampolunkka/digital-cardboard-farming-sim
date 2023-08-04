@@ -5,7 +5,7 @@ maxSize = 5;
 cards = [];
 hidden = false;
 face = CardFace.Down;
-name = "Generic zone";
+title = "Generic zone";
 movementMode = CardMovementMode.Fast;
 
 function moveCard(card, zone) {
@@ -18,13 +18,13 @@ function moveCard(card, zone) {
 	var ind = array_get_index(cards, card);
 	if (ind >= 0) {
 		removeCard(getCardIndex(card));
-		//show_message("attempting to move card: " + string(card.id) + " to zone: " + zone.name );
+		//show_message("attempting to move card: " + string(card.id) + " to zone: " + zone.title );
 		zone.addCard(card);
 	}
 }
 
 function addCard(card) {
-	//show_message("adding card: " + string(card.id) + "to zone: " + name);
+	//show_message("adding card: " + string(card.id) + "to zone: " + title);
 	if (self.isFull()) {
 		show_message("Zone is full!");
 		return;
@@ -46,6 +46,7 @@ function swapCard(card, replacement, zone) {
 }
 
 function insertCard(card, index) {
+	//show_message("inserting card: " + string(card.id));
 	array_insert(cards, index, card);
 	refresh();
 }
@@ -78,7 +79,7 @@ function getIndexAtX(tx) {
 	}
 	var index = 0;
 	for (var i = 0; i < getSize(); i++) {
-		if (tx > cards[i].baseX) {
+		if (tx > cards[i].anchorX) {
 			index = i;
 		} else {
 			break;

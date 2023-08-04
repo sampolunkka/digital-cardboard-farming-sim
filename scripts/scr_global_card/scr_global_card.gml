@@ -17,5 +17,5 @@ function scr_global_card(){
 }
 
 function getCardCenterX(card) {
-	return round(card.baseX + (card.sprite_width * 0.5));
+	return round(card.anchorX + (card.sprite_width * 0.5));
 }

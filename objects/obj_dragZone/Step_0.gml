@@ -5,6 +5,6 @@ y = mouse_y;
 
 if (!isEmpty()) {
 	card = cards[0];
-	card.baseX = round(x - card.sprite_width * 0.5);
-	card.baseY = round(y - card.sprite_height * 0.5);
+	card.anchorX = round(x - card.sprite_width * 0.5);
+	card.anchorY = round(y - card.sprite_height * 0.5);
 }

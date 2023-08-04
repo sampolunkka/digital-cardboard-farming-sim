@@ -5,6 +5,7 @@ deck = noone;
 drag = noone;
 hand = noone;
 board = noone;
+turnController = noone;
 
 function draw() {
 	deck.moveCard(deck.getTopCard(), hand);
@@ -77,11 +78,12 @@ function init() {
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
 	board = instance_create_depth(x, y, 0, obj_boardZone);
+	turnController = instance_create_depth(x, y, 0, obj_turnController);
 	
-	for (var i=0; i < deck.maxSize; i++) {
+	/*for (var i=0; i < deck.maxSize; i++) {
 		//show_message("controller adding card: " + string(i));
 		deck.addCard(instance_create_depth(x, y, 0, obj_playCard));
-	}
+	}*/
 }
 
 init();

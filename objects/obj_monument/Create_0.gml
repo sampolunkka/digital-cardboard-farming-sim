@@ -2,13 +2,13 @@
 // You can write your code in this editor
 event_inherited();
 portrait = spr_monument;
-cardName = "Altar";
+cardtitle = "Altar";
 
 highlighted = false;
 baseDepth = depth;
-baseY = y;
-baseX = x;
+anchorY = y;
+anchorX = x;
 highlightMovementDistance = 5;
 handIndex = 1;
 yOffset = 0;
-isPlaceholder = false;
+//isPlaceholder = false;

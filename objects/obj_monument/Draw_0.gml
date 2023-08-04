@@ -10,9 +10,9 @@ draw_sprite(portrait, 0, x+1, dy+7);
 draw_set_font(global.CardTitleFont);
 
 draw_set_color(c_black);
-draw_text(x+5,dy+4,cardName + string(handIndex));
+draw_text(x+5,dy+4,cardtitle + string(handIndex));
 draw_set_color(c_white);
-draw_text(x+5,dy+3,cardName + string(handIndex));
+draw_text(x+5,dy+3,cardtitle + string(handIndex));
 
 draw_set_color(c_black);
 draw_text(x+5, dy+sprite_height-8, "+XX")

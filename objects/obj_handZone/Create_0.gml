@@ -14,7 +14,7 @@ function refresh() {
 maxSize = 8;
 hidden = false;
 face = CardFace.Up;
-name = "Hand";
+title = "Hand";
 movementMode = CardMovementMode.Slow;
 
 // Arc params
@@ -56,19 +56,24 @@ function createArcPortion() {
 			show_message("Something went wrong! No card to arrange in hand!");
 			return;
 		}
-		card.baseX = round(tx - card.sprite_width * 0.5);
-		card.baseY = round(ty - card.sprite_height);
+		
+		card.setPosition(
+			round(tx - card.sprite_width * 0.5),
+			round(ty - card.sprite_height)
+		);
+		//card.anchorX = round(tx - card.sprite_width * 0.5);
+		//card.anchorY = round(ty - card.sprite_height);
 		card.depth = -i;
 	}
 	
-	// set hand bounding box for collisions
+	// set hand bounds for collisons
 	if (getSize() > 0) {
 		depth = 1;
-		x = cards[0].baseX;
-		y = cards[0].baseY - 5;
+		x = cards[0].anchorX;
+		y = cards[0].anchorY - 5;
 		image_yscale = 40;
-		image_xscale = cards[max(0, getSize() - 1)].baseX
-			- cards[0].baseX 
+		image_xscale = cards[max(0, getSize() - 1)].anchorX
+			- cards[0].anchorX 
 			+ cards[max(0, getSize() - 1)].sprite_width;
 	}
 }
@@ -125,6 +130,7 @@ function findHandCircle(topPointY, topPointX) {
 }
 
 function init() {
+	findHandCircle(topPointX, topPointY);
 	createArcPortion();
 }
 

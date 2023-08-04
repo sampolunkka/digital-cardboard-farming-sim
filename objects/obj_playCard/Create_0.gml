@@ -1,20 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
+cardtitle = "card";
+
 faceDownSprite = spr_cardBack;
 faceUpSprite = spr_card;
 
 face = CardFace.Down;
 hidden = true;
 
-baseX = x;
-baseY = y;
+anchorX = x;
+anchorY = y;
 
 movementSnapDistance = 2;
 movementSpeedMultiplier = 0.8;
 movementMode = CardMovementMode.Instant;
 
-// only for placeholder card
-isPlaceholder = false;
+placeholder = false;
 
 function setFace(face) {
 	self.face = face;
@@ -31,8 +32,8 @@ function setFaceAndHidden(face, hidden) {
 }
 
 function setPosition(tx, ty) {
-	baseX = tx;
-	baseY = ty;
+	anchorX = tx;
+	anchorY = ty;
 }
 
 function setMovement(mode) {
@@ -42,6 +43,10 @@ function setMovement(mode) {
 		case CardMovementMode.Slow: movementSpeedMultiplier = 0.4; break;
 		default: movementSpeedMultiplier = 1; break;
 	}
+}
+
+function isPlaceholder() {
+	return placeholder;
 }
 
 function refresh() {

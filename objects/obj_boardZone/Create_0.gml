@@ -5,7 +5,7 @@ event_inherited();
 // Override
 hidden = false;
 face = CardFace.Up;
-name = "Board";
+title = "Board";
 maxSize = 4;
 movementMode = CardMovementMode.Slow;
 
@@ -20,7 +20,7 @@ slotWidth = 32;
 
 // Override
 function addCard(card) {
-	//show_message("add card on zone: " + name + " and card: " + string(card.id));
+	//show_message("add card on zone: " + title + " and card: " + string(card.id));
 	if (array_length(cards) >= maxSize) {
 		show_message("Zone is full!");
 		return;

@@ -5,7 +5,7 @@
 event_inherited();
 
 portrait = spr_windmill;
-cardName = "Mill";
+cardtitle = "Mill";
 effectText = "Åx2";
 
 function getEffect() {

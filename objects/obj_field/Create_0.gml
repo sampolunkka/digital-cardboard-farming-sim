@@ -2,16 +2,16 @@
 // You can write your code in this editor
 event_inherited();
 portrait = spr_farm;
-cardName = "Farm";
+cardtitle = "Farm";
 
 highlighted = false;
 baseDepth = depth;
-baseY = y;
-baseX = x;
+anchorY = y;
+anchorX = x;
 highlightMovementDistance = 5;
 handIndex = 1;
 yOffset = 0;
-isPlaceholder = false;
+//isPlaceholder = false;
 effectText = "+Å";
 info = "Can be placed anywhere. Produces 2 food per turn.";
 

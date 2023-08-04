@@ -1,5 +1,20 @@
 # Digital cardboard farming sim
 
+## 4.8.2023
+### TurnController
+- Add turn controller
+- Add interface to start turn, end turn, start next phase
+
+### Phase
+- Add phase
+	- Phase is used to execute actions related to phase 
+	- eg. hypothetical start phase would trigger drawing a card and other start of the turn actions
+
+### Action
+- Add action
+	- Action is an effect that can be triggered by other objects
+	- Cards, phases and other game events could have actions
+
 ## 30.7.2023
 ### Placeholder
 - Add placeholder controller

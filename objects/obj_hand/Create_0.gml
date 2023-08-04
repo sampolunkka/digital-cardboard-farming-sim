@@ -56,8 +56,8 @@ function createArcPortion() {
 		}
 		card.x = round(tx - card.sprite_width * 0.5);
 		card.y = round(ty - card.sprite_height);
-		card.baseY = card.y;
-		card.baseX = card.x;
+		card.anchorY = card.y;
+		card.anchorX = card.x;
 		card.handIndex = i;
 	}
 }

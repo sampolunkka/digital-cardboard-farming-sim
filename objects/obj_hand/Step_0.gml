@@ -10,8 +10,8 @@ for(var i = 0; i < array_length(cards); i++) {
 		}
 	} else {
 		card.yOffset = 0;
-		card.x = card.baseX;
-		card.y = card.baseY;
+		card.x = card.anchorX;
+		card.y = card.anchorY;
 		card.depth = card.baseDepth-i;
 	}
 }
