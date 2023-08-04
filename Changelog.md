@@ -1,6 +1,11 @@
 # Digital cardboard farming sim
 
 ## 4.8.2023
+### Card
+- Change card movement to use real x & y instead of rounded value
+	- Prevents card prematurely reaching 0 movement speed
+	- Actual drawn x & y coordinates are still rounded to whole numbers
+
 ### TurnController
 - Add turn controller
 - Add interface to start turn, end turn, start next phase

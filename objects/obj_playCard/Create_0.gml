@@ -11,6 +11,9 @@ hidden = true;
 anchorX = x;
 anchorY = y;
 
+realX = x;
+realY = y;
+
 movementSnapDistance = 2;
 movementSpeedMultiplier = 0.8;
 movementMode = CardMovementMode.Instant;
