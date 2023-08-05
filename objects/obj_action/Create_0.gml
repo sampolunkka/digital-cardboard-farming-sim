@@ -5,3 +5,8 @@ targets = [];
 
 function trigger() {
 }
+
+function init(origin, targets) {
+	self.origin = origin;
+	self.targets = targets
+}

@@ -31,3 +31,11 @@ if (x != anchorX || y != anchorY) {
 	x = round(realX);
 	y = round(realY);
 }
+
+// Transition towards base depth
+if (depth < baseDepth) {
+	depth++;
+} else if (depth > baseDepth) {
+	depth--;
+}
+	

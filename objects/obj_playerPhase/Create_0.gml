@@ -11,12 +11,10 @@ function onPhaseBegin() {
 function init() {
 	var origin = instance_nearest(x,y,obj_player);
 	var targets = [origin];
+	origin.refresh();
 	//show_message("Player (origin): " + string(origin.id));
 	addAction(instance_create_layer(0,0,0,obj_drawAction), origin, targets);
-	addAction(instance_create_layer(0,0,0,obj_drawAction), origin, targets);
-	addAction(instance_create_layer(0,0,0,obj_drawAction), origin, targets);
-	addAction(instance_create_layer(0,0,0,obj_drawAction), origin, targets);
-	addAction(instance_create_layer(0,0,0,obj_drawAction), origin, targets);
+	addAction(instance_create_layer(0,0,0,act_gainResource), origin, targets);
 }
 
 init();

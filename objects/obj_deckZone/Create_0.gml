@@ -26,7 +26,13 @@ function shuffle() {
 
 function init() {
 	for (var i=0; i<maxSize; i++) {
-		addCard(instance_create_depth(0,0,0,obj_playCard));
+		var rand = irandom_range(0,1);
+		if(rand == 0) {
+			addCard(instance_create_depth(0,0,0,card_noviceEngineer));
+		} else {
+			addCard(instance_create_depth(0,0,0,card_miner));
+		}
+		/*
 		var ctitle;
 		var rand = irandom_range(0, 4);
 		switch (rand) {
@@ -36,9 +42,10 @@ function init() {
 			case 3: ctitle = "River"; break;
 			case 4: ctitle = "Farm"; break;
 		}
-		cards[i].cardtitle = ctitle;
+		cards[i].title = ctitle;
+		*/
 		cards[i].setPosition(x, round(y - i * 0.2));
-		cards[i].depth = -i;
+		cards[i].setDepth(-i);
 	}
 	//show_message("Deck created!");
 }

@@ -12,6 +12,13 @@ enum CardMovementMode {
 	Slow,
 }
 
+enum CardType {
+	Spell,
+	Building,
+	Unit,
+	Unique
+}
+
 function scr_global_card(){
 
 }

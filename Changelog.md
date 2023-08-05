@@ -1,5 +1,26 @@
 # Digital cardboard farming sim
 
+## 5.8.2023
+### Card
+- Add on play actions
+- Add stats (cost, attack, hp)
+- Add depth behaviour
+	- Card depth will shift towards base depth if they differ
+	- Allows for "set and forget" when changing card depth temporarily
+
+### Player
+- Add resource and hp
+
+### CardInfoController
+- Add card info controller
+- Show card info above card when hovered
+
+### Misc
+- Add play trigger on board placement
+- Add debug info flags
+- Change card layout
+
+
 ## 4.8.2023
 ### Card
 - Change card movement to use real x & y instead of rounded value

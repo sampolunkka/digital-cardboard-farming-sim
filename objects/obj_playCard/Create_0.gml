@@ -1,24 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
-cardtitle = "card";
 
+// ATTRIBUTES
+type = CardType.Unique;
+title = "card";
+cost = 1;
+hp = 1;
+attack = 1;
+
+// INFO
+info = "Card info here";
+
+// ACTIONS
+onPlayActions = [];
+
+// CONTROL
+placeholder = false;
+
+// VISUAL
 faceDownSprite = spr_cardBack;
 faceUpSprite = spr_card;
-
 face = CardFace.Down;
 hidden = true;
 
+// MOVEMENT
+baseDepth = depth;
 anchorX = x;
 anchorY = y;
-
 realX = x;
 realY = y;
-
 movementSnapDistance = 2;
 movementSpeedMultiplier = 0.8;
 movementMode = CardMovementMode.Instant;
-
-placeholder = false;
 
 function setFace(face) {
 	self.face = face;
@@ -48,8 +61,33 @@ function setMovement(mode) {
 	}
 }
 
+function setDepth(value) {
+	baseDepth = value;
+}
+
+function getInfo() {
+	return info;
+}
+
 function isPlaceholder() {
 	return placeholder;
+}
+
+function onPlay() {
+	for (var i = 0; i < array_length(onPlayActions); i++) {
+		var action = action_create(onPlayActions[0], self, [player_get_active()]);
+		action.trigger();
+	}
+}
+
+// TODO: smooth hover movement 
+function hover() {
+	y = anchorY - 4;
+	depth = baseDepth - 2;
+}
+
+function isFaceUp() {
+	return face == CardFace.Up;
 }
 
 function refresh() {

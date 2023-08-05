@@ -16,12 +16,12 @@ draw_sprite(sprite_index, 0, x, dy);
 
 draw_sprite(portrait, 0, x+2, dy+10);
 
-draw_set_font(global.CardTitleFont);
+draw_set_font(global.titleFont);
 
 draw_set_color(c_black);
-draw_text(textX,dy+4,cardtitle);
+draw_text(textX,dy+4,title);
 draw_set_color(c_white);
-draw_text(textX,dy+3,cardtitle);
+draw_text(textX,dy+3,title);
 
 draw_set_color(c_black);
 draw_text(x+5, dy+sprite_height-8, effectText);

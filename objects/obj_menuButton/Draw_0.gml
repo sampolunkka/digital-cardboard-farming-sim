@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 draw_self();
-draw_set_font(global.CardTitleFont);
+draw_set_font(global.titleFont);
 draw_set_color(c_black);
 draw_set_alpha(0.8);
 draw_text(x+3, y+3, string_upper(label));

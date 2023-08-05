@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-cardtitle = "Furs";
+title = "Furs";
 portrait = spr_squirrel;
 effectText = "+Ö";
 

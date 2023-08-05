@@ -63,7 +63,7 @@ function createArcPortion() {
 		);
 		//card.anchorX = round(tx - card.sprite_width * 0.5);
 		//card.anchorY = round(ty - card.sprite_height);
-		card.depth = -i;
+		card.setDepth(-i);
 	}
 	
 	// set hand bounds for collisons

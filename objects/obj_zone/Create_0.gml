@@ -8,6 +8,10 @@ face = CardFace.Down;
 title = "Generic zone";
 movementMode = CardMovementMode.Fast;
 
+function hoverCard(card) {
+	card.hover();
+}
+
 function moveCard(card, zone) {
 	//show_message("move card: " + string(card,id));
 	if (zone.isFull()) {
@@ -46,9 +50,13 @@ function swapCard(card, replacement, zone) {
 }
 
 function insertCard(card, index) {
+	onInsert(card);
 	//show_message("inserting card: " + string(card.id));
 	array_insert(cards, index, card);
 	refresh();
+}
+
+function onInsert(card) {
 }
 
 function removeCard(cardIndex) {

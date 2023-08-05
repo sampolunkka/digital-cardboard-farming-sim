@@ -22,9 +22,24 @@ function pick() {
 
 function place() {
 	if (collision_point(mouse_x, mouse_y, board, true, true)) {
-		placeAtPlaceholder(board);
+		//placeAtPlaceholder(board);
+		playCard();
 	} else if (collision_point(mouse_x, mouse_y, hand, false, true)) {
 		placeAtPlaceholder(hand);
+	}
+}
+
+function playCard() {
+	var card = drag.getCard();
+	var zone = board;
+	var player = player_get_active();
+	if (instance_exists(obj_placeholderCard)) {
+		if (player.payForCard(card)) {
+			card.setMovement(zone.movementMode);
+			zone.insertCard(drag.getCard(), zone.getIndexAtX(mouse_x));
+			drag.removeCard(0);
+			instance_destroy(obj_placeholderController);
+		}
 	}
 }
 
@@ -71,6 +86,15 @@ function getTopmostHoveredCard() {
 	}
 	ds_list_destroy(cardCollisions);
 	return card;
+}
+
+function getHoveredCardInZone(zone) {
+	var card = getTopmostHoveredCard();
+	if (zone.hasCard(card)) {
+		return card;
+	} else {
+		return noone;
+	}
 }
 
 function init() {
