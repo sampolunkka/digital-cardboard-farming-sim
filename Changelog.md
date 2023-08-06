@@ -1,5 +1,11 @@
 # Digital cardboard farming sim
 
+## 6.8.2023
+### Combat
+- Add combat controller
+- Add opponent board
+- Implement basid combat mechanics
+
 ## 5.8.2023
 ### Card
 - Add on play actions

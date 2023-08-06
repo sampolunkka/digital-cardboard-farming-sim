@@ -1,21 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_boardZone",
+  "name": "obj_opponentCardController",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Zone",
-    "path": "folders/Objects/Zone.yy",
+    "name": "Controller",
+    "path": "folders/Objects/Controller.yy",
   },
-  "parentObjectId": {
-    "name": "obj_zone",
-    "path": "objects/obj_zone/obj_zone.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,10 +27,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "Sprite11",
-    "path": "sprites/Sprite11/Sprite11.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

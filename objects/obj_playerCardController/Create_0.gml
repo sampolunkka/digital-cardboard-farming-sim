@@ -1,19 +1,32 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+// ZONES
 deck = noone;
 drag = noone;
 hand = noone;
 board = noone;
+
+// CONTROLLERS
 turnController = noone;
 
 function draw() {
 	deck.moveCard(deck.getTopCard(), hand);
 }
 
-// TODO: Pick could create placeholder instance. Needs research..
-function pick() {
-	var card = getTopmostHoveredCard();
+function select(card) {
+	//show_message("select on card: " + string(card.id));
+	if (hand.hasCard(card)) {
+		//show_message("hand has card");
+		pick(card);
+	} else if (board.hasCard(card)) {
+		if (!instance_exists(obj_combatController)) {
+			var combtCon = instance_create_depth(0,0,0,obj_combatController);
+			combtCon.init(card);
+		}
+	}
+}
+
+function pick(card) {
 	if (card == noone) {
 		return;
 	}

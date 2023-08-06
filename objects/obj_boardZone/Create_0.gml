@@ -13,7 +13,7 @@ image_xscale = 12;
 image_yscale = 2;
 depth = 20;
 x = 0;
-y = 40;
+y = 50;
 
 
 slotWidth = 32;

@@ -16,6 +16,32 @@ if (isFaceUp()) {
 	
 	draw_text_shadow(x + 3, bottomY - 3, string(attack) + "/" + string(hp));
 	
+	var color = c_white;
+	
+	// ATTACK
+	if (attack > baseAttack) {
+		color = c_teal;
+	} else if (attack < baseAttack) {
+		color = c_red;
+	} else {
+		color = c_white;
+	}
+	draw_text_shadow_color(x + 3, bottomY - 3, string(attack), color);
+	
+	// DIVIDER
+	draw_set_color(c_white);
+	draw_text_shadow(x + 3 + string_width(attack), bottomY - 3, "/");
+	
+	// HEALTH
+	if (attack > baseAttack) {
+		color = c_teal;
+	} else if (attack < baseAttack) {
+		color = c_red;
+	} else {
+		color = c_white;
+	}
+	draw_text_shadow_color(x + 3 + string_width(attack) + string_width("/"), bottomY - 3, string(hp), color);
+	
 	draw_sprite(spr_titleBackplate, 0, x + 4, y - 2);
 	draw_text_shadow(x + 5, y-2, title);
 }

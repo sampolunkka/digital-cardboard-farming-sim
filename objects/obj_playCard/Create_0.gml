@@ -5,8 +5,10 @@
 type = CardType.Unique;
 title = "card";
 cost = 1;
-hp = 1;
-attack = 1;
+baseHp = 1;
+hp = baseHp;
+baseAttack = 1;
+attack = baseAttack;
 
 // INFO
 info = "Card info here";

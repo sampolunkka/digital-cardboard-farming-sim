@@ -23,6 +23,11 @@ function scr_global_card(){
 
 }
 
-function getCardCenterX(card) {
-	return round(card.anchorX + (card.sprite_width * 0.5));
+
+function card_get_center_x(card) {
+		return round(card.anchorX + (card.sprite_width * 0.5));
+}
+
+function card_get_center_y(card) {
+		return round(card.anchorY + (card.sprite_height * 0.5));
 }

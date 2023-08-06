@@ -6,7 +6,9 @@ event_inherited();
 
 title = "Miner";
 cost = 4;
-hp = 2;
-attack = 3;
+baseHp = 2;
+hp = baseHp;
+baseAttack = 3;
+attack = baseAttack;
 onPlayActions = [act_gainResourceEmpty];
 info = "Play: gain an empty resource.";

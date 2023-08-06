@@ -60,11 +60,13 @@ function onInsert(card) {
 }
 
 function removeCard(cardIndex) {
+	//show_message("Removing card with index: " + string(cardIndex));
 	array_delete(cards, cardIndex, 1);
 	refresh();
 }
 
 function deleteCard(card) {
+	//show_message("Deleting card: " + string(card.id));
 	removeCard(getCardIndex(card));
 	instance_destroy(card);
 }
