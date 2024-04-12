@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Action",
-    "path": "folders/Objects/Action.yy",
+    "path": "folders/Objects/Effects/Action.yy",
   },
   "parentObjectId": {
     "name": "obj_action",

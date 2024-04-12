@@ -26,11 +26,14 @@ function shuffle() {
 
 function init() {
 	for (var i=0; i<maxSize; i++) {
-		var rand = irandom_range(0,1);
-		if(rand == 0) {
-			addCard(instance_create_depth(0,0,0,card_noviceEngineer));
-		} else {
-			addCard(instance_create_depth(0,0,0,card_miner));
+		var rand = irandom_range(0,4);
+		switch (rand) {
+			case 0: addCard(instance_create_depth(0,0,0,card_squire)) break;
+			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;
+			case 2: addCard(instance_create_depth(0,0,0,card_knight)) break;
+			case 3: addCard(instance_create_depth(0,0,0,card_gallant)) break;
+			case 4: addCard(instance_create_depth(0,0,0,card_cart)) break;
+			default: addCard(instance_create_depth(0,0,0,card_knight)) break;
 		}
 		/*
 		var ctitle;

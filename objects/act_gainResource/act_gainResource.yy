@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Actions",
-    "path": "folders/Objects/Action/Actions.yy",
+    "name": "Action",
+    "path": "folders/Objects/Effects/Action.yy",
   },
   "parentObjectId": {
     "name": "obj_action",

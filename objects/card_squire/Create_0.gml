@@ -1,15 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
-
 // Inherit the parent event
 event_inherited();
 
-title = "Croc";
-cost = 2;
+title = "Squire";
+cost = 1;
 baseAttack = 2;
+baseHp = 1;
 attack = baseAttack;
-baseHp = 3;
 hp = baseHp;
 onPlayActions = [];
-info = "";
+info = "Sworn to carry your burdens";
+portrait = spr_portrait_squire;
+
+
+
+
+
+
+
 

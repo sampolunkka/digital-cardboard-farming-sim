@@ -16,7 +16,7 @@ x = 0;
 y = 50;
 
 
-slotWidth = 32;
+slotWidth = 40;
 
 // Override
 function onInsert(card) {

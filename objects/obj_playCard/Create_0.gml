@@ -21,9 +21,10 @@ placeholder = false;
 
 // VISUAL
 faceDownSprite = spr_cardBack;
-faceUpSprite = spr_card;
+faceUpSprite = spr_card_stats_overlay;
 face = CardFace.Down;
 hidden = true;
+portrait = spr_portrait_default;
 
 // MOVEMENT
 baseDepth = depth;
@@ -34,6 +35,10 @@ realY = y;
 movementSnapDistance = 2;
 movementSpeedMultiplier = 0.8;
 movementMode = CardMovementMode.Instant;
+
+function init() {
+	image_speed = 0;
+}
 
 function setFace(face) {
 	self.face = face;
