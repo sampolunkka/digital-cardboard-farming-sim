@@ -71,6 +71,7 @@
     {"id":{"name":"spr_titleBackplate","path":"sprites/spr_titleBackplate/spr_titleBackplate.yy",},},
     {"id":{"name":"obj_handZone","path":"objects/obj_handZone/obj_handZone.yy",},},
     {"id":{"name":"obj_playCard","path":"objects/obj_playCard/obj_playCard.yy",},},
+    {"id":{"name":"card_croc","path":"objects/card_croc/card_croc.yy",},},
     {"id":{"name":"spr_attackSymbol","path":"sprites/spr_attackSymbol/spr_attackSymbol.yy",},},
     {"id":{"name":"obj_boardZone","path":"objects/obj_boardZone/obj_boardZone.yy",},},
     {"id":{"name":"obj_phase","path":"objects/obj_phase/obj_phase.yy",},},

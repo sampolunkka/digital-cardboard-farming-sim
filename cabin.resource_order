@@ -44,6 +44,7 @@
     {"name":"spr_menuButton","order":1,"path":"sprites/spr_menuButton/spr_menuButton.yy",},
     {"name":"spr_titleBackplate","order":3,"path":"sprites/spr_titleBackplate/spr_titleBackplate.yy",},
     {"name":"obj_handZone","order":5,"path":"objects/obj_handZone/obj_handZone.yy",},
+    {"name":"card_croc","order":2,"path":"objects/card_croc/card_croc.yy",},
     {"name":"obj_boardZone","order":8,"path":"objects/obj_boardZone/obj_boardZone.yy",},
     {"name":"obj_hand","order":5,"path":"objects/obj_hand/obj_hand.yy",},
     {"name":"spr_farm","order":3,"path":"sprites/spr_farm/spr_farm.yy",},
