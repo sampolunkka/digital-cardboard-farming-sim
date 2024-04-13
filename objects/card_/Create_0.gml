@@ -9,7 +9,7 @@ baseAttack = 1;
 baseHp = 1;
 attack = baseAttack;
 hp = baseHp;
-onPlayActions = [];
+on_play_actions = [];
 info = "";
 portrait = noone;
 

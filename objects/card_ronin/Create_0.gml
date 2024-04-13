@@ -10,7 +10,7 @@ baseAttack = 3;
 attack = baseAttack;
 baseHp = 2;
 hp = baseHp;
-onPlayActions = [];
+on_play_actions = [];
 info = "";
 portrait = spr_portrait_ronin;
 

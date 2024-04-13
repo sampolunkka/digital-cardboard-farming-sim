@@ -3,18 +3,18 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Knight";
-cost = 3;
-baseAttack = 3;
-baseHp = 4;
+title = "Pegasos";
+cost = 6;
+baseAttack = 5;
+baseHp = 5;
 attack = baseAttack;
 hp = baseHp;
 on_play_actions = [];
 info = "";
-portrait = spr_portrait_knight;
+portrait = spr_portrait_pegasos;
+on_damage_actions = [act_aegis];
 
-
-
+init();
 
 
 

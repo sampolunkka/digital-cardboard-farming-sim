@@ -9,7 +9,7 @@ baseAttack = 2;
 baseHp = 1;
 attack = baseAttack;
 hp = baseHp;
-onPlayActions = [];
+on_play_actions = [];
 info = "Sworn to carry your burdens";
 portrait = spr_portrait_squire;
 

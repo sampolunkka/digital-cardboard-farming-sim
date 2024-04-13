@@ -9,7 +9,7 @@ baseAttack = 4;
 baseHp = 5;
 attack = baseAttack;
 hp = baseHp;
-onPlayActions = [];
+on_play_actions = [];
 info = "";
 portrait = spr_portrait_gallant;
 

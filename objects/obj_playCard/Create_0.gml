@@ -13,8 +13,10 @@ attack = baseAttack;
 // INFO
 info = "Card info here";
 
-// ACTIONS
-onPlayActions = [];
+// Effects
+on_play_actions = [];
+on_damage_actions = [];
+actives = [];
 
 // CONTROL
 placeholder = false;
@@ -38,6 +40,10 @@ movementMode = CardMovementMode.Instant;
 
 function init() {
 	image_speed = 0;
+	for (var i=0; i<array_length(on_damage_actions); i++) {
+		var action = instance_create_layer(x, y, "Effects", on_damage_actions[i]);
+		action.initWith(self);
+	}
 }
 
 function setFace(face) {
@@ -80,9 +86,13 @@ function isPlaceholder() {
 	return placeholder;
 }
 
+function addOnDamageAction(action) {
+	array_push(on_damage_actions, action);
+}
+
 function onPlay() {
-	for (var i = 0; i < array_length(onPlayActions); i++) {
-		var action = action_create(onPlayActions[0], self, [player_get_active()]);
+	for (var i = 0; i < array_length(on_play_actions); i++) {
+		var action = action_create(on_play_actions[0], self, [player_get_active()]);
 		action.trigger();
 	}
 }

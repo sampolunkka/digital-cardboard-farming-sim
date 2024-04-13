@@ -7,5 +7,8 @@ board = noone;
 
 board = instance_create_depth(0,0,10,obj_boardZone);
 board.y = 0;
-board.addCard(instance_create_depth(0,0,0,card_noviceEngineer));
+board.addCard(instance_create_depth(0,0,0,card_pegasos));
+board.addCard(instance_create_depth(0,0,0,card_pegasos));
+board.addCard(instance_create_depth(0,0,0,card_pegasos));
+board.addCard(instance_create_depth(0,0,0,card_pegasos));
 board.sprite_index = spr_boardOpponent;

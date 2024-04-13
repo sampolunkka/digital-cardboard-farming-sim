@@ -9,7 +9,7 @@ baseAttack = 4;
 baseHp = 4;
 attack = baseAttack;
 hp = baseHp;
-onPlayActions = [obj_drawAction];
+on_play_actions = [obj_drawAction];
 info = "";
 portrait = spr_portrait_cart;
 

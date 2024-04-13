@@ -6,5 +6,5 @@ event_inherited();
 
 title = "Novice";
 cost = 2;
-onPlayActions = [obj_drawAction];
+on_play_actions = [obj_drawAction];
 info = "Play: draw a card.";

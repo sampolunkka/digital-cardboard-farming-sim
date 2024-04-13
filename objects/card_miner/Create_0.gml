@@ -10,5 +10,5 @@ baseHp = 2;
 hp = baseHp;
 baseAttack = 3;
 attack = baseAttack;
-onPlayActions = [act_gainResourceEmpty];
+on_play_actions = [act_gainResourceEmpty];
 info = "Play: gain an empty resource.";
