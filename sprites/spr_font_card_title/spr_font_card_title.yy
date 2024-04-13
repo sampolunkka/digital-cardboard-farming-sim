@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_font_card_title",
-  "bbox_bottom": 5,
+  "bbox_bottom": 6,
   "bbox_left": 0,
   "bbox_right": 4,
   "bbox_top": 0,
@@ -94,7 +94,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 6,
+  "height": 7,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6260fb6f-02c4-493c-adf3-04f7db5add6f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},

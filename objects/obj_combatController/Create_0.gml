@@ -25,23 +25,7 @@ function isOpponentCard(card) {
 
 function attackCard(target) {
 	var card = attackingCard;
-	var ownAtk = card.attack;
-	var oppAtk = target.attack;
-	
-	card.hp -= oppAtk;
-	target.hp -= ownAtk;
-	
-	if (card.hp <= 0) {
-		var playerControl = instance_nearest(x, y, obj_playerCardController);
-		var playerBoard = playerControl.board;
-		playerBoard.deleteCard(card);
-	}
-	
-	if (target.hp <= 0) {
-		var opponentControl = instance_nearest(x, y, obj_opponentCardController);
-		var opponentBoard = opponentControl.board;
-		opponentBoard.deleteCard(target);
-	}
+	card.startCombat(target);
 }
 
 function init(card) {

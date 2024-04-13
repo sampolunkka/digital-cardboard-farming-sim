@@ -7,9 +7,8 @@ function initWith(card) {
 	source = card;
 	x = source.x;
 	y = source.y;
-	show_message(source);
 }
 
-function trigger() {
+function triggerAndApplyDamage() {
 	
 }

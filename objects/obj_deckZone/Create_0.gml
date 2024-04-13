@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-
+randomize();
 // Override
 maxSize = 30;
 hidden = false;
@@ -26,13 +26,14 @@ function shuffle() {
 
 function init() {
 	for (var i=0; i<maxSize; i++) {
-		var rand = irandom_range(0,4);
+		var rand = irandom_range(0,5);
 		switch (rand) {
 			case 0: addCard(instance_create_depth(0,0,0,card_squire)) break;
 			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;
 			case 2: addCard(instance_create_depth(0,0,0,card_knight)) break;
 			case 3: addCard(instance_create_depth(0,0,0,card_gallant)) break;
 			case 4: addCard(instance_create_depth(0,0,0,card_cart)) break;
+			case 5: addCard(instance_create_depth(0,0,0,card_pegasos)) break;
 			default: addCard(instance_create_depth(0,0,0,card_knight)) break;
 		}
 		/*

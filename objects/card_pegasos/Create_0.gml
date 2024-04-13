@@ -12,7 +12,7 @@ hp = baseHp;
 on_play_actions = [];
 info = "";
 portrait = spr_portrait_pegasos;
-on_damage_actions = [act_aegis];
+before_damage_actions = [act_aegis];
 
 init();
 

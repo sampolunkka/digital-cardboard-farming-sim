@@ -11,4 +11,9 @@ board.addCard(instance_create_depth(0,0,0,card_pegasos));
 board.addCard(instance_create_depth(0,0,0,card_pegasos));
 board.addCard(instance_create_depth(0,0,0,card_pegasos));
 board.addCard(instance_create_depth(0,0,0,card_pegasos));
+
+for (var i = 0; i < array_length(board.cards); i++) {
+	board.cards[i].onSummon();
+}
+
 board.sprite_index = spr_boardOpponent;

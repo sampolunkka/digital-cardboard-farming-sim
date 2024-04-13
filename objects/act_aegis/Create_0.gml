@@ -4,6 +4,6 @@ event_inherited();
 
 function triggerAndApplyDamage(damage) {
 	instance_destroy();
-	return 0;
+	return -damage;
 }
 

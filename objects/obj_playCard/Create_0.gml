@@ -15,6 +15,7 @@ info = "Card info here";
 
 // Effects
 on_play_actions = [];
+before_damage_actions = [];
 on_damage_actions = [];
 actives = [];
 
@@ -40,10 +41,6 @@ movementMode = CardMovementMode.Instant;
 
 function init() {
 	image_speed = 0;
-	for (var i=0; i<array_length(on_damage_actions); i++) {
-		var action = instance_create_layer(x, y, "Effects", on_damage_actions[i]);
-		action.initWith(self);
-	}
 }
 
 function setFace(face) {
@@ -86,11 +83,10 @@ function isPlaceholder() {
 	return placeholder;
 }
 
-function addOnDamageAction(action) {
-	array_push(on_damage_actions, action);
-}
-
 function onPlay() {
+	
+	onSummon();
+	
 	for (var i = 0; i < array_length(on_play_actions); i++) {
 		var action = action_create(on_play_actions[0], self, [player_get_active()]);
 		action.trigger();
@@ -116,5 +112,66 @@ function refresh() {
 	
 	if (hidden) {
 		sprite_index = noone;
+	}
+}
+
+function startCombat(target) {
+	target.defend(self, attack);
+	onDamage(target.getDefendDamage());
+	afterDamage();
+	target.afterDamage();
+}
+
+function defend(attacker, damage) {
+	onDamage(damage);
+}
+
+function getDefendDamage() {
+	return attack;
+}
+
+function onDamage(damage) {
+	var total_damage = damage;
+	
+	for (var i = 0; i < array_length(before_damage_actions); i++) {
+		var action = before_damage_actions[i];
+		total_damage += action.triggerAndApplyDamage(damage);
+		if (!instance_exists(action)) {
+			array_delete(before_damage_actions, i, 1);
+		}
+	}
+	
+	for (var i = 0; i < array_length(on_damage_actions); i++) {
+		on_damage_actions[i].trigger(total_damage);
+	}
+	
+	// Update hp
+	hp -= total_damage;
+}
+
+function onSummon() {
+	
+	// Before damage
+	for (var i=0; i < array_length(before_damage_actions); i++) {
+		var action = instance_create_layer(x, y, "Effects", before_damage_actions[i]);
+		action.initWith(self);
+		before_damage_actions[i] = action;
+	}
+	
+	// On damage
+	for (var i=0; i < array_length(on_damage_actions); i++) {
+		var action = instance_create_layer(x, y, "Effects", on_damage_actions[i]);
+		action.initWith(self);
+		on_damage_actions[i] = action;
+	}
+}
+
+
+function afterDamage() {
+	// Check if dies
+	if (hp <= 0) {
+		var playerControl = instance_nearest(x, y, obj_playerCardController);
+		var playerBoard = playerControl.board;
+		playerBoard.deleteCard(self);
 	}
 }
