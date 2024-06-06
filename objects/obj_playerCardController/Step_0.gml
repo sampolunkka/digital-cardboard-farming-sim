@@ -18,13 +18,6 @@ if (drag.isFull()) {
 			var infoControl = instance_create_depth(0,0,0,obj_cardInfoController);
 			infoControl.init(card);
 		} 
-		/* This is buggy
-		else {
-			var infoControl = instance_nearest(0,0,obj_cardInfoController);
-			if (infoControl.card != card) {
-				infoControl.init(card);
-			}
-		}
-		*/
 	} 
+	// TODO: should we make hover for battlers also?
 }

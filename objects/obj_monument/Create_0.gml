@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 portrait = spr_monument;
-title = "Altar";
+label = "Altar";
 
 highlighted = false;
 baseDepth = depth;

@@ -19,7 +19,7 @@ for (var i = 0; i < array_length(effects); i++) {
 }
 
 draw_set_color(c_white);
-draw_set_font(global.titleFont);
+draw_set_font(global.labelFont);
 
 var uiString = "";
 

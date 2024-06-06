@@ -3,7 +3,7 @@
 attackingCard = noone;
 
 function getOpponentCard() {
-	var target  = collision_point(mouse_x, mouse_y, obj_playCard, false, true);
+	var target  = collision_point(mouse_x, mouse_y, obj_battleCard, false, true);
 	if (isOpponentCard(target)) {
 		return target;
 	}
@@ -29,7 +29,5 @@ function attackCard(target) {
 }
 
 function init(card) {
-	x = card_get_center_x(card);
-	y = card_get_center_y(card);
 	attackingCard = card;
 }

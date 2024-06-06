@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Ronin";
+label = "Ronin";
 cost = 2;
 baseAttack = 3;
 attack = baseAttack;
@@ -13,4 +13,5 @@ hp = baseHp;
 on_play_actions = [];
 info = "";
 portrait = spr_portrait_ronin;
+battler_sprite = spr_battler_ronin;
 

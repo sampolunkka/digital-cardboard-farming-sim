@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Novice";
+label = "Novice";
 cost = 2;
 on_play_actions = [obj_drawAction];
 info = "Play: draw a card.";

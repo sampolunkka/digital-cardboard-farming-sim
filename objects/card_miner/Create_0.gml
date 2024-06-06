@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Miner";
+label = "Miner";
 cost = 4;
 baseHp = 2;
 hp = baseHp;

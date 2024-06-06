@@ -7,12 +7,12 @@ draw_sprite(sprite_index, 0, x, dy);
 
 draw_sprite(portrait, 0, x+1, dy+7);
 
-draw_set_font(global.titleFont);
+draw_set_font(global.labelFont);
 
 draw_set_color(c_black);
-draw_text(x+5,dy+4,title + string(handIndex));
+draw_text(x+5,dy+4,label + string(handIndex));
 draw_set_color(c_white);
-draw_text(x+5,dy+3,title + string(handIndex));
+draw_text(x+5,dy+3,label + string(handIndex));
 
 draw_set_color(c_black);
 draw_text(x+5, dy+sprite_height-8, "+XX")

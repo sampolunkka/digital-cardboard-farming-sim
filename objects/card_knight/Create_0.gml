@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Knight";
+label = "Knight";
 cost = 3;
 baseAttack = 3;
 baseHp = 4;

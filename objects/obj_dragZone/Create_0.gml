@@ -8,7 +8,7 @@ event_inherited();
 maxSize = 1;
 face = CardFace.Up;
 hidden = false;
-title = "Drag";
+label = "Drag";
 movementMode = CardMovementMode.Instant;
 
 function getCard() {

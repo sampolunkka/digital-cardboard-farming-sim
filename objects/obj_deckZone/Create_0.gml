@@ -6,10 +6,10 @@ randomize();
 maxSize = 30;
 hidden = false;
 face = CardFace.Down;
-title = "Deck";
+label = "Deck";
 
-x = 200;
-y = 100;
+x = 210;
+y = 118;
 
 // Override
 function refresh() {
@@ -26,27 +26,23 @@ function shuffle() {
 
 function init() {
 	for (var i=0; i<maxSize; i++) {
-		var rand = irandom_range(0,5);
+		var rand = irandom_range(0,1);
 		switch (rand) {
 			case 0: addCard(instance_create_depth(0,0,0,card_squire)) break;
-			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;
-			case 2: addCard(instance_create_depth(0,0,0,card_knight)) break;
-			case 3: addCard(instance_create_depth(0,0,0,card_gallant)) break;
-			case 4: addCard(instance_create_depth(0,0,0,card_cart)) break;
-			case 5: addCard(instance_create_depth(0,0,0,card_pegasos)) break;
-			default: addCard(instance_create_depth(0,0,0,card_knight)) break;
+			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;;
+			default: addCard(instance_create_depth(0,0,0,card_squire)) break;
 		}
 		/*
-		var ctitle;
+		var clabel;
 		var rand = irandom_range(0, 4);
 		switch (rand) {
-			case 0: ctitle = "Forest"; break;
-			case 1: ctitle = "Plains"; break;
-			case 2: ctitle = "Cabin"; break;
-			case 3: ctitle = "River"; break;
-			case 4: ctitle = "Farm"; break;
+			case 0: clabel = "Forest"; break;
+			case 1: clabel = "Plains"; break;
+			case 2: clabel = "Cabin"; break;
+			case 3: clabel = "River"; break;
+			case 4: clabel = "Farm"; break;
 		}
-		cards[i].title = ctitle;
+		cards[i].label = clabel;
 		*/
 		cards[i].setPosition(x, round(y - i * 0.2));
 		cards[i].setDepth(-i);

@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Forest";
+label = "Forest";
 portrait = spr_forest;
 effectText = "+@";
 info = "Card info. Lorem ipsum dolor sit amet. This text is for development purposes to test how card info text boxes behave.";

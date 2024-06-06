@@ -5,7 +5,7 @@ maxSize = 5;
 cards = [];
 hidden = false;
 face = CardFace.Down;
-title = "Generic zone";
+label = "Generic zone";
 movementMode = CardMovementMode.Fast;
 
 function hoverCard(card) {
@@ -21,14 +21,14 @@ function moveCard(card, zone) {
 	
 	var ind = array_get_index(cards, card);
 	if (ind >= 0) {
-		removeCard(getCardIndex(card));
-		//show_message("attempting to move card: " + string(card.id) + " to zone: " + zone.title );
+		removeCardAtIndex(getCardIndex(card));
+		//show_message("attempting to move card: " + string(card.id) + " to zone: " + zone.label );
 		zone.addCard(card);
 	}
 }
 
 function addCard(card) {
-	//show_message("adding card: " + string(card.id) + "to zone: " + title);
+	//show_message("adding card: " + string(card.id) + "to zone: " + label);
 	if (self.isFull()) {
 		show_message("Zone is full!");
 		return;
@@ -42,32 +42,49 @@ function addCard(card) {
 }
 
 function swapCard(card, replacement, zone) {
-	// may cause index = -1, therefore use max(0, ind)
-	self.insertCard(replacement, max(0, self.getCardIndex(card)));
-	self.removeCard(max(0, self.getCardIndex(card)));
-	zone.insertCard(card, max(0, zone.getCardIndex(replacement)));
-	zone.removeCard(max(0, zone.getCardIndex(replacement)));
+	insertCard(replacement, getCardIndex(card));
+	removeCard(card);
+	
+	zone.insertCard(card, zone.getCardIndex(replacement));
+	zone.removeCard(card);
 }
 
 function insertCard(card, index) {
+	var temp = cards;
 	onInsert(card);
-	//show_message("inserting card: " + string(card.id));
-	array_insert(cards, index, card);
+	show_debug_message("insert card: " + mask_instance_ref(card) + " " + card.label + " to zone: " + mask_instance_ref(self) + " " + label);
+	array_insert(temp, index, card);
+	cards = temp;
 	refresh();
 }
 
 function onInsert(card) {
 }
 
-function removeCard(cardIndex) {
-	//show_message("Removing card with index: " + string(cardIndex));
+function removeCardAtIndex(cardIndex) {
 	array_delete(cards, cardIndex, 1);
 	refresh();
 }
 
+function removeCard(card) {
+	show_debug_message("Remove card " + card + " from zone " + label);
+	var index = array_get_index(cards, card.instance_id);
+	if (index < 0) {
+		show_debug_message("card index <0");
+	}
+	var temp = cards;
+	array_delete(temp, array_get_index(temp, card), 1);
+	cards = temp;
+	show_debug_message("cards: " + string(cards));
+	refresh();
+}
+
 function deleteCard(card) {
-	//show_message("Deleting card: " + string(card.id));
-	removeCard(getCardIndex(card));
+	var temp = cards;
+	array_delete(temp, getCardIndex(card), 1);
+	show_debug_message("delete card: " + mask_instance_ref(card) + " " + card.label + " from zone: " + mask_instance_ref(self) + " " + label);
+	cards = temp;
+	refresh();
 	instance_destroy(card);
 }
 
@@ -89,6 +106,7 @@ function getIndexAtX(tx) {
 	}
 	var index = 0;
 	for (var i = 0; i < getSize(); i++) {
+		//show_debug_message("cards is array: " + string(is_array(cards)) + " with values: " + string(cards));
 		if (tx > cards[i].anchorX) {
 			index = i;
 		} else {

@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Furs";
+label = "Furs";
 portrait = spr_squirrel;
 effectText = "+Ö";
 

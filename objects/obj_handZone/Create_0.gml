@@ -14,13 +14,13 @@ function refresh() {
 maxSize = 8;
 hidden = false;
 face = CardFace.Up;
-title = "Hand";
+label = "Hand";
 movementMode = CardMovementMode.Slow;
 
 // Arc params
 verticalOffset = 0;
 horizontalOffset = 20;
-leftPointX =horizontalOffset;
+leftPointX = horizontalOffset;
 leftPointY = room_height - verticalOffset;
 rightPointX = room_width - horizontalOffset - 20;
 rightPointY = leftPointY;
@@ -125,7 +125,7 @@ function findHandCircle(topPointY, topPointX) {
 	var r = sqrt(sqr_of_r);
 	
 	x = h;
-	y = k + (10 - getSize()) * 2;
+	y = k + (15 - getSize()) * 2;
 	handRadius = r;
 }
 

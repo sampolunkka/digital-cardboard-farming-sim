@@ -4,5 +4,11 @@ event_inherited();
 
 faceDownSprite = sprite_index;
 faceUpSprite = sprite_index;
-visible = false;
+visible = global.debugShowPlaceholder;
 placeholder = true;
+label = "Placeholder";
+
+
+function onSummon() {
+	
+}

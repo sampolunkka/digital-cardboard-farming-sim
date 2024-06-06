@@ -6,6 +6,7 @@ event_inherited();
 
 if (debug_show_zone_card_info()) {
 	for (var i = 0; i < array_length(cards); i++) {
-		draw_text(x, y + 6*i,string(i) + ": " + string(cards[i].id) + " " + string(cards[i].title));
+		if (!instance_exists(cards[i])) return;
+		draw_text(x, y + 6*i,string(i) + ": " + mask_instance_ref(cards[i]) + " " + string(cards[i].label));
 	}
 }

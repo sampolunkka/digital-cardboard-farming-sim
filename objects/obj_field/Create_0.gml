@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 portrait = spr_farm;
-title = "Farm";
+label = "Farm";
 
 highlighted = false;
 baseDepth = depth;

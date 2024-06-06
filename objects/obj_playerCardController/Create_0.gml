@@ -10,7 +10,10 @@ board = noone;
 turnController = noone;
 
 function draw() {
-	deck.moveCard(deck.getTopCard(), hand);
+	var topCard = deck.getTopCard();
+	if (topCard != undefined && topCard != noone) {
+		deck.moveCard(deck.getTopCard(), hand);
+	}
 }
 
 function select(card) {
@@ -20,7 +23,7 @@ function select(card) {
 		pick(card);
 	} else if (board.hasCard(card)) {
 		if (!instance_exists(obj_combatController)) {
-			var combtCon = instance_create_depth(0,0,0,obj_combatController);
+			var combtCon = instance_create_depth(card.x,card.y,0,obj_combatController);
 			combtCon.init(card);
 		}
 	}
@@ -50,7 +53,7 @@ function playCard() {
 		if (player.payForCard(card)) {
 			card.setMovement(zone.movementMode);
 			zone.insertCard(drag.getCard(), zone.getIndexAtX(mouse_x));
-			drag.removeCard(0);
+			drag.removeCardAtIndex(0);
 			instance_destroy(obj_placeholderController);
 		}
 	}
@@ -61,7 +64,7 @@ function placeAtPlaceholder(zone) {
 		var card = drag.getCard();
 		card.setMovement(zone.movementMode);
 		zone.insertCard(drag.getCard(), zone.getIndexAtX(mouse_x));
-		drag.removeCard(0);
+		drag.removeCardAtIndex(0);
 		instance_destroy(obj_placeholderController);
 	}
 }
@@ -84,12 +87,14 @@ function returnToHand() {
 
 function getTopmostHoveredCard() {
 	var cardCollisions = ds_list_create();
-	var collisionCount = collision_point_list(mouse_x, mouse_y, obj_playCard, false, true, cardCollisions, true);
+	var collisionCount = collision_point_list(mouse_x, mouse_y, obj_battleCard, false, true, cardCollisions, true);
 	
 	// Remove dragged card from collisions
 	if (!drag.isEmpty()) {
-		ds_list_delete(cardCollisions, ds_list_find_index(cardCollisions, drag.getTopCard));
-		collisionCount--;
+		if (drag.getTopCard != undefined && drag.getTopCard != noone) {
+			ds_list_delete(cardCollisions, ds_list_find_index(cardCollisions, drag.getTopCard));
+			collisionCount--;
+		}
 	}
 	
 	var card = noone;
@@ -119,7 +124,7 @@ function init() {
 	
 	/*for (var i=0; i < deck.maxSize; i++) {
 		//show_message("controller adding card: " + string(i));
-		deck.addCard(instance_create_depth(x, y, 0, obj_playCard));
+		deck.addCard(instance_create_depth(x, y, 0, obj_battleCard));
 	}*/
 }
 

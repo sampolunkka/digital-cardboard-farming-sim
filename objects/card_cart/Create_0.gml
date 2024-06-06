@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-title = "Cart";
+label = "Cart";
 cost = 5;
 baseAttack = 4;
 baseHp = 4;
