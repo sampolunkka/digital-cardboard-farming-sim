@@ -1,2 +1,0 @@
-destination = Board;
-label = "Play";

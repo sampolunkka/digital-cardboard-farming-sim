@@ -1,2 +1,0 @@
-destination = DeckBuilder;
-label = "Deck";
