@@ -13,8 +13,8 @@
     "path":"folders/Objects/x_toberemoved/x_cards.yy",
   },
   "parentObjectId":{
-    "name":"obj_card",
-    "path":"objects/obj_card/obj_card.yy",
+    "name":"x_obj_card",
+    "path":"objects/x_obj_card/x_obj_card.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

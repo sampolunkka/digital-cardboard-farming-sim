@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var heart_width = sprite_get_width(spr_health_symbol);
-var heart_height = sprite_get_height(spr_health_symbol);
+var heart_width = sprite_get_width(spr_heart);
+var heart_height = sprite_get_height(spr_heart);
 var bar_y = y - sprite_height;
 
 

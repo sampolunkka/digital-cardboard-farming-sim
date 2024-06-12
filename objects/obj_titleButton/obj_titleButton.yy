@@ -10,8 +10,8 @@
   "name":"obj_titleButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"Title",
-    "path":"folders/Objects/Title.yy",
+    "name":"Main",
+    "path":"folders/Objects/Main.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,6 +1,14 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+global.phantasmagoria
+= [
+	card_squire,
+	card_ronin,
+	card_gallant
+	
+];
+
 enum CardFace {
 	Up,
 	Down,
@@ -21,6 +29,10 @@ enum CardType {
 
 function scr_global_card(){
 
+}
+
+function phantasmagoria_getall() {
+	return global.phantasmagoria;
 }
 
 

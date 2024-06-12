@@ -9,6 +9,7 @@ function onPhaseBegin() {
 }
 
 function init() {
+	// TODO: this bugs out -> find out why
 	var origin = instance_nearest(x,y,obj_player);
 	var targets = [origin];
 	origin.refresh();

@@ -15,7 +15,7 @@ state = "free";
 
 /// @description Insert description here
 // You can write your code in this editor
-draggable = obj_card;
+draggable = x_obj_card;
 draggedCard = noone;
 
 dragOffsetX = 0;
@@ -58,7 +58,7 @@ function controlDeckManagerDrag() {
 
 function getCardCollisions() {
 	var cardCollisions = ds_list_create();
-	var _num = collision_point_list(mouse_x, mouse_y, obj_card, false, true, cardCollisions, true);
+	var _num = collision_point_list(mouse_x, mouse_y, x_obj_card, false, true, cardCollisions, true);
 	
 	//prevent collision with dragged card
 	if (draggedCard != noone) {
