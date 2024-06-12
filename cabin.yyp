@@ -114,6 +114,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerCardController","path":"objects/obj_playerCardController/obj_playerCardController.yy",},},
     {"id":{"name":"obj_playerPhase","path":"objects/obj_playerPhase/obj_playerPhase.yy",},},
+    {"id":{"name":"obj_roomFadeIn","path":"objects/obj_roomFadeIn/obj_roomFadeIn.yy",},},
     {"id":{"name":"obj_squirrels","path":"objects/obj_squirrels/obj_squirrels.yy",},},
     {"id":{"name":"obj_studyButton","path":"objects/obj_studyButton/obj_studyButton.yy",},},
     {"id":{"name":"obj_titleButton","path":"objects/obj_titleButton/obj_titleButton.yy",},},

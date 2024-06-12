@@ -76,6 +76,7 @@
     {"name":"obj_opponentCardController","order":5,"path":"objects/obj_opponentCardController/obj_opponentCardController.yy",},
     {"name":"obj_placeHolder","order":9,"path":"objects/obj_placeHolder/obj_placeHolder.yy",},
     {"name":"obj_placeholderController","order":2,"path":"objects/obj_placeholderController/obj_placeholderController.yy",},
+    {"name":"obj_roomFadeIn","order":3,"path":"objects/obj_roomFadeIn/obj_roomFadeIn.yy",},
     {"name":"obj_squirrels","order":3,"path":"objects/obj_squirrels/obj_squirrels.yy",},
     {"name":"obj_titleButton","order":1,"path":"objects/obj_titleButton/obj_titleButton.yy",},
     {"name":"obj_turnController","order":1,"path":"objects/obj_turnController/obj_turnController.yy",},
