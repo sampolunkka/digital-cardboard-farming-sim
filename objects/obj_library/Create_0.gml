@@ -16,7 +16,7 @@ scroll_speed = 8;
 var card_index = 0;
 for (var i = 0; i < ceil(array_length(library)/3); i++) {
 	for (var j = 0; j < 3; j++) {
-		if (j-1*i >= array_length(library)) {
+		if (card_index >= array_length(card_instances)) {
 			break;
 		}
 		var card = library[card_index];

@@ -3,3 +3,4 @@
 image_speed = 0;
 cards = array_create();
 deck_id = 0;
+open = false;
