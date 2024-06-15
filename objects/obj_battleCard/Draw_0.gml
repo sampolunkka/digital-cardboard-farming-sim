@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 if (on_board) {
 	if (fade_in_alpha < 1) {
 		fade_in_alpha+=0.06;
@@ -13,7 +14,9 @@ if (on_board) {
 	draw_sprite(portrait, 0, x + 5, y + 11);
 	draw_sprite(spr_card_stats_overlay, 0, x, y);
 	
+	draw_set_font(global.labelFont);
 	// Draw label
+	draw_text(x + 4, y + 2, label);
 	draw_text_color(x + 3, y + 3, label, c_black, c_black, c_fuchsia, c_dkgray, 1);
 	
 	// Draw cost
@@ -30,3 +33,5 @@ if (on_board) {
 } else {
 	draw_self();
 }
+
+draw_reset();

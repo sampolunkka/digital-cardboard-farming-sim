@@ -26,7 +26,7 @@ placeholder = false;
 // VISUAL
 faceDownSprite = spr_cardBack;
 faceUpSprite = spr_card_stats_overlay;
-face = CardFace.Down;
+face = CardFace.Up;
 hidden = true;
 portrait = spr_portrait_default;
 battler_sprite = spr_battler_default;
@@ -69,6 +69,10 @@ function setFaceAndHidden(face, hidden) {
 function setPosition(tx, ty) {
 	anchorX = tx;
 	anchorY = ty;
+}
+
+function move_y (_ty) {
+	setPosition(anchorX, anchorY + _ty);
 }
 
 function setMovement(mode) {
