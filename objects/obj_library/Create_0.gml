@@ -12,6 +12,7 @@ end_y = 112;
 
 scroll_speed = 8;
 
+// Init collection
 var card_index = 0;
 for (var i = 0; i < ceil(array_length(library)/3); i++) {
 	for (var j = 0; j < 3; j++) {

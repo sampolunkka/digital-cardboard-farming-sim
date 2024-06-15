@@ -39,9 +39,16 @@ if (bottom_card.y > end_y || top_card.y < start_y) {
 	
 	}
 	
-	draw_text(100, 40, card_rows);
-	draw_text(100, 60, string(bottom_card.y) + "/" + string(bottom_card_max_y));
-	draw_text(100, 80, collection_height);
-	draw_text(100, 100, string(distance_to_scroll) + "/" + string(max_distance_to_scroll));
-	draw_text(100, 120, scroll_percent);
+	if (global.debugEnabled) {
+		draw_text(100, 40, card_rows);
+		draw_text(100, 60, string(bottom_card.y) + "/" + string(bottom_card_max_y));
+		draw_text(100, 80, collection_height);
+		draw_text(100, 100, string(distance_to_scroll) + "/" + string(max_distance_to_scroll));
+		draw_text(100, 120, scroll_percent);
+	}
+	
+	draw_set_color(c_black);
+	//draw_rectangle(start_x, 2, room_width - 2, space_y + 4, false);
 }
+
+draw_reset();
