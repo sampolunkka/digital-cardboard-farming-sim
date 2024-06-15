@@ -35,7 +35,7 @@ if (bottom_card.y > end_y || top_card.y < start_y) {
 	if (distance_to_scroll > -1) {
 	
 		var scroll_pip_y = round(start_y + scroll_bar_height * scroll_percent);
-		draw_sprite(spr_scroll_bar, 3, room_width - 10, scroll_pip_y);
+		draw_sprite(spr_scroll_bar, 3, scroll_bar_x, scroll_pip_y);
 	
 	}
 	

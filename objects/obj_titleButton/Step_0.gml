@@ -3,7 +3,7 @@
 if (collision_point(mouse_x, mouse_y, self, false, false)) {
 	hovered = true;
 	text_fade_alpha = min(1, text_fade_alpha + text_fade_in_increment);
-	if(mouse_check_button(mb_left)) {
+	if(mouse_check_button_pressed(mb_left)) {
 		enter();
 	}
 } else {

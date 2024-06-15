@@ -16,7 +16,7 @@ scroll_speed = 8;
 var card_index = 0;
 for (var i = 0; i < ceil(array_length(library)/3); i++) {
 	for (var j = 0; j < 3; j++) {
-		if (card_index >= array_length(card_instances)) {
+		if (card_index >= array_length(library)) {
 			break;
 		}
 		var card = library[card_index];
@@ -30,3 +30,7 @@ for (var i = 0; i < ceil(array_length(library)/3); i++) {
 
 top_card = array_first(collection);
 bottom_card = array_last(collection);
+
+function activate_travel_delayed(_frames) {
+	alarm[0] = frames;
+}

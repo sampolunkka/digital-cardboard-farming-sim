@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 start_x = 4;
-start_y = 4;
+start_y = 40;
 space_x = 32;
 space_y = 48;
 
@@ -17,10 +17,14 @@ cards_list = array_create();
 card_instances = array_create();
 
 max_size = 15;
+deck_id = 1;
+
+save_button = noone;
 
 // Init collection
 function init_with(_deck) {
 	array_copy(cards_list, 0, _deck.cards, 0, array_length(_deck.cards));
+	deck_id = _deck.deck_id;
 	
 	for (var i = 0; i < array_length(card_instances); i++) {
 		instance_destroy(card_instances[i]);
@@ -41,6 +45,13 @@ function init_with(_deck) {
 	}
 	top_card = array_first(card_instances);
 	bottom_card = array_last(card_instances);
+	
+	// Create deck save button
+	save_button = instance_create_layer(x + 26, y + 26, "Buttons", obj_deck_save_button);
+	save_button = instance_create_layer(x + 60, y + 26, "Buttons", obj_deck_cancel_button);
+	
+	// Deactivate room navigation
+	instance_deactivate_object(obj_titleButton);
 }
 
 function update() {
@@ -71,4 +82,9 @@ function add_card(_card) {
 
 function is_full() {
 	return array_length(cards_list) >= max_size;
+}
+
+// Need delayed destroy since travel can accidentally activate on cancel
+function destroy_delayed() {
+	alarm[0] = 1;
 }

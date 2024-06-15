@@ -7,7 +7,7 @@ fontString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 + "+-ÅÖ@"
 + "0123456789"
 + "[]"
-+ " .,:;/";
++ " .,:;/!";
 global.labelFont = font_add_sprite_ext(spr_font_card_label, fontString, true, 1);
 
 function scr_global_font(){

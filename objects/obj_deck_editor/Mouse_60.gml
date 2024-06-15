@@ -1,5 +1,5 @@
 
-if (mouse_x > room_width/2) {
+if (array_length(card_instances) < 1 || mouse_x > room_width/2) {
 	return;
 }
 
