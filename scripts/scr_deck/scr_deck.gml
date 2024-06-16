@@ -18,8 +18,7 @@ function deck_save(_id, _cards) {
 		show_message("Invalid deck id: " + string(_id) + ", max decks allowed is " + string(max_decks));
 		return;
 	}
-	
-	global.decks[_id] = _cards;
+	array_copy(global.decks[_id], 0, _cards, 0, array_length(_cards));
 }
 
 function deck_get(_id) {

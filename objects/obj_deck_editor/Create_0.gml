@@ -25,7 +25,7 @@ underlay_sprite = spr_deck_editor_underlay;
 
 // Init collection
 function init_with(_deck) {
-	cards_list = _deck.cards;
+	array_copy(cards_list, 0, _deck.cards, 0, array_length(_deck.cards));
 	deck_id = _deck.deck_id;
 	
 	
@@ -78,6 +78,7 @@ function add_card(_card) {
 	var card_instance = instance_create_depth(_card.x, _card.y, depth - 1 - array_length(card_instances), _card.object_index);
 	card_instance.setFace(CardFace.Up);
 	array_push(card_instances, card_instance);
+	show_debug_message("cards_list: " + string(cards_list));
 	update();
 }
 
