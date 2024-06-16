@@ -4,6 +4,7 @@ image_speed = 0;
 deck_id = 0;
 open = false;
 cards = array_create();
+max_cards = 15;
 
 function init_with(_id) {
 	deck_id = _id;

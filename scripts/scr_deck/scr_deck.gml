@@ -7,6 +7,9 @@ global.decks[0] = array_create();
 global.decks[1] = array_create();
 global.decks[2] = array_create();
 
+// Active deck
+global.active_deck = noone;
+
 function decks_get_all() {
 	show_debug_message(global.decks);
 	return global.decks;

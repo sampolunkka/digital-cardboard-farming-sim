@@ -12,8 +12,8 @@
     "path":"folders/Objects/Main.yy",
   },
   "parentObjectId":{
-    "name":"obj_titleButton",
-    "path":"objects/obj_titleButton/obj_titleButton.yy",
+    "name":"obj_entrance",
+    "path":"objects/obj_entrance/obj_entrance.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -51,7 +51,7 @@ function init_with(_deck) {
 	save_button = instance_create_layer(x + 60, y + 26, "Buttons", obj_deck_cancel_button);
 	
 	// Deactivate room navigation and deck picker
-	instance_deactivate_object(obj_titleButton);
+	instance_deactivate_object(obj_entrance);
 }
 
 function update() {
