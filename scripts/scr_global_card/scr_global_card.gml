@@ -33,12 +33,12 @@ enum CardType {
 	Unique
 }
 
-function scr_global_card(){
-
-}
-
 function library_getall() {
-	return global.library;
+	var ret = array_create(array_length(global.library));
+	for (var i = 0; i < array_length(global.library); i++) {
+		ret[i] = i;
+	}
+	return ret;
 }
 
 
@@ -48,4 +48,16 @@ function card_get_center_x(card) {
 
 function card_get_center_y(card) {
 		return round(card.anchorY + (card.sprite_height * 0.5));
+}
+
+function string_debug_card(card) {
+	return mask_instance_ref(card) + " " + card.label;
+}
+
+function card_get(_id) {
+	return global.library[_id];
+}
+
+function card_get_id(_object_index) {
+	return array_get_index(global.library, _object_index);
 }

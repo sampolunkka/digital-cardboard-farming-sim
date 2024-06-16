@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_deck_cancel_button",
-    "path":"sprites/spr_deck_cancel_button/spr_deck_cancel_button.yy",
+    "name":"spr_deck_save_button_1",
+    "path":"sprites/spr_deck_save_button_1/spr_deck_save_button_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

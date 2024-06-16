@@ -3,12 +3,23 @@
 
 image_speed = 0;
 
-// Init deck picker
-decks = decks_get_all();
+function init() {
+	
+	var decks_count = instance_number(obj_collection_deck);
+	for (var i = 0; i < decks_count; i++) {
+		var deck_instance = instance_find(obj_collection_deck, i);
+		instance_destroy(deck_instance);
+	}
+	
+	// Init deck picker
+	decks = decks_get_all();
 
-var deck_space = 8 + sprite_get_width(spr_deck);
+	var deck_space = 4 + sprite_get_height(spr_deck);
 
-for (var i = 0; i < array_length(decks); i++) {
-	var _deck = instance_create_depth(x + 12 + i * deck_space, y + 3, depth-1, obj_collection_deck);
-	_deck.deck_id = i;
+	for (var i = 0; i < array_length(decks); i++) {
+		var _deck = instance_create_depth(x, y + i * deck_space, depth-1, obj_collection_deck);
+		_deck.init_with(i);
+	}
 }
+
+init();

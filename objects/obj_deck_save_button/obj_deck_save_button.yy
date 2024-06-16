@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_deck_save_button",
-    "path":"sprites/spr_deck_save_button/spr_deck_save_button.yy",
+    "name":"spr_deck_editor_button",
+    "path":"sprites/spr_deck_editor_button/spr_deck_editor_button.yy",
   },
   "spriteMaskId":null,
   "visible":true,

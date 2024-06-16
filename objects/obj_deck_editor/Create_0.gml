@@ -21,24 +21,24 @@ deck_id = 1;
 
 save_button = noone;
 
+underlay_sprite = spr_deck_editor_underlay;
+
 // Init collection
 function init_with(_deck) {
-	array_copy(cards_list, 0, _deck.cards, 0, array_length(_deck.cards));
+	cards_list = _deck.cards;
 	deck_id = _deck.deck_id;
 	
-	for (var i = 0; i < array_length(card_instances); i++) {
-		instance_destroy(card_instances[i]);
-	}
+	
 	var card_index = 0;
 	for (var i = 0; i < ceil(array_length(cards_list)/3); i++) {
 		for (var j = 0; j < 3; j++) {
-			if (card_index >= array_length(card_instances)) {
+			if (card_index >= array_length(cards_list)) {
 				break;
 			}
-			var card = cards_list[card_index];
-			var card_instance = instance_create_layer(start_x + 1 * j * space_x, start_y + offset_y + 1 * i * space_y, "Instances", card);
+			var card_id = cards_list[card_index];
+			var card_instance = instance_create_layer(start_x + 1 * j * space_x, start_y + offset_y + 1 * i * space_y, "Instances", card_get(card_id));
 			card_instance.setFace(CardFace.Up);
-			card_instance.depth = depth - card_index;
+			card_instance.setDepth(depth-1);
 			card_index++;
 			array_push(card_instances, card_instance);
 		}
@@ -50,7 +50,7 @@ function init_with(_deck) {
 	save_button = instance_create_layer(x + 26, y + 26, "Buttons", obj_deck_save_button);
 	save_button = instance_create_layer(x + 60, y + 26, "Buttons", obj_deck_cancel_button);
 	
-	// Deactivate room navigation
+	// Deactivate room navigation and deck picker
 	instance_deactivate_object(obj_titleButton);
 }
 
@@ -72,7 +72,8 @@ function update() {
 }
 
 function add_card(_card) {
-	array_push(cards_list, _card.object_index);
+	var card_id = card_get_id(_card.object_index);
+	array_push(cards_list, card_id);
 	
 	var card_instance = instance_create_depth(_card.x, _card.y, depth - 1 - array_length(card_instances), _card.object_index);
 	card_instance.setFace(CardFace.Up);

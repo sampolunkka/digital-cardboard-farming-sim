@@ -1,14 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
-
 if (on_board) {
+	image_index = 0;
+	image_speed = 0;
 	if (fade_in_alpha < 1) {
 		fade_in_alpha+=0.06;
 	}
 	image_alpha = fade_in_alpha;
 	draw_self();
 	
-} else if (isFaceUp()) {
+} else if (face == CardFace.Up) {
+	image_speed = 0;
 	
 	draw_sprite(spr_card_base, 0, x, y);
 	draw_sprite(portrait, 0, x + 5, y + 11);

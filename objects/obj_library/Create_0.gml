@@ -3,7 +3,7 @@
 var library = library_getall();
 collection = array_create();
 
-start_x = 124;
+start_x = 132;
 start_y = 40;
 space_x = 32;
 space_y = 48;
@@ -19,8 +19,8 @@ for (var i = 0; i < ceil(array_length(library)/3); i++) {
 		if (card_index >= array_length(library)) {
 			break;
 		}
-		var card = library[card_index];
-		var card_instance = instance_create_layer(start_x + 1 * j * space_x, start_y + 1 * i * space_y, "Instances", card);
+		var card_id = library[card_index];
+		var card_instance = instance_create_layer(start_x + 1 * j * space_x, start_y + 1 * i * space_y, "Instances", card_get(card_id));
 		card_instance.setFace(CardFace.Up);
 		card_instance.depth = 100 - card_index;
 		card_index++;

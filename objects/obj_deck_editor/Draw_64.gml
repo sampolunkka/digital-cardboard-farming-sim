@@ -4,12 +4,12 @@ if (array_length(card_instances) > 0) {
 	
 		// Draw scroll bar
 	
-		var scroll_bar_x = x + sprite_width - 10;
+		var scroll_bar_x = x + 2;
 		var scroll_bar_height = end_y - start_y + 32;
 	
 		draw_sprite(spr_scroll_bar, 0, scroll_bar_x, start_y);
-		draw_sprite_stretched(spr_scroll_bar, 1, scroll_bar_x, start_y + 8, 8, scroll_bar_height - 8);
-		draw_sprite(spr_scroll_bar, 2, scroll_bar_x, start_y + scroll_bar_height);
+		draw_sprite_stretched(spr_scroll_bar, 0, scroll_bar_x, start_y + 8, sprite_get_width(spr_scroll_bar), scroll_bar_height - 8);
+		draw_sprite(spr_scroll_bar, 0, scroll_bar_x, start_y + scroll_bar_height);
 	
 		// Draw scroll bar pip
 		var card_rows = ceil(array_length(card_instances)/3);
@@ -48,11 +48,11 @@ if (array_length(card_instances) > 0) {
 // Draw selected deck overlay background
 draw_set_font(fnt_title);
 draw_set_alpha(1);
-draw_sprite(spr_selected_deck_overlay, 0, x, y);
+draw_sprite(underlay_sprite, 0, x, y);
 draw_set_alpha(0.66);
-draw_sprite(spr_selected_deck_overlay, 1, x, y);
+draw_sprite(underlay_sprite, 1, x, y);
 draw_set_alpha(0.33);
-draw_sprite(spr_selected_deck_overlay, 2, x, y);
+draw_sprite(underlay_sprite, 2, x, y);
 
 // Draw deck sprite
 draw_set_alpha(1);
@@ -66,5 +66,13 @@ draw_text_shadow(x + sprite_get_width(spr_deck) + 4, y + 3, deck_text);
 // Draw deck size
 draw_set_font(global.labelFont);
 draw_text_shadow(x + sprite_get_width(spr_deck) + 5, y + 1 + deck_text_height, "Cards: " + string(array_length(cards_list)) + "/" + string(max_size));
+
+if (global.debugEnabled) {
+	for (var i = 0; i < array_length(card_instances); i++) {
+		draw_text(100, 10+i*8, card_instances[i].x);
+		draw_text(110, 10+i*8, card_instances[i].y);
+		draw_text(80, 10+i*8, instance_exists(card_instances[i]));
+	}
+}
 
 draw_reset();

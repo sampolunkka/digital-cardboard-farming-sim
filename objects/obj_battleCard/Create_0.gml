@@ -49,7 +49,7 @@ stats_bar = noone;
 index = 0;
 
 function init() {
-	image_speed = 1;
+	image_speed = 0;
 }
 
 function setFace(face) {
@@ -114,10 +114,6 @@ function hover() {
 	}
 }
 
-function isFaceUp() {
-	return face == CardFace.Up;
-}
-
 function refresh() {
 	if (face == CardFace.Down) {
 		sprite_index = faceDownSprite;
@@ -158,7 +154,7 @@ function onDamage(damage) {
 }
 
 function onSummon() {
-	
+	image_speed = 1;
 	on_board = true;
 	sprite_index = battler_sprite;
 	stats_bar = instance_create_depth(x, y - sprite_get_height(battler_sprite), depth-1, obj_health_bar);

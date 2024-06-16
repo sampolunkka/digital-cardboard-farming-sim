@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var 
 var cursorCollision = collision_rectangle(
 	x,
 	y,
