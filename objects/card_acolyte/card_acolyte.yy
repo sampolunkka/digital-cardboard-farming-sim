@@ -1,16 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_placeholderCard",
+  "%Name":"card_acolyte",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_placeholderCard",
+  "name":"card_acolyte",
   "overriddenProperties":[],
   "parent":{
-    "name":"Card",
-    "path":"folders/Objects/Card.yy",
+    "name":"Cards",
+    "path":"folders/Objects/Card/Cards.yy",
   },
   "parentObjectId":{
     "name":"obj_battleCard",
@@ -34,9 +33,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cardPlaceholder",
-    "path":"sprites/spr_cardPlaceholder/spr_cardPlaceholder.yy",
+    "name":"spr_cardBack",
+    "path":"sprites/spr_cardBack/spr_cardBack.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

@@ -24,6 +24,7 @@ actives = [];
 placeholder = false;
 
 // VISUAL
+face_up_sprite = spr_cardBack;
 faceDownSprite = spr_cardBack;
 faceUpSprite = spr_cardBack
 face = CardFace.Up;
@@ -118,7 +119,7 @@ function refresh() {
 	if (face == CardFace.Down) {
 		sprite_index = faceDownSprite;
 	} else if (face == CardFace.Up) {
-		sprite_index = faceUpSprite;
+		sprite_index = face_up_sprite;
 	}
 	
 	if (hidden) {
@@ -191,4 +192,11 @@ function destroy() {
 	fade_in_alpha = 0.2;
 	alarm[0] = 10;
 	alarm[1] = 30;
+}
+
+function has_actions() {
+	return array_length(on_play_actions)
+		+ array_length(before_damage_actions)
+		+ array_length(on_damage_actions) 
+		> 0;
 }

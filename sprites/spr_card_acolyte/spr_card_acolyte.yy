@@ -19,6 +19,7 @@
   "height":42,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"f6d45fbc-d208-4250-9f5a-e85b18ec6bf2","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f6d45fbc-d208-4250-9f5a-e85b18ec6bf2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"354f7755-c6fd-434c-8a04-cdd31555eb45","blendMode":0,"displayName":"default","isLocked":false,"name":"354f7755-c6fd-434c-8a04-cdd31555eb45","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_card_acolyte",

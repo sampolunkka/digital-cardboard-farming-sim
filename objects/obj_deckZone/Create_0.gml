@@ -28,8 +28,8 @@ function init() {
 	for (var i=0; i<maxSize; i++) {
 		var rand = irandom_range(0,1);
 		switch (rand) {
-			case 0: addCard(instance_create_depth(0,0,0,card_squire)) break;
-			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;
+			case 0: addCard(instance_create_depth(0,0,0,card_acolyte)) break;
+			case 1: addCard(instance_create_depth(0,0,0,card_acolyte)) break;
 			default: addCard(instance_create_depth(0,0,0,card_squire)) break;
 		}
 		/*

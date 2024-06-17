@@ -3,7 +3,7 @@
 event_inherited();
 
 faceDownSprite = sprite_index;
-faceUpSprite = sprite_index;
+face_up_sprite = sprite_index;
 visible = global.debugShowPlaceholder;
 placeholder = true;
 label = "Placeholder";

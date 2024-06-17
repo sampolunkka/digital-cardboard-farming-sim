@@ -1,18 +1,64 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-/*
-function card_move_zone(card, from_zone, to_zone, index) {
-	if (zone_is_full(zone_to)) {
-		show_debug_message("Cannot move card: " + string_debug_card(card) + " to zone: " + string_debug_zone(to_zone) + ". Zone is full.");
-		return;
-	}
-	
-	if (index == undefined) {
-		zone_add_card(card, to_zone);
-	} else {
-		zone_add_card(card, to_zone, index);
-	}
-	
-	zone_remove_card(card, from_zone);
+
+global.library = [];
+global.library[0] = card_squire;
+global.library[1] = card_cart;
+global.library[2] = card_gallant;
+global.library[3] = card_knight;
+global.library[4] = card_miner;
+global.library[5] = card_noviceEngineer;
+global.library[6] = card_pegasos;
+global.library[7] = card_ronin;
+global.library[8] = card_squire;
+global.library[9] = card_pegasos;
+global.library[10] = card_pegasos;
+global.library[11] = card_pegasos;
+global.library[12] = card_acolyte;
+
+enum CardFace {
+	Up,
+	Down,
 }
-*/
+
+enum CardMovementMode {
+	Instant,
+	Fast,
+	Slow,
+}
+
+enum CardType {
+	Spell,
+	Building,
+	Unit,
+	Unique
+}
+
+function library_getall() {
+	var ret = array_create(array_length(global.library));
+	for (var i = 0; i < array_length(global.library); i++) {
+		ret[i] = i;
+	}
+	return ret;
+}
+
+
+function card_get_center_x(card) {
+		return round(card.anchorX + (card.sprite_width * 0.5));
+}
+
+function card_get_center_y(card) {
+		return round(card.anchorY + (card.sprite_height * 0.5));
+}
+
+function string_debug_card(card) {
+	return mask_instance_ref(card) + " " + card.label;
+}
+
+function card_get(_id) {
+	return global.library[_id];
+}
+
+function card_get_id(_object_index) {
+	return array_get_index(global.library, _object_index);
+}
