@@ -4,7 +4,8 @@ global.cursor = self;
 
 enum CursorMode {
 	Neutral,
-	Inspect
+	Inspect,
+	Travel
 }
 
 mode = CursorMode.Neutral;

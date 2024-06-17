@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_cursor_inspect",
   "bboxMode":0,
-  "bbox_bottom":13,
+  "bbox_bottom":12,
   "bbox_left":0,
   "bbox_right":15,
   "bbox_top":2,

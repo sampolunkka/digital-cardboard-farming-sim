@@ -14,7 +14,10 @@
     "name":"Main",
     "path":"folders/Objects/Main.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_travelable",
+    "path":"objects/obj_travelable/obj_travelable.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
