@@ -4,7 +4,8 @@
 deck = noone;
 drag = noone;
 hand = noone;
-board = noone;
+board = instance_nearest(x, y, obj_boardZone);
+drag_hand_index = -1;
 
 // CONTROLLERS
 turnController = noone;
@@ -20,6 +21,7 @@ function select(card) {
 	//show_message("select on card: " + string(card.id));
 	if (hand.hasCard(card)) {
 		//show_message("hand has card");
+		drag_hand_index = hand.getCardIndex(card);
 		pick(card);
 	} else if (board.hasCard(card)) {
 		if (!instance_exists(obj_combatController)) {
@@ -119,7 +121,6 @@ function init() {
 	deck = instance_create_depth(x, y, 0, obj_deckZone);
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
-	board = instance_create_depth(x, y, 0, obj_boardZone);
 	turnController = instance_create_depth(x, y, 0, obj_turnController);
 	
 	/*for (var i=0; i < deck.maxSize; i++) {

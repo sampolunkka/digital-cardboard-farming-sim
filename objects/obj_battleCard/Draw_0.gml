@@ -9,7 +9,9 @@ if (on_board) {
 	image_alpha = fade_in_alpha;
 	draw_self();
 	
-} else if (face == CardFace.Up) {
+}
+/*
+if (face == CardFace.Up) {
 	image_speed = 0;
 	
 	draw_sprite(spr_card_base, 0, x, y);
@@ -34,6 +36,6 @@ if (on_board) {
 	draw_text_color(x + hp_x, y + 41, hp, c_black, c_black, c_blue, c_dkgray, 1);
 } else {
 	draw_self();
-}
-
+}*/
+draw_self();
 draw_reset();

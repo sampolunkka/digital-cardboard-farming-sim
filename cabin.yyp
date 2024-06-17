@@ -144,6 +144,7 @@
     {"id":{"name":"obj_windmill","path":"objects/obj_windmill/obj_windmill.yy",},},
     {"id":{"name":"obj_zone","path":"objects/obj_zone/obj_zone.yy",},},
     {"id":{"name":"x_obj_card","path":"objects/x_obj_card/x_obj_card.yy",},},
+    {"id":{"name":"Battle","path":"rooms/Battle/Battle.yy",},},
     {"id":{"name":"Board","path":"rooms/Board/Board.yy",},},
     {"id":{"name":"DeckBuilder","path":"rooms/DeckBuilder/DeckBuilder.yy",},},
     {"id":{"name":"GameBoard","path":"rooms/GameBoard/GameBoard.yy",},},
@@ -275,6 +276,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"Battle","path":"rooms/Battle/Battle.yy",},},
     {"roomId":{"name":"Main","path":"rooms/Main/Main.yy",},},
     {"roomId":{"name":"ZoneTest","path":"rooms/ZoneTest/ZoneTest.yy",},},
     {"roomId":{"name":"GameBoard","path":"rooms/GameBoard/GameBoard.yy",},},

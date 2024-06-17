@@ -25,7 +25,7 @@ placeholder = false;
 
 // VISUAL
 faceDownSprite = spr_cardBack;
-faceUpSprite = spr_card_stats_overlay;
+faceUpSprite = spr_cardBack
 face = CardFace.Up;
 hidden = true;
 portrait = spr_portrait_default;
@@ -154,11 +154,11 @@ function onDamage(damage) {
 }
 
 function onSummon() {
-	image_speed = 1;
+	//image_speed = 1;
 	on_board = true;
-	sprite_index = battler_sprite;
-	stats_bar = instance_create_depth(x, y - sprite_get_height(battler_sprite), depth-1, obj_health_bar);
-	stats_bar.owner = self;
+	//sprite_index = battler_sprite;
+	//stats_bar = instance_create_depth(x, y - sprite_get_height(battler_sprite), depth-1, obj_health_bar);
+	//stats_bar.owner = self;
 	
 	// Before damage
 	for (var i=0; i < array_length(before_damage_actions); i++) {

@@ -11,6 +11,7 @@ if (drag.isFull()) {
 
 // Hand hover behaviour
 } else {
+	drag_hand_index = -1;
 	var card = getHoveredCardInZone(hand);
 	if (card != noone) {
 		card.hover();

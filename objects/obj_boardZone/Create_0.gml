@@ -12,14 +12,14 @@ cards = [];
 destroy_cards = [];
 mirrored = false;
 
-image_xscale = 6;
-image_yscale = 2;
+//image_xscale = 6;
+//image_yscale = 2;
 depth = 20;
-x = 0;
-y = 66;
+//x = 0;
+//y = 66;
 
 
-slotWidth = 20;
+slotWidth = 34;
 
 // Override
 function onInsert(card) {
@@ -28,16 +28,13 @@ function onInsert(card) {
 
 // Override
 function refresh() {
-	var k = mirrored ? -1 : 1;
 	var temp = cards;
 	var area = slotWidth * getSize();
-	var slot_height = 10;
-	var ax = x + (sprite_width / 2 ) - (array_length(cards) * slotWidth/2 * k);
-	var ay = y + (sprite_height / 2) + (array_length(cards) * slot_height/2) - 4;
+	var ax = x + (sprite_width / 2 ) - (array_length(cards) * slotWidth/2);
+	var ay = y;
 	
 	for (var i = 0; i < getSize(); i++) {
-		temp[i].setPosition(ax + (i * slotWidth * k), ay - i * slot_height);
-		temp[i].image_xscale = mirrored ? -1 : 1;
+		temp[i].setPosition(ax + (i * slotWidth), ay);
 		if (temp[i].hp <= 0) {
 			array_push(destroy_cards, temp[i]);
 			temp[i].destroy();

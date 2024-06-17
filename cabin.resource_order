@@ -101,6 +101,7 @@
     {"name":"obj_turnController","order":1,"path":"objects/obj_turnController/obj_turnController.yy",},
     {"name":"obj_windmill","order":1,"path":"objects/obj_windmill/obj_windmill.yy",},
     {"name":"x_obj_card","order":2,"path":"objects/x_obj_card/x_obj_card.yy",},
+    {"name":"Battle","order":7,"path":"rooms/Battle/Battle.yy",},
     {"name":"Board","order":6,"path":"rooms/Board/Board.yy",},
     {"name":"DeckBuilder","order":1,"path":"rooms/DeckBuilder/DeckBuilder.yy",},
     {"name":"GameBoard","order":3,"path":"rooms/GameBoard/GameBoard.yy",},

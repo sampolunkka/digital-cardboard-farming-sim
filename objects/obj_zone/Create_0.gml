@@ -49,6 +49,17 @@ function swapCard(card, replacement, zone) {
 	zone.removeCard(card);
 }
 
+function replace_card(card, replacement) {
+	insertCard(replacement, getCardIndex(card));
+	removeCard(card);
+}
+
+function replace_card_at_index(index, replacement) {
+	var card = array_get_index(cards, index);
+	insertCard(replacement, index);
+	instance_destroy(card);
+}
+
 function insertCard(card, index) {
 	var temp = cards;
 	onInsert(card);

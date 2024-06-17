@@ -2,4 +2,5 @@
 // You can write your code in this editor
 if (!drag.isEmpty()) {
 	drag.moveCard(drag.getTopCard(), hand);
+	instance_destroy(obj_placeholderController);
 }
