@@ -16,7 +16,7 @@ draw_self();
 if (face == CardFace.Up) {
 	
 	// Card effect will cause stats to shift north
-	var stats_offset_y = has_actions() ? 0 : 6;
+	var stats_offset_y = has_actions() ? -1 : 7;
 	
 	// Draw cost
 	draw_text_color(x + 3, y + 1, cost, c_white, c_white, c_yellow, c_white, 1);
@@ -36,5 +36,8 @@ if (face == CardFace.Up) {
 	draw_text_color(hp_x, hp_y, hp, c_white, c_white, c_fuchsia, c_white, 1);
 	
 	// Draw effect
+	if (has_actions()) {
+		draw_actions();
+	}
 }
 draw_reset();

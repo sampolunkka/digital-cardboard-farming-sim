@@ -183,6 +183,7 @@
     {"name":"spr_lv1_enter","order":10,"path":"sprites/spr_lv1_enter/spr_lv1_enter.yy",},
     {"name":"spr_mansion","order":9,"path":"sprites/spr_mansion/spr_mansion.yy",},
     {"name":"spr_monument","order":7,"path":"sprites/spr_monument/spr_monument.yy",},
+    {"name":"spr_onplay","order":9,"path":"sprites/spr_onplay/spr_onplay.yy",},
     {"name":"spr_orangeHitbox","order":1,"path":"sprites/spr_orangeHitbox/spr_orangeHitbox.yy",},
     {"name":"spr_portrait_","order":5,"path":"sprites/spr_portrait_/spr_portrait_.yy",},
     {"name":"spr_portrait_cart","order":8,"path":"sprites/spr_portrait_cart/spr_portrait_cart.yy",},
@@ -215,6 +216,7 @@
     {"name":"Sprite58","order":33,"path":"sprites/Sprite58/Sprite58.yy",},
     {"name":"Sprite63","order":1,"path":"sprites/Sprite63/Sprite63.yy",},
     {"name":"Sprite65","order":1,"path":"sprites/Sprite65/Sprite65.yy",},
+    {"name":"Sprite99","order":43,"path":"sprites/Sprite99/Sprite99.yy",},
     {"name":"template_portrait","order":26,"path":"sprites/template_portrait/template_portrait.yy",},
   ],
 }

@@ -32,6 +32,8 @@ hidden = true;
 portrait = spr_portrait_default;
 battler_sprite = spr_battler_default;
 fade_in_alpha = 0;
+actions_x = 8;
+actions_y = 33;
 
 // MOVEMENT
 baseDepth = depth;
@@ -199,4 +201,8 @@ function has_actions() {
 		+ array_length(before_damage_actions)
 		+ array_length(on_damage_actions) 
 		> 0;
+}
+
+function draw_actions() {
+	return;
 }
