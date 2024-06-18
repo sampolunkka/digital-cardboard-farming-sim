@@ -5,7 +5,10 @@ global.cursor = self;
 enum CursorMode {
 	Neutral,
 	Inspect,
-	Travel
+	Travel,
+	Grab,
+	Grabbing,
+	Pinching
 }
 
 mode = CursorMode.Neutral;

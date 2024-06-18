@@ -22,6 +22,7 @@ actives = [];
 
 // CONTROL
 placeholder = false;
+owner = noone;
 
 // VISUAL
 image_speed = 0;
@@ -53,6 +54,9 @@ stats_bar = noone;
 
 //ZONE
 index = 0;
+
+// Interaction
+interaction = Interaction.None;
 
 function setFace(face) {
 	self.face = face;
@@ -99,7 +103,6 @@ function isPlaceholder() {
 }
 
 function onPlay() {
-	
 	onSummon();
 	
 	for (var i = 0; i < array_length(on_play_actions); i++) {

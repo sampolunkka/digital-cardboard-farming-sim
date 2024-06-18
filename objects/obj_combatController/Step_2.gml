@@ -1,10 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-enum Interaction {
-	Travel,
-	Inspect,
-	Grab,
-	Grabbing,
-	None
+if (attackingCard != noone) {
+	cursor.mode = CursorMode.Pinching;
 }
-owner = noone;

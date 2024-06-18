@@ -38,4 +38,3 @@ if (depth < baseDepth) {
 } else if (depth > baseDepth) {
 	depth--;
 }
-	

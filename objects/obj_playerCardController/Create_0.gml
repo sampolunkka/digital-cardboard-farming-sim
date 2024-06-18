@@ -5,6 +5,7 @@ deck = noone;
 drag = noone;
 hand = noone;
 board = instance_nearest(x, y, obj_boardZone);
+
 drag_hand_index = -1;
 
 // CONTROLLERS
@@ -25,7 +26,7 @@ function select(card) {
 		pick(card);
 	} else if (board.hasCard(card)) {
 		if (!instance_exists(obj_combatController)) {
-			var combtCon = instance_create_depth(card.x,card.y,0,obj_combatController);
+			var combtCon = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_combatController);
 			combtCon.init(card);
 		}
 	}
@@ -121,6 +122,13 @@ function init() {
 	deck = instance_create_depth(x, y, 0, obj_deckZone);
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
+	
+	// Set ownership of zones
+	deck.owner = obj_player;
+	drag.owner = obj_player;
+	hand.owner = obj_player;
+	board.owner = obj_player;
+	
 	turnController = instance_create_depth(x, y, 0, obj_turnController);
 	
 	/*for (var i=0; i < deck.maxSize; i++) {

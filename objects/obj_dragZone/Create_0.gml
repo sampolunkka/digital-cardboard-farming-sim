@@ -19,8 +19,16 @@ function getCard() {
 }
 
 // Override
-refresh() {
+function refresh() {
 	if(getSize() > 0) {
-		card[0].depth += 100;
+		cards[0].depth -= 100;
 	}
+}
+
+function onInsert(card) {
+	card.interaction = Interaction.Grabbing;
+}
+
+function on_add(card) {
+	card.interaction = Interaction.Grabbing;
 }

@@ -134,4 +134,12 @@ function init() {
 	createArcPortion();
 }
 
+function on_add(card) {
+		card.interaction = Interaction.None;
+}
+
+function onInsert(card) {
+		card.interaction = Interaction.None;
+}
+
 init();

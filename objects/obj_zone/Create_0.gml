@@ -8,6 +8,9 @@ face = CardFace.Down;
 label = "Generic zone";
 movementMode = CardMovementMode.Fast;
 
+// Adding and inserting sets owner
+owner = noone;
+
 function hoverCard(card) {
 	card.hover();
 }
@@ -38,6 +41,8 @@ function addCard(card) {
 	card.setMovement(movementMode);
 	
 	array_push(cards, card);
+	card.owner = owner;
+	on_add(card);
 	refresh();
 }
 
@@ -62,14 +67,18 @@ function replace_card_at_index(index, replacement) {
 
 function insertCard(card, index) {
 	var temp = cards;
-	onInsert(card);
 	show_debug_message("insert card: " + mask_instance_ref(card) + " " + card.label + " to zone: " + mask_instance_ref(self) + " " + label);
 	array_insert(temp, index, card);
 	cards = temp;
+	card.owner = owner;
+	onInsert(card);
 	refresh();
 }
 
 function onInsert(card) {
+}
+
+function on_add(card) {
 }
 
 function removeCardAtIndex(cardIndex) {

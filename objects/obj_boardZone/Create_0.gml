@@ -24,6 +24,7 @@ slotWidth = 34;
 // Override
 function onInsert(card) {
 	card.onPlay();
+	card.interaction = Interaction.None;
 }
 
 // Override
