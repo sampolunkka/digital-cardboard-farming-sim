@@ -5,10 +5,10 @@ drag = noone;
 hand = noone;
 board = instance_nearest(x, y, obj_boardZone);
 
-board.addCard(instance_create_depth(0,0,0,card_gallant));
-board.addCard(instance_create_depth(0,0,0,card_gallant));
-board.addCard(instance_create_depth(0,0,0,card_ronin));
-board.addCard(instance_create_depth(0,0,0,card_ronin));
+board.addCard(instance_create_depth(0,0,0,card_acolyte));
+board.addCard(instance_create_depth(0,0,0,card_acolyte));
+board.addCard(instance_create_depth(0,0,0,card_acolyte));
+board.addCard(instance_create_depth(0,0,0,card_acolyte));
 
 for (var i = 0; i < array_length(board.cards); i++) {
 	board.cards[i].onSummon();

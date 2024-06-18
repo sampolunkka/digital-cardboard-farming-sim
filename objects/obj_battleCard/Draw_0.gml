@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 //draw_self();
-
+var stats_offset_x = 9;
 if (on_board) {
-	image_index = 0;
-	image_speed = 0;
+	sprite_index = on_board_sprite;
+	stats_offset_x = 2;
 	if (fade_in_alpha < 1) {
 		fade_in_alpha+=0.06;
 	}
@@ -19,25 +19,17 @@ if (face == CardFace.Up) {
 	var stats_offset_y = has_actions() ? -1 : 7;
 	
 	// Draw cost
-	draw_text_color(x + 3, y + 1, cost, c_white, c_white, c_yellow, c_white, 1);
+	if (!on_board) {
+		draw_text_color(x + 3, y + 1, cost, c_white, c_white, c_yellow, c_white, 1);
+	}
 	
-	// Draw attack
-	var atk_x = x + 9 + sprite_get_width(spr_sword);
-	var atk_y = y + 18 + stats_offset_y;
-	draw_sprite(spr_sword, 0, x + 8, atk_y);
-	draw_sprite(spr_card_digit_background, 0, atk_x, atk_y);
-	draw_text_color(atk_x, atk_y, attack, c_white, c_white, c_orange, c_white, 1);
+	// Draw stats
+	draw_text_shadow(x + stats_offset_x, y + sprite_height - 25 + stats_offset_y, "@" + string(attack));
+	draw_text_shadow(x + stats_offset_x, y + sprite_height - 16 + stats_offset_y, "#" + string(hp));
 
-	// Draw health
-	var hp_x = x + 9 + sprite_get_width(spr_heart);
-	var hp_y = y + 26 + stats_offset_y;
-	draw_sprite(spr_heart, 0, x + 8, hp_y);
-	draw_sprite(spr_card_digit_background, 0, hp_x, hp_y);
-	draw_text_color(hp_x, hp_y, hp, c_white, c_white, c_fuchsia, c_white, 1);
-	
 	// Draw effect
 	if (has_actions()) {
-		draw_actions();
+		draw_text(x + stats_offset_x, y + sprite_height - 9, actions_string);
 	}
 }
 draw_reset();
