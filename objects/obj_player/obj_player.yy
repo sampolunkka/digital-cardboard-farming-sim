@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_player_portrait",
+    "path":"sprites/spr_player_portrait/spr_player_portrait.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

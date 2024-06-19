@@ -25,4 +25,4 @@ draw_set_alpha(1);
 
 // Draw text
 draw_set_color(c_white);
-draw_text(tx1, ty1, formattedText);
+draw_text(tx1 + 1, ty1, formattedText);

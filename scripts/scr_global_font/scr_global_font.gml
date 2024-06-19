@@ -8,7 +8,7 @@ fontString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 + "0123456789"
 + "[]"
 + " .,:;/!"
-+ "@#§¤*>€$";
++ "@#§¤*>€$£";
 // @attack, #health, §onplay, ¤ondeath, *ondamage, >onattack, $draw
 
 global.labelFont = font_add_sprite_ext(spr_font_card_label, fontString, true, 1);

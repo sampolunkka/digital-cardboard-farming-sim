@@ -8,9 +8,6 @@ hidden = false;
 face = CardFace.Down;
 label = "Deck";
 
-x = 210;
-y = 118;
-
 // Override
 function refresh() {
 	for (var i = 0; i < getSize(); i++) {
@@ -29,7 +26,7 @@ function init() {
 		var rand = irandom_range(0,1);
 		switch (rand) {
 			case 0: addCard(instance_create_depth(0,0,0,card_acolyte)) break;
-			case 1: addCard(instance_create_depth(0,0,0,card_acolyte)) break;
+			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;
 			default: addCard(instance_create_depth(0,0,0,card_squire)) break;
 		}
 		/*

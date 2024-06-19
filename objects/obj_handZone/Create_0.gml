@@ -10,23 +10,23 @@ function refresh() {
 	createArcPortion();
 }
 
+// Arc params
+verticalOffset = 0;
+horizontalOffset = 20;
+leftPointX = horizontalOffset;
+leftPointY =  room_height - verticalOffset;
+rightPointX = room_width - horizontalOffset - 20;
+rightPointY = leftPointY;
+topPointX = room_width * 0.5 + horizontalOffset ;
+topPointY = 140;
+handRadius = 0; // Needs initial size. Init function sets final size.
+
 // Override
 maxSize = 8;
 hidden = false;
 face = CardFace.Up;
 label = "Hand";
 movementMode = CardMovementMode.Slow;
-
-// Arc params
-verticalOffset = 0;
-horizontalOffset = 20;
-leftPointX = horizontalOffset;
-leftPointY = room_height - verticalOffset;
-rightPointX = room_width - horizontalOffset - 20;
-rightPointY = leftPointY;
-topPointX = room_width * 0.5 + horizontalOffset;
-topPointY = 140;
-handRadius = 0; // Needs initial size. Init function sets final size.
 
 // Arcing the hand
 function createArcPortion() {
@@ -129,7 +129,7 @@ function findHandCircle(topPointY, topPointX) {
 	handRadius = r;
 }
 
-function init() {
+function init() {	
 	findHandCircle(topPointX, topPointY);
 	createArcPortion();
 }

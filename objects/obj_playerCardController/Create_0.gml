@@ -119,7 +119,7 @@ function getHoveredCardInZone(zone) {
 }
 
 function init() {
-	deck = instance_create_depth(x, y, 0, obj_deckZone);
+	deck = instance_create_depth(203, 118, 0, obj_deckZone);
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
 	

@@ -11,7 +11,8 @@ attack = baseAttack;
 baseHp = 2;
 hp = baseHp;
 on_play_actions = [];
-info = "";
+info = string(cost) + " " + label + "\n" + "Unit: " + string(baseAttack) + "/" + string(baseHp);
 portrait = spr_portrait_ronin;
-battler_sprite = spr_battler_ronin;
+face_up_sprite = spr_card_ronin;
+on_board_sprite = spr_card_ronin_small;
 

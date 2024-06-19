@@ -4,7 +4,8 @@
 // STATS
 resource = 8;
 resourceMax = resource;
-hp = 30;
+max_hp = 15;
+hp = max_hp;
 
 
 controller = noone;

@@ -105,6 +105,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"6260fb6f-02c4-493c-adf3-04f7db5add6f","blendMode":0,"displayName":"default","isLocked":false,"name":"6260fb6f-02c4-493c-adf3-04f7db5add6f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"0385fca3-8923-4478-8f06-ca1ceee18967","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"0385fca3-8923-4478-8f06-ca1ceee18967","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"spr_font_card_label",
   "nineSlice":null,

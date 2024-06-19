@@ -10,7 +10,6 @@ maxSize = 4;
 movementMode = CardMovementMode.Slow;
 cards = [];
 destroy_cards = [];
-mirrored = false;
 
 //image_xscale = 6;
 //image_yscale = 2;
