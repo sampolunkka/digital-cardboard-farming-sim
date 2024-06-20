@@ -13,8 +13,8 @@
   "name":"obj_library",
   "overriddenProperties":[],
   "parent":{
-    "name":"Study",
-    "path":"folders/Objects/Study.yy",
+    "name":"Collection",
+    "path":"folders/Objects/Collection.yy",
   },
   "parentObjectId":null,
   "persistent":false,

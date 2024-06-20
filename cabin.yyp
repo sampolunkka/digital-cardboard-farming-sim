@@ -29,7 +29,7 @@
     {"$GMFolder":"","%Name":"Phase","folderPath":"folders/Objects/Phase.yy","name":"Phase","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"PlayerPhase","folderPath":"folders/Objects/Phase/PlayerPhase.yy","name":"PlayerPhase","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Objects/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Study","folderPath":"folders/Objects/Study.yy","name":"Study","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Collection","folderPath":"folders/Objects/Collection.yy","name":"Collection","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"x_toberemoved","folderPath":"folders/Objects/x_toberemoved.yy","name":"x_toberemoved","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"x_cards","folderPath":"folders/Objects/x_toberemoved/x_cards.yy","name":"x_cards","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"x_cursor","folderPath":"folders/Objects/x_toberemoved/x_cursor.yy","name":"x_cursor","resourceType":"GMFolder","resourceVersion":"2.0",},

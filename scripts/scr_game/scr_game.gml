@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function game_save_deck(_deck_id){
+function game_save_deck(_deck_id, _card_ids){
 	ini_open("decks.ini");
-	ini_write_string("deck" + string(_deck_id) , "card_ids", json_stringify(deck_get(_deck_id)));
+	ini_write_string("deck" + string(_deck_id) , "card_ids", json_stringify(_card_ids));
 	ini_close();
 }
 

@@ -20,11 +20,13 @@ max_size = 15;
 deck_id = 1;
 
 save_button = noone;
+deck_picker = noone;
 
 underlay_sprite = spr_deck_editor_underlay;
 
 // Init collection
-function init_with(_deck) {
+function init_with(_deck, _deck_picker) {
+	deck_picker = _deck_picker;
 	array_copy(cards_list, 0, _deck.cards, 0, array_length(_deck.cards));
 	deck_id = _deck.deck_id;
 	
@@ -80,6 +82,17 @@ function add_card(_card) {
 	array_push(card_instances, card_instance);
 	show_debug_message("cards_list: " + string(cards_list));
 	update();
+}
+
+function remove_card(_card) {
+	var index = array_get_index(card_instances, _card);
+	if (index >= 0) {
+		array_delete(cards_list, index, 1);
+		show_debug_message("Cards list: " + string(cards_list));
+		instance_destroy(card_instances[index]);
+		array_delete(card_instances, index, 1);
+		update();
+	}
 }
 
 function is_full() {

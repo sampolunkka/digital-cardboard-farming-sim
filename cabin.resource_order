@@ -18,7 +18,7 @@
     {"name":"Phase","order":4,"path":"folders/Objects/Phase.yy",},
     {"name":"PlayerPhase","order":2,"path":"folders/Objects/Phase/PlayerPhase.yy",},
     {"name":"Player","order":5,"path":"folders/Objects/Player.yy",},
-    {"name":"Study","order":9,"path":"folders/Objects/Study.yy",},
+    {"name":"Collection","order":9,"path":"folders/Objects/Collection.yy",},
     {"name":"x_toberemoved","order":3,"path":"folders/Objects/x_toberemoved.yy",},
     {"name":"x_cursor","order":1,"path":"folders/Objects/x_toberemoved/x_cursor.yy",},
     {"name":"x_deckbuilder","order":2,"path":"folders/Objects/x_toberemoved/x_deckbuilder.yy",},
