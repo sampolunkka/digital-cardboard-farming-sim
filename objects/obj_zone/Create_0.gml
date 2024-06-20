@@ -18,7 +18,7 @@ function hoverCard(card) {
 function moveCard(card, zone) {
 	show_debug_message("Moving card: " + string(card,id));
 	if (zone.isFull()) {
-		show_message("Zone is full!");
+		show_debug_message("Zone " + zone.label + " is full!");
 		return;
 	}
 	
@@ -33,7 +33,7 @@ function moveCard(card, zone) {
 function addCard(card) {
 	//show_message("adding card: " + string(card.id) + "to zone: " + label);
 	if (self.isFull()) {
-		show_message("Zone is full!");
+		show_debug_message("Zone " + label + " is full!");
 		return;
 	}
 	

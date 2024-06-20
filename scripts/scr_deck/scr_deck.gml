@@ -11,6 +11,7 @@ global.decks[2] = array_create();
 global.active_deck = noone;
 
 function decks_get_all() {
+	game_load_decks();
 	show_debug_message(global.decks);
 	return global.decks;
 }
@@ -22,6 +23,7 @@ function deck_save(_id, _cards) {
 		return;
 	}
 	array_copy(global.decks[_id], 0, _cards, 0, array_length(_cards));
+	game_save_deck(_id);
 }
 
 function deck_get(_id) {

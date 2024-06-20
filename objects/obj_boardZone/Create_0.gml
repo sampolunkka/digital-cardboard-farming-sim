@@ -46,3 +46,9 @@ function refresh() {
 	}
 	cards = temp;
 }
+
+function remove_fatigue() {
+	for (var i = 0; i < array_length(cards); i++) {
+		cards[i].fatigued = false;
+	}
+}

@@ -16,6 +16,9 @@ draw_self();
 if (face == CardFace.Up) {
 	if (on_board) {
 		sprite_index = on_board_sprite;
+		if (fatigued) {
+			draw_sprite(spr_fatigue_symbol, 0, x + sprite_width, y);
+		}
 	} else {
 		sprite_index = face_up_sprite;
 	}

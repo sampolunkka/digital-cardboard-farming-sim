@@ -16,6 +16,7 @@ hp = baseHp;
 baseAttack = 1;
 attack = baseAttack;
 on_board = false;
+fatigued = false;
 
 // INFO
 info = "Card info here";
@@ -169,6 +170,7 @@ function onDamage(damage) {
 
 function onSummon() {
 	on_board = true;
+	fatigued = true;
 	
 	// Before damage
 	for (var i=0; i < array_length(before_damage_actions); i++) {
