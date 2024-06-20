@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_opponent",
+  "%Name":"obj_opponent_phase",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_opponent",
+  "name":"obj_opponent_phase",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Commander",
+    "path":"folders/Objects/Phase/Commander.yy",
   },
   "parentObjectId":{
-    "name":"obj_commander",
-    "path":"objects/obj_commander/obj_commander.yy",
+    "name":"obj_phase",
+    "path":"objects/obj_phase/obj_phase.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_skeleton_portrait",
-    "path":"sprites/spr_skeleton_portrait/spr_skeleton_portrait.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

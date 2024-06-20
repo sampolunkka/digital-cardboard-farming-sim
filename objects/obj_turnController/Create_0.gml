@@ -12,7 +12,7 @@ function startTurn() {
 
 function startNextPhase() {
 	if (array_length(phases) > 0) {
-		instance_create_depth(0,0,0,array_pop(phases));
+		var phase = instance_create_depth(0,0,0,array_pop(phases));
 	}
 }
 

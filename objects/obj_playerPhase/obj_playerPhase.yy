@@ -9,8 +9,8 @@
   "name":"obj_playerPhase",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerPhase",
-    "path":"folders/Objects/Phase/PlayerPhase.yy",
+    "name":"Commander",
+    "path":"folders/Objects/Phase/Commander.yy",
   },
   "parentObjectId":{
     "name":"obj_phase",

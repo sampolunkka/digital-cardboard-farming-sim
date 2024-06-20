@@ -26,7 +26,7 @@ function select(card) {
 		drag_hand_index = hand.getCardIndex(card);
 		pick(card);
 	} else if (board.hasCard(card)) {
-		if (!instance_exists(obj_combatController)) {
+		if (!card.fatigued && !instance_exists(obj_combatController)) {
 			var combtCon = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_combatController);
 			combtCon.init(card);
 		}
