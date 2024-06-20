@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+enum Zone {
+	Hand,
+	Deck,
+	Board
+}
+
 // ATTRIBUTES
 type = CardType.Unique;
 label = "card";
@@ -32,6 +38,7 @@ faceUpSprite = spr_cardBack
 on_board_sprite = spr_cardBack;
 face = CardFace.Up;
 hidden = true;
+portrait = spr_portrait_default;
 portrait = spr_portrait_default;
 battler_sprite = spr_battler_default;
 fade_in_alpha = 0;
@@ -111,7 +118,9 @@ function onPlay() {
 	}
 }
 
-// TODO: smooth hover movement 
+// TODO: smooth hover movement
+
+// onko kädessä?
 function hover() {
 	if (!on_board) {
 		y = anchorY - 4;

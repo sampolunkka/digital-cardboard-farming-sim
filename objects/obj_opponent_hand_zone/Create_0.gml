@@ -3,7 +3,7 @@
 event_inherited();
 x = room_height/2;
 y = -20;
-maxSize = 8;
+max_size = 8;
 slotWidth = 16;
 
 // Override

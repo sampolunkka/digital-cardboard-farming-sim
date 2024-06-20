@@ -2,7 +2,7 @@
 // You can write your code in this editor
 switch (mode) {
 	case CursorMode.Neutral: sprite_index = spr_cursor_neutral; break;
-	case CursorMode.Inspect: sprite_index = spr_cursor_grab; break;
+	case CursorMode.Inspect: sprite_index = spr_cursor_inspect; break;
 	case CursorMode.Travel: sprite_index = spr_cursor_neutral; break;
 	case CursorMode.Grab: sprite_index = spr_cursor_grab; break;
 	case CursorMode.Grabbing: sprite_index = spr_cursor_grabbing; break;

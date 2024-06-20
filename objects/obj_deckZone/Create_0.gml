@@ -3,7 +3,7 @@
 event_inherited();
 randomize();
 // Override
-maxSize = 30;
+max_size = 30;
 hidden = false;
 face = CardFace.Down;
 label = "Deck";
@@ -22,27 +22,15 @@ function shuffle() {
 }
 
 function init() {
-	for (var i=0; i<maxSize; i++) {
-		var rand = irandom_range(0,1);
-		switch (rand) {
-			case 0: addCard(instance_create_depth(0,0,0,card_acolyte)) break;
-			case 1: addCard(instance_create_depth(0,0,0,card_ronin)) break;
-			default: addCard(instance_create_depth(0,0,0,card_squire)) break;
-		}
-		/*
-		var clabel;
-		var rand = irandom_range(0, 4);
-		switch (rand) {
-			case 0: clabel = "Forest"; break;
-			case 1: clabel = "Plains"; break;
-			case 2: clabel = "Cabin"; break;
-			case 3: clabel = "River"; break;
-			case 4: clabel = "Farm"; break;
-		}
-		cards[i].label = clabel;
-		*/
+	show_debug_message("Init deck cards");
+	var _card_ids = global.active_deck;
+		
+	for (var i = 0; i < array_length(_card_ids); i++) {
+		var _card_object = card_get(_card_ids[i]);
+		addCard(instance_create_depth(0,0,0,_card_object));
 		cards[i].setPosition(x, round(y - i * 0.2));
 		cards[i].setDepth(-i);
+		show_debug_message("Added to deck:" + cards[i].label);
 	}
 	//show_message("Deck created!");
 }

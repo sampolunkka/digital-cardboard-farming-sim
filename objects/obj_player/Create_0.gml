@@ -12,7 +12,6 @@ controller = noone;
 
 function init() {
 	controller = instance_create_depth(x,y,0,obj_playerCardController);
-	drawMultiple(5);
 }
 
 function draw() {

@@ -1,7 +1,7 @@
 /// @description Generic Zone functions
 
-maxSize = 5;
-// cards = array_create(maxSize, noone);
+max_size = 5;
+// cards = array_create(max_size, noone);
 cards = [];
 hidden = false;
 face = CardFace.Down;
@@ -150,7 +150,7 @@ function getIndex(index) {
 }
 
 function isFull() {
-	return array_length(cards) >= maxSize;
+	return array_length(cards) >= max_size;
 }
 
 function isEmpty() {
@@ -159,6 +159,17 @@ function isEmpty() {
 
 function hasCard(card) {
 	return getCardIndex(card) > -1;
+}
+
+function move_all_cards(_to_zone) {
+	// If cant move, return
+	if (_to_zone.getSize() + array_length(cards) > _to_zone.max_size) {
+		return;
+	}
+	
+	for (var i = 0; i < array_length(cards); i++) {
+		moveCard(cards[i], _to_zone);
+	}
 }
 
 function refresh() {

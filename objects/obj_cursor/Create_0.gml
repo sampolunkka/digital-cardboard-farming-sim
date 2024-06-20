@@ -15,5 +15,6 @@ mode = CursorMode.Neutral;
 
 image_speed = 0;
 image_index = 0;
+depth = -2000;
 
 window_set_cursor(cr_none);

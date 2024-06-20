@@ -14,6 +14,13 @@ if (on_board) {
 draw_self();
 
 if (face == CardFace.Up) {
+	if (on_board) {
+		sprite_index = on_board_sprite;
+	} else {
+		sprite_index = face_up_sprite;
+	}
+	
+	draw_set_font(global.labelFont);
 	
 	// Card effect will cause stats to shift north
 	var stats_offset_y = has_actions() ? -1 : 7;

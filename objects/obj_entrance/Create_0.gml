@@ -3,6 +3,8 @@
 event_inherited();
 destination = Main;
 
+owner = noone;
+
 text = "Enter";
 text_x = x;
 text_y = y;

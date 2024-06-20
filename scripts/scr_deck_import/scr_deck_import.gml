@@ -19,8 +19,8 @@ function scr_deck_import(){
 	deck.label = ini_read_string(sectInfo, keylabel, "label");
 	//show_message(deck.label);
 	
-	var cards = array_create(deck.maxSize);
-	for (var i=0; i<deck.maxSize; i++) {
+	var cards = array_create(deck.max_size);
+	for (var i=0; i<deck.max_size; i++) {
 		cards[i+1] = ini_read_string(sectCards, i, "empty");
 	}
 	ini_close();

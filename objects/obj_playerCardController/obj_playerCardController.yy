@@ -17,8 +17,8 @@
   "name":"obj_playerCardController",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controller",
-    "path":"folders/Objects/Controller.yy",
+    "name":"Battle",
+    "path":"folders/Objects/Battle.yy",
   },
   "parentObjectId":null,
   "persistent":false,

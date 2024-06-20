@@ -5,7 +5,7 @@
 event_inherited();
 
 // Override
-maxSize = 1;
+max_size = 1;
 face = CardFace.Up;
 hidden = false;
 label = "Drag";

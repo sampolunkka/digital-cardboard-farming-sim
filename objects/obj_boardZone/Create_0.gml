@@ -6,7 +6,7 @@ event_inherited();
 hidden = false;
 face = CardFace.Up;
 label = "Board";
-maxSize = 4;
+max_size = 4;
 movementMode = CardMovementMode.Slow;
 cards = [];
 destroy_cards = [];

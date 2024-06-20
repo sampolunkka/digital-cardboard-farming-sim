@@ -22,7 +22,7 @@ topPointY = 140;
 handRadius = 0; // Needs initial size. Init function sets final size.
 
 // Override
-maxSize = 8;
+max_size = 8;
 hidden = false;
 face = CardFace.Up;
 label = "Hand";
