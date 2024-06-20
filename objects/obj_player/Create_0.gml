@@ -2,8 +2,9 @@
 // You can write your code in this editor
 
 // STATS
-resource = 8;
+resource = 0;
 resourceMax = resource;
+resource_cap = 10;
 max_hp = 15;
 hp = max_hp;
 

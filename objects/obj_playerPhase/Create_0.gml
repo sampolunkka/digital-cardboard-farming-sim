@@ -9,13 +9,13 @@ function onPhaseBegin() {
 }
 
 function init() {
-	// TODO: this bugs out -> find out why
 	var origin = instance_nearest(x,y,obj_player);
 	var targets = [origin];
+	
 	origin.refresh();
-	//show_message("Player (origin): " + string(origin.id));
-	addAction(instance_create_layer(0,0,0,obj_drawAction), origin, targets);
-	addAction(instance_create_layer(0,0,0,act_gainResource), origin, targets);
+	
+	addAction(instance_create_layer(0,0,"Instances",obj_drawAction), origin, targets);
+	addAction(instance_create_layer(0,0,"Instances",act_gainResource), origin, targets);
 }
 
 init();

@@ -123,17 +123,18 @@ function init() {
 	deck = instance_create_depth(203, 118, 0, obj_deckZone);
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
-	mulligan = instance_create_layer(x, y, "Instances", obj_mulligan_zone);
 	
-	mulligan.init_with(deck, hand);
+	mulligan = instance_create_layer(x, y, "Instances", obj_mulligan_zone);
+	turnController = instance_create_depth(x, y, 0, obj_turnController);
+	
+	mulligan.init_with(deck, hand, turnController);
 	
 	// Set ownership of zones
 	deck.owner = obj_player;
 	drag.owner = obj_player;
 	hand.owner = obj_player;
 	board.owner = obj_player;
-	
-	turnController = instance_create_depth(x, y, 0, obj_turnController);
+
 	
 	/*for (var i=0; i < deck.max_size; i++) {
 		//show_message("controller adding card: " + string(i));

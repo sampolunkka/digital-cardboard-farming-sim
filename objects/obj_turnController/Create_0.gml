@@ -2,9 +2,11 @@
 // You can write your code in this editor
 
 phases = [];
+player = instance_nearest(x, y, obj_player);
+opponent = instance_nearest(x, y, obj_opponent);
 
 function startTurn() {
-	init();
+	array_push(phases, obj_playerPhase);
 	startNextPhase();
 }
 
@@ -15,12 +17,6 @@ function startNextPhase() {
 }
 
 function endTurn() {
-	//show_message("ending turn..");
+	show_debug_message("ending turn..");
 	startTurn();
 }
-
-function init() {
-	array_push(phases, obj_playerPhase);
-}
-
-init();

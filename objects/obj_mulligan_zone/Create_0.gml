@@ -13,14 +13,16 @@ y = room_height/2 - 44;
 selected_zone = instance_create_layer(x, y, "Instances", obj_mulligan_selected_zone);
 hand = noone;
 deck = noone;
+turn_controller = noone;
 confirm_button = instance_create_layer(x, y - 20, "Instances", obj_confirm_button);
 
 slot_width = 32;
 
-function init_with(_deck, _hand) {
+function init_with(_deck, _hand, _turn_controller) {
 	
 	hand = _hand;
 	deck = _deck;
+	turn_controller = _turn_controller
 	
 	// Top row
 	var top_row_length = ceil(max_size/2);
@@ -56,6 +58,7 @@ function confirm() {
 		selected_zone.move_all_cards(hand);
 		self.move_all_cards(deck);
 		deck.shuffle();
+		turn_controller.startTurn();
 		instance_destroy(selected_zone);
 		instance_destroy(confirm_button);
 		instance_destroy();
