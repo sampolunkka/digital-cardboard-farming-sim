@@ -2,19 +2,20 @@
 // You can write your code in this editor
 event_inherited();
 
+label = "Mulligan zone";
+
 max_size = 6;
 face = CardFace.Up;
+
+x = room_width/2;
+y = room_height/2 - 44;
 
 selected_zone = instance_create_layer(x, y, "Instances", obj_mulligan_selected_zone);
 hand = noone;
 deck = noone;
-confirm_button = instance_create_layer(x, -20, "Instances", obj_confirm_button);
-
+confirm_button = instance_create_layer(x, y - 20, "Instances", obj_confirm_button);
 
 slot_width = 32;
-
-x = room_width/2;
-y = room_height/2 - 44;
 
 function init_with(_deck, _hand) {
 	
@@ -43,14 +44,18 @@ function init_with(_deck, _hand) {
 function toggle_select(_card) {
 	if (selected_zone.hasCard(_card)) {
 		selected_zone.moveCard(_card, self);
+		show_debug_message("Unselected card " + _card.label)
 	} else {
 		self.moveCard(_card, selected_zone);
+		show_debug_message("Selected card " + _card.label)
 	}
 }
 
 function confirm() {
 	if (selected_zone.isFull()) {
 		selected_zone.move_all_cards(hand);
+		self.move_all_cards(deck);
+		deck.shuffle();
 		instance_destroy(selected_zone);
 		instance_destroy(confirm_button);
 		instance_destroy();

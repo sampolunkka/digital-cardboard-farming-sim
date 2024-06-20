@@ -16,7 +16,7 @@ function hoverCard(card) {
 }
 
 function moveCard(card, zone) {
-	//show_message("move card: " + string(card,id));
+	show_debug_message("Moving card: " + string(card,id));
 	if (zone.isFull()) {
 		show_message("Zone is full!");
 		return;
@@ -25,8 +25,8 @@ function moveCard(card, zone) {
 	var ind = array_get_index(cards, card);
 	if (ind >= 0) {
 		removeCardAtIndex(getCardIndex(card));
-		//show_message("attempting to move card: " + string(card.id) + " to zone: " + zone.label );
 		zone.addCard(card);
+		show_debug_message("Moved card: " + string(card.id) + " to zone: " + zone.label );
 	}
 }
 
@@ -162,13 +162,17 @@ function hasCard(card) {
 }
 
 function move_all_cards(_to_zone) {
+	show_debug_message("Moving all cards to " + _to_zone.label + ", cards: " + string(cards));
 	// If cant move, return
 	if (_to_zone.getSize() + array_length(cards) > _to_zone.max_size) {
 		return;
 	}
 	
-	for (var i = 0; i < array_length(cards); i++) {
-		moveCard(cards[i], _to_zone);
+	// Avoid side effects when array is resized
+	var temp = [];
+	array_copy(temp, 0, cards, 0, array_length(cards));
+	for (var i = 0; i < array_length(temp); i++) {
+		moveCard(temp[i], _to_zone);
 	}
 }
 
