@@ -30,12 +30,14 @@ actives = [];
 // CONTROL
 placeholder = false;
 owner = noone;
+targeted = false;
+target_type = TargetType.None;
 
 // VISUAL
 image_speed = 0;
 face_up_sprite = spr_cardBack;
 faceDownSprite = spr_cardBack;
-faceUpSprite = spr_cardBack
+face_up_sprite = spr_cardBack
 on_board_sprite = spr_cardBack;
 face = CardFace.Up;
 hidden = true;
@@ -111,7 +113,9 @@ function isPlaceholder() {
 }
 
 function onPlay() {
-	onSummon();
+	if (type == CardType.Unit) {
+		onSummon();
+	}
 	
 	for (var i = 0; i < array_length(on_play_actions); i++) {
 		var action = action_create(on_play_actions[0], self, [player_get_active()]);

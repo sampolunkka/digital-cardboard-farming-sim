@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+type = CardType.Unit;
 label = "Acolyte";
 cost = 3;
 baseAttack = 2;

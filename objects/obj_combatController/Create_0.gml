@@ -1,5 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+enum TargetType {
+	Any,
+	PlayerUnit,
+	OpponentUnit,
+	Player,
+	Opponent,
+	Commander,
+	Unit,
+	None
+}
+
+target_type = TargetType.Any;
 cursor = instance_nearest(x, y, obj_cursor);
 attackingCard = noone;
 pip_path = path_add();
@@ -12,14 +25,6 @@ path_set_kind(pip_path, true);
 
 function getDist() {
 	
-}
-
-function getOpponentCard() {
-	var target  = collision_point(mouse_x, mouse_y, obj_battleCard, false, true);
-	if (isOpponentCard(target)) {
-		return target;
-	}
-	return noone;
 }
 
 function isOpponentCard(card) {
@@ -40,6 +45,7 @@ function attackCard(target) {
 	card.startCombat(target);
 }
 
-function init(card) {
-	attackingCard = card;
+function init(_card, _target_type) {
+	target_type = _target_type;
+	attackingCard = _card;
 }

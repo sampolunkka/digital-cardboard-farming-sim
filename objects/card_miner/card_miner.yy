@@ -8,8 +8,8 @@
   "name":"card_miner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cards",
-    "path":"folders/Objects/Card/Cards.yy",
+    "name":"Units",
+    "path":"folders/Objects/Card/Units.yy",
   },
   "parentObjectId":{
     "name":"obj_battleCard",

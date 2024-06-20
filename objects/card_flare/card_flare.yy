@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"card_squire",
+  "%Name":"card_flare",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"card_squire",
+  "name":"card_flare",
   "overriddenProperties":[],
   "parent":{
-    "name":"Units",
-    "path":"folders/Objects/Card/Units.yy",
+    "name":"Spells",
+    "path":"folders/Objects/Card/Spells.yy",
   },
   "parentObjectId":{
     "name":"obj_battleCard",

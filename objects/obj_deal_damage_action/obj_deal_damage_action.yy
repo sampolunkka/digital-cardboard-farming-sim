@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"card_squire",
+  "%Name":"obj_deal_damage_action",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"card_squire",
+  "name":"obj_deal_damage_action",
   "overriddenProperties":[],
   "parent":{
-    "name":"Units",
-    "path":"folders/Objects/Card/Units.yy",
+    "name":"Action",
+    "path":"folders/Objects/Effects/Action.yy",
   },
   "parentObjectId":{
-    "name":"obj_battleCard",
-    "path":"objects/obj_battleCard/obj_battleCard.yy",
+    "name":"obj_action",
+    "path":"objects/obj_action/obj_action.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_cardBack",
-    "path":"sprites/spr_cardBack/spr_cardBack.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

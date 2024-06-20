@@ -20,11 +20,21 @@ function draw() {
 }
 
 function select(card) {
-	//show_message("select on card: " + string(card.id));
+
+	// Check if in hand
 	if (hand.hasCard(card)) {
-		//show_message("hand has card");
-		drag_hand_index = hand.getCardIndex(card);
-		pick(card);
+		if (card.type == CardType.Unit) {
+			drag_hand_index = hand.getCardIndex(card);
+			pick(card);
+		} else if (card.type == CardType.Spell) {
+			if (card.targeted) {
+				var combtCon = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_combatController);
+				combtCon.init(card, card.target_type);
+			} else {
+				card.onPlay();
+			}
+		}
+	// Check if on board
 	} else if (board.hasCard(card)) {
 		if (!card.fatigued && !instance_exists(obj_combatController)) {
 			var combtCon = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_combatController);

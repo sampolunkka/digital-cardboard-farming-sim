@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
+type = CardType.Unit;
 label = "Ronin";
 cost = 2;
 baseAttack = 3;
