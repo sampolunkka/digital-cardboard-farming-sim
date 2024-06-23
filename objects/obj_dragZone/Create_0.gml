@@ -11,6 +11,8 @@ hidden = false;
 label = "Drag";
 movementMode = CardMovementMode.Instant;
 
+highlight_zone = noone;
+
 function getCard() {
 	if (isEmpty()) {
 		return noone;

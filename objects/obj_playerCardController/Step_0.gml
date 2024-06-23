@@ -6,7 +6,9 @@ if (drag.isFull()) {
 	if (collision_point(mouse_x, mouse_y, hand, false, true)) {
 		createPlaceholderController(hand);
 	} else if (collision_point(mouse_x, mouse_y, board, false, true)) {
-		createPlaceholderController(board);
+		if (drag.getTopCard().type == CardType.Unit) {
+			createPlaceholderController(board);
+		}
 	}
 
 // Hand hover behaviour

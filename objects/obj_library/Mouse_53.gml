@@ -1,8 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-var _card = collision_point(mouse_x, mouse_y, obj_unit_card, false, true);
+var _card = collision_point(mouse_x, mouse_y, obj_card, false, true);
 
 if (_card == noone) {
+	show_debug_message("Card  == none");
 	return;
 }
 

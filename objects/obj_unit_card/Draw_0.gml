@@ -6,7 +6,8 @@ if (on_board) {
 	sprite_index = on_board_sprite;
 	stats_offset_x = 2;
 	if (fade_in_alpha < 1) {
-		fade_in_alpha+=0.06;
+		fade_in_alpha+=0.03;
+		draw_sprite_ext(spr_small_card_overlay, 0, x, y, 1, 1, 0, c_white, 1 - fade_in_alpha);
 	}
 	image_alpha = fade_in_alpha;
 }
@@ -58,7 +59,7 @@ if (face == CardFace.Up) {
 	
 	// Draw effect
 	if (has_actions()) {
-		draw_text(x + stats_offset_x, y + sprite_height - 9, actions_string);
+		draw_text_shadow(x + stats_offset_x, y + sprite_height - 9, actions_string);
 	}
 }
 draw_reset();

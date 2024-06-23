@@ -15,10 +15,6 @@ enum Zone {
 type = CardType.Unique;
 label = "card";
 cost = 1;
-baseHp = 1;
-hp = baseHp;
-baseAttack = 1;
-attack = baseAttack;
 on_board = false;
 fatigued = false;
 
@@ -90,6 +86,7 @@ function setMovement(mode) {
 	switch (movementMode) {
 		case CardMovementMode.Fast: movementSpeedMultiplier = 0.8; break;
 		case CardMovementMode.Slow: movementSpeedMultiplier = 0.4; break;
+		case CardMovementMode.Slower: movementSpeedMultiplier = 0.2; break;
 		default: movementSpeedMultiplier = 1; break;
 	}
 }

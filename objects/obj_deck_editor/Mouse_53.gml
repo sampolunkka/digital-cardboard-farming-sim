@@ -12,6 +12,8 @@ if (save_btn != noone) {
 } else if (cancel_btn != noone) {
 	destroy_delayed();
 } else if (card != noone) {
-	show_debug_message("Deleting card " + card.label);
-	remove_card(card);
+	if (array_get_index(card_instances, card) > -1) {
+		show_debug_message("Removing card " + card.label + " from deck");
+		remove_card(card);
+	}
 }

@@ -2,6 +2,12 @@ event_inherited();
 
 type = CardType.Unit;
 
+baseHp = 1;
+hp = baseHp;
+max_hp = baseHp;
+baseAttack = 1;
+attack = baseAttack;
+
 function start_combat(target) {
 	target.onDamage(attack);
 	self.onDamage(target.attack);
@@ -32,20 +38,6 @@ function onDamage(damage) {
 function onSummon() {
 	on_board = true;
 	fatigued = true;
-	
-	// Before damage
-	for (var i=0; i < array_length(before_damage_actions); i++) {
-		var action = instance_create_layer(x, y, "Effects", before_damage_actions[i]);
-		action.initWith(self);
-		before_damage_actions[i] = action;
-	}
-	
-	// On damage
-	for (var i=0; i < array_length(on_damage_actions); i++) {
-		var action = instance_create_layer(x, y, "Effects", on_damage_actions[i]);
-		action.initWith(self);
-		on_damage_actions[i] = action;
-	}
 }
 
 
@@ -60,6 +52,10 @@ function afterDamage() {
 function deal_damage(_damage) {
 	onDamage(_damage);
 	afterDamage();
+}
+
+function heal_damage(_heal) {
+	hp = min(max_hp, hp + _heal);
 }
 
 function destroy() {

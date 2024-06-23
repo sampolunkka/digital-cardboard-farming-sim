@@ -18,7 +18,7 @@ function refresh() {
 }
 
 function shuffle() {
-	array_shuffle(cards);
+	cards = array_shuffle(cards);
 }
 
 function init() {

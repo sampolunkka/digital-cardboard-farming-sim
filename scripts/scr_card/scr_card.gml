@@ -5,7 +5,7 @@ global.library = [];
 global.library[0] = card_acolyte;
 global.library[1] = card_ronin;
 global.library[2] = card_flare;
-global.library[3] = card_ronin;
+global.library[3] = card_purify;
 global.library[4] = card_acolyte;
 global.library[5] = card_ronin;
 global.library[6] = card_acolyte;
@@ -20,6 +20,7 @@ enum CardMovementMode {
 	Instant,
 	Fast,
 	Slow,
+	Slower
 }
 
 enum CardType {
