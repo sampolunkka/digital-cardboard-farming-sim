@@ -57,13 +57,13 @@ function createArcPortion() {
 			return;
 		}
 		
-		card.setPosition(
+		card.set_position(
 			round(tx - card.sprite_width * 0.5),
 			round(ty - card.sprite_height)
 		);
 		//card.anchorX = round(tx - card.sprite_width * 0.5);
 		//card.anchorY = round(ty - card.sprite_height);
-		card.setDepth(-i);
+		card.set_depth(-i);
 	}
 	
 	// set hand bounds for collisons
@@ -138,8 +138,12 @@ function on_add(card) {
 		card.interaction = Interaction.None;
 }
 
-function onInsert(card) {
+function on_insert(card) {
 		card.interaction = Interaction.None;
+}
+
+refresh() {
+	init()
 }
 
 init();

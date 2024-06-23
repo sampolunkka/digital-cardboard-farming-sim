@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var target_unit = collision_point(mouse_x, mouse_y, obj_battleCard, false, true);
+var target_unit = collision_point(mouse_x, mouse_y, obj_card, false, true);
 if (target_unit != noone) {
 	if(!target_unit.on_board || !target_unit.type == CardType.Unit) {
 		target_unit = noone;
@@ -20,6 +20,9 @@ switch (target_type) {
 }
 
 if (target != noone) {
-	attackCard(target);
+	switch (target_mode) {
+		case TargetMode.Attack: attack_card(target); break;
+		case TargetMode.Spell: cast_spell(target); break;
+	}
 	instance_destroy();
 }

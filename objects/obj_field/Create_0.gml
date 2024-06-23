@@ -11,7 +11,7 @@ anchorX = x;
 highlightMovementDistance = 5;
 handIndex = 1;
 yOffset = 0;
-//isPlaceholder = false;
+//is_placeholder = false;
 effectText = "+Å";
 info = "Can be placed anywhere. Produces 2 food per turn.";
 

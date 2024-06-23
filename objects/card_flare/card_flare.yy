@@ -12,8 +12,8 @@
     "path":"folders/Objects/Card/Spells.yy",
   },
   "parentObjectId":{
-    "name":"obj_battleCard",
-    "path":"objects/obj_battleCard/obj_battleCard.yy",
+    "name":"obj_spell_card",
+    "path":"objects/obj_spell_card/obj_spell_card.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

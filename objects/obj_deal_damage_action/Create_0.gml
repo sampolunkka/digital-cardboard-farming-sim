@@ -8,5 +8,6 @@ damage = 0;
 
 // @Override
 function trigger() {
-	target.hp -= damage;
+	show_debug_message(targets);
+	targets[0].hp -= damage;
 }

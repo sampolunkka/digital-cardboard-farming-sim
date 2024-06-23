@@ -14,7 +14,7 @@ function refresh() {
 	var ay = y;
 	show_debug_message(cards);
 	for (var i = 0; i < getSize(); i++) {
-		temp[i].setPosition(ax + (i * slotWidth), ay);
+		temp[i].set_position(ax + (i * slotWidth), ay);
 	}
 	cards = temp;
 }

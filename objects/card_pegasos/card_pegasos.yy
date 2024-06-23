@@ -12,8 +12,8 @@
     "path":"folders/Objects/Card/Units.yy",
   },
   "parentObjectId":{
-    "name":"obj_battleCard",
-    "path":"objects/obj_battleCard/obj_battleCard.yy",
+    "name":"obj_unit_card",
+    "path":"objects/obj_unit_card/obj_unit_card.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

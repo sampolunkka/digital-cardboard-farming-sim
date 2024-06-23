@@ -4,6 +4,7 @@
 deck = noone;
 drag = noone;
 hand = noone;
+grave = noone;
 board = instance_nearest(x, y, obj_boardZone);
 mulligan = noone;
 
@@ -28,17 +29,17 @@ function select(card) {
 			pick(card);
 		} else if (card.type == CardType.Spell) {
 			if (card.targeted) {
-				var combtCon = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_combatController);
-				combtCon.init(card, card.target_type);
+				var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
+				trgt_con.init(card, card.target_type, hand, grave);
 			} else {
-				card.onPlay();
+				card.on_cast(noone, hand, grave);
 			}
 		}
 	// Check if on board
 	} else if (board.hasCard(card)) {
-		if (!card.fatigued && !instance_exists(obj_combatController)) {
-			var combtCon = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_combatController);
-			combtCon.init(card);
+		if (!card.fatigued && !instance_exists(obj_targeting_controller)) {
+			var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
+			trgt_con.init(card);
 		}
 	}
 }
@@ -101,7 +102,7 @@ function returnToHand() {
 
 function getTopmostHoveredCard() {
 	var cardCollisions = ds_list_create();
-	var collisionCount = collision_point_list(mouse_x, mouse_y, obj_battleCard, false, true, cardCollisions, true);
+	var collisionCount = collision_point_list(mouse_x, mouse_y, obj_card, false, true, cardCollisions, true);
 	
 	// Remove dragged card from collisions
 	if (!drag.isEmpty()) {
@@ -133,6 +134,7 @@ function init() {
 	deck = instance_create_depth(203, 118, 0, obj_deckZone);
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
+	grave = instance_create_depth(x, y, 0, obj_hiddenZone);
 	
 	mulligan = instance_create_layer(x, y, "Instances", obj_mulligan_zone);
 	turnController = instance_create_depth(x, y, 0, obj_turnController);
@@ -144,11 +146,12 @@ function init() {
 	drag.owner = obj_player;
 	hand.owner = obj_player;
 	board.owner = obj_player;
+	grave.owner = obj_player;
 
 	
 	/*for (var i=0; i < deck.max_size; i++) {
 		//show_message("controller adding card: " + string(i));
-		deck.addCard(instance_create_depth(x, y, 0, obj_battleCard));
+		deck.addCard(instance_create_depth(x, y, 0, obj_card));
 	}*/
 }
 

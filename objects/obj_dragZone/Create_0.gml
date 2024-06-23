@@ -25,7 +25,7 @@ function refresh() {
 	}
 }
 
-function onInsert(card) {
+function on_insert(card) {
 	card.interaction = Interaction.Grabbing;
 }
 

@@ -21,8 +21,8 @@ depth = 20;
 slotWidth = 34;
 
 // Override
-function onInsert(card) {
-	card.onPlay();
+function on_insert(card) {
+	card.on_play();
 	card.interaction = Interaction.None;
 }
 
@@ -34,7 +34,7 @@ function refresh() {
 	var ay = y;
 	
 	for (var i = 0; i < getSize(); i++) {
-		temp[i].setPosition(ax + (i * slotWidth), ay);
+		temp[i].set_position(ax + (i * slotWidth), ay);
 		if (temp[i].hp <= 0) {
 			array_push(destroy_cards, temp[i]);
 			temp[i].destroy();

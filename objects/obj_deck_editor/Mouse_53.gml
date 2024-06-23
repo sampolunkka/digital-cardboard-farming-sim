@@ -3,7 +3,7 @@
 
 var save_btn = collision_point(mouse_x, mouse_y, obj_deck_save_button, false, true);
 var cancel_btn = collision_point(mouse_x, mouse_y, obj_deck_cancel_button, false, true);
-var card = collision_point(mouse_x, mouse_y, obj_battleCard, false, true);
+var card = collision_point(mouse_x, mouse_y, obj_card, false, true);
 
 if (save_btn != noone) {
 	deck_save(deck_id, cards_list);

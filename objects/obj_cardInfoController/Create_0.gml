@@ -7,7 +7,7 @@ lifetime = 2;
 timer = 0;
 	
 function formatText() {
-	var infoString = card.getInfo();
+	var infoString = card.get_info();
 	
 	// Split at word
 	var words = string_split(infoString, " ");

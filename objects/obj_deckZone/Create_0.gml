@@ -28,8 +28,8 @@ function init() {
 	for (var i = 0; i < array_length(_card_ids); i++) {
 		var _card_object = card_get(_card_ids[i]);
 		addCard(instance_create_depth(0,0,0,_card_object));
-		cards[i].setPosition(x, round(y - i * 0.2));
-		cards[i].setDepth(-i);
+		cards[i].set_position(x, round(y - i * 0.2));
+		cards[i].set_depth(-i);
 		show_debug_message("Added to deck:" + cards[i].label);
 	}
 	//show_message("Deck created!");

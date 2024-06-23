@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
+
+/// @description Insert description here
+// You can write your code in this editor
 
 enum Zone {
 	Hand,
@@ -68,27 +72,17 @@ index = 0;
 // Interaction
 interaction = Interaction.None;
 
-function setFace(face) {
+function set_face(face) {
 	self.face = face;
 }
 
-function setHidden(boolean) {
-	hidden = boolean;
-}
-
-function setFaceAndHidden(face, hidden) {
-	setFace(face);
-	setHidden(hidden);
-	refresh();
-}
-
-function setPosition(tx, ty) {
+function set_position(tx, ty) {
 	anchorX = tx;
 	anchorY = ty;
 }
 
 function move_y (_ty) {
-	setPosition(anchorX, anchorY + _ty);
+	set_position(anchorX, anchorY + _ty);
 }
 
 function setMovement(mode) {
@@ -100,25 +94,25 @@ function setMovement(mode) {
 	}
 }
 
-function setDepth(value) {
+function set_depth(value) {
 	baseDepth = value;
 }
 
-function getInfo() {
+function get_info() {
 	return info;
 }
 
-function isPlaceholder() {
+function is_placeholder() {
 	return placeholder;
 }
 
-function onPlay() {
+function on_play() {
 	if (type == CardType.Unit) {
 		onSummon();
 	}
 	
 	for (var i = 0; i < array_length(on_play_actions); i++) {
-		var action = action_create(on_play_actions[0], self, [player_get_active()]);
+		var action = action_create(on_play_actions[i], self, [player_get_active()]);
 		action.trigger();
 	}
 }
@@ -143,75 +137,4 @@ function refresh() {
 	if (hidden) {
 		sprite_index = noone;
 	}
-}
-
-function startCombat(target) {
-	target.onDamage(attack);
-	self.onDamage(target.attack);
-	
-	target.afterDamage();
-	self.afterDamage();
-}
-
-function onDamage(damage) {
-	var total_damage = damage;
-	
-	for (var i = 0; i < array_length(before_damage_actions); i++) {
-		var action = before_damage_actions[i];
-		total_damage += action.triggerAndApplyDamage(damage);
-		if (!instance_exists(action)) {
-			array_delete(before_damage_actions, i, 1);
-		}
-	}
-	
-	for (var i = 0; i < array_length(on_damage_actions); i++) {
-		on_damage_actions[i].trigger(total_damage);
-	}
-	
-	// Update hp
-	hp -= total_damage;
-}
-
-function onSummon() {
-	on_board = true;
-	fatigued = true;
-	
-	// Before damage
-	for (var i=0; i < array_length(before_damage_actions); i++) {
-		var action = instance_create_layer(x, y, "Effects", before_damage_actions[i]);
-		action.initWith(self);
-		before_damage_actions[i] = action;
-	}
-	
-	// On damage
-	for (var i=0; i < array_length(on_damage_actions); i++) {
-		var action = instance_create_layer(x, y, "Effects", on_damage_actions[i]);
-		action.initWith(self);
-		on_damage_actions[i] = action;
-	}
-}
-
-
-function afterDamage() {
-	// Check if dies
-	if (hp <= 0) {
-		zone = collision_point(x, y, obj_zone, false, true);
-		zone.refresh();
-	}
-}
-
-function destroy() {
-	if (stats_bar != noone) {
-		stats_bar.destroy();
-	}
-	fade_in_alpha = 0.2;
-	alarm[0] = 10;
-	alarm[1] = 30;
-}
-
-function has_actions() {
-	return array_length(on_play_actions)
-		+ array_length(before_damage_actions)
-		+ array_length(on_damage_actions) 
-		> 0;
 }

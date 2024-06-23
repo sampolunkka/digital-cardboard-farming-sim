@@ -21,9 +21,8 @@ for (var i = 0; i < ceil(array_length(library)/3); i++) {
 		}
 		var card_id = library[card_index];
 		var card_instance = instance_create_layer(start_x + 1 * j * space_x, start_y + 1 * i * space_y, "Instances", card_get(card_id));
-		card_instance.setFace(CardFace.Up);
-		card_instance.setDepth(-100 - card_index);
-		card_instance.setFace(CardFace.Up);
+		card_instance.face = CardFace.Up;
+		card_instance.set_depth(-100 - card_index);
 		card_index++;
 		array_push(collection, card_instance);
 	}

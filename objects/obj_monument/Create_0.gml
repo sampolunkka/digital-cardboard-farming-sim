@@ -11,4 +11,4 @@ anchorX = x;
 highlightMovementDistance = 5;
 handIndex = 1;
 yOffset = 0;
-//isPlaceholder = false;
+//is_placeholder = false;

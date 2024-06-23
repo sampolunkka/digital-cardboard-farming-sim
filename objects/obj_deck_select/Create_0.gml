@@ -19,8 +19,8 @@ cancel_button.text = "Withdraw";
 
 function display_cards() {
 	
-	for (var i = 0; i < instance_number(obj_battleCard); i++) {
-		instance_destroy(obj_battleCard);
+	for (var i = 0; i < instance_number(obj_card); i++) {
+		instance_destroy(obj_card);
 	}
 	
 	var card_space = 30;

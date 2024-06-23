@@ -39,8 +39,8 @@ function init_with(_deck, _deck_picker) {
 			}
 			var card_id = cards_list[card_index];
 			var card_instance = instance_create_layer(start_x + 1 * j * space_x, start_y + offset_y + 1 * i * space_y, "Instances", card_get(card_id));
-			card_instance.setFace(CardFace.Up);
-			card_instance.setDepth(depth-1);
+			card_instance.set_face(CardFace.Up);
+			card_instance.set_depth(depth-1);
 			card_index++;
 			array_push(card_instances, card_instance);
 		}
@@ -65,7 +65,7 @@ function update() {
 			}
 			var card = card_instances[card_index];
 			card.depth = depth - card_index;
-			card.setPosition(start_x + 1 * j * space_x, start_y + offset_y + 1 * i * space_y);
+			card.set_position(start_x + 1 * j * space_x, start_y + offset_y + 1 * i * space_y);
 			card_index++;
 		}
 	}
@@ -78,7 +78,7 @@ function add_card(_card) {
 	array_push(cards_list, card_id);
 	
 	var card_instance = instance_create_depth(_card.x, _card.y, depth - 1 - array_length(card_instances), _card.object_index);
-	card_instance.setFace(CardFace.Up);
+	card_instance.face = CardFace.Up;
 	array_push(card_instances, card_instance);
 	show_debug_message("cards_list: " + string(cards_list));
 	update();

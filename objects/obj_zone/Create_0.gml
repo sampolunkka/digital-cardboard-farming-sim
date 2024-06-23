@@ -37,7 +37,8 @@ function addCard(card) {
 		return;
 	}
 	
-	card.setFaceAndHidden(face, hidden);
+	card.face = CardFace.Up;
+	card.hidden = hidden;
 	card.setMovement(movementMode);
 	
 	array_push(cards, card);
@@ -71,11 +72,11 @@ function insertCard(card, index) {
 	array_insert(temp, index, card);
 	cards = temp;
 	card.owner = owner;
-	onInsert(card);
+	on_insert(card);
 	refresh();
 }
 
-function onInsert(card) {
+function on_insert(card) {
 }
 
 function on_add(card) {
@@ -87,24 +88,19 @@ function removeCardAtIndex(cardIndex) {
 }
 
 function removeCard(card) {
-	show_debug_message("Remove card " + card + " from zone " + label);
-	var index = array_get_index(cards, card.instance_id);
+	show_debug_message("Remove card " + string(card.label) + " from zone " + label);
+	var index = array_get_index(cards, card);
 	if (index < 0) {
-		show_debug_message("card index <0");
+		show_debug_message("card index <0 for card: " + card.label, " " + string(mask_instance_ref(card)));
 	}
-	var temp = cards;
-	array_delete(temp, array_get_index(temp, card), 1);
-	cards = temp;
+	array_delete(cards, array_get_index(cards, card), 1);
+
 	show_debug_message("cards: " + string(cards));
 	refresh();
 }
 
 function deleteCard(card) {
-	var temp = cards;
-	array_delete(temp, getCardIndex(card), 1);
-	show_debug_message("delete card: " + mask_instance_ref(card) + " " + card.label + " from zone: " + mask_instance_ref(self) + " " + label);
-	cards = temp;
-	refresh();
+	removeCard(card);
 	instance_destroy(card);
 }
 

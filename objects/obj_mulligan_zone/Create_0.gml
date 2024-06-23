@@ -30,7 +30,7 @@ function init_with(_deck, _hand, _turn_controller) {
 	for (var i = 0; i < top_row_length; i++) {
 		var card = _deck.getTopCard();
 		_deck.moveCard(card, self);
-		card.setPosition(x - top_row_width/2 + slot_width * i, y);
+		card.set_position(x - top_row_width/2 + slot_width * i, y);
 	}
 	
 	// Bottom row
@@ -39,7 +39,7 @@ function init_with(_deck, _hand, _turn_controller) {
 	for (var i = 0; i < bottom_row_length; i++) {
 		var card = _deck.getTopCard();
 		_deck.moveCard(card, self);
-		card.setPosition(x - bottom_row_width/2 + slot_width * i, y + 44);
+		card.set_position(x - bottom_row_width/2 + slot_width * i, y + 44);
 	}
 }
 
