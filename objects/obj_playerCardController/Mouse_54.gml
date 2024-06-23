@@ -5,4 +5,5 @@ if (!highlight_zone.isEmpty()) {
 } else if (!drag.isEmpty()) {
 	drag.moveCard(drag.getTopCard(), hand);
 	instance_destroy(obj_placeholderController);
+	audio_play_sound(snd_card_move_alt, 1, false);
 }

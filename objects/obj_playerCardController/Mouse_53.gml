@@ -7,7 +7,6 @@ if (drag.isEmpty()) {
 		select(card);
 	}
 } else {
-	
 	//TODO: Check zone
 	var card = drag.getTopCard();
 	if (card.type == CardType.Spell) {
@@ -22,9 +21,9 @@ if (drag.isEmpty()) {
 				card.on_cast(noone, hand, grave);
 			} 
 		} else {
-			place()
+			place();
 		}
-	} else if (card.type == CardType.Unit) { 
+	} else if (card.type == CardType.Unit) {
 		place();
 	}
 }

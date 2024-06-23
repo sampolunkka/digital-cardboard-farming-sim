@@ -5,3 +5,6 @@ animation_alpha = 0;
 big_card_animation_frame = 0;
 card = noone;
 image_speed = 0;
+
+audio_play_sound(snd_cast_buildup, 1, false);
+alarm[0] = 25;

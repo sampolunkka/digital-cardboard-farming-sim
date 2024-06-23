@@ -15,6 +15,7 @@ drag_hand_index = -1;
 turnController = noone;
 
 function draw() {
+	audio_play_sound(snd_card_draw, 1, false);
 	var topCard = deck.getTopCard();
 	if (topCard != undefined && topCard != noone) {
 		deck.moveCard(deck.getTopCard(), hand);
@@ -55,6 +56,7 @@ function place() {
 	if (collision_point(mouse_x, mouse_y, board, true, true)) {
 		play_card();
 	} else if (collision_point(mouse_x, mouse_y, hand, false, true)) {
+		audio_play_sound(snd_card_move, 1, false);
 		placeAtPlaceholder(hand);
 	}
 }
