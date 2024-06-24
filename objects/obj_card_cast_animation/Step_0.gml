@@ -5,4 +5,3 @@ big_card_animation_frame++;
 animation_alpha +=0.05;
 x = card.x;
 y = card.y;
-card.setMovement(CardMovementMode.Slower);

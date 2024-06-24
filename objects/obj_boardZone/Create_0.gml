@@ -42,7 +42,7 @@ function refresh() {
 	}
 	
 	if (array_length(destroy_cards) > 0) {
-		alarm[0] = 30;
+		alarm[0] = 50;
 	}
 	cards = temp;
 }
