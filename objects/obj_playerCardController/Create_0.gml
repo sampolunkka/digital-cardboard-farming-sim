@@ -27,15 +27,6 @@ function select(card) {
 	if (hand.hasCard(card)) {
 			drag_hand_index = hand.getCardIndex(card);
 			pick(card);
-		 /*else if (card.type == CardType.Spell) {
-			if (card.targeted) {
-				var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
-				trgt_con.init(card, card.target_type, hand, grave);
-			} else {
-				card.on_cast(noone, hand, grave);
-			}
-		}*/
-		
 	// Check if on board
 	} else if (board.hasCard(card)) {
 		if (!card.fatigued && !instance_exists(obj_targeting_controller)) {
@@ -50,6 +41,7 @@ function pick(card) {
 		return;
 	}
 	hand.moveCard(card, drag);
+	audio_play_sound(snd_card_grab, 1, false);
 }
 
 function place() {
@@ -64,11 +56,11 @@ function place() {
 function play_card() {
 	var card = drag.getCard();
 	var zone = board;
-	var anim = instance_create_depth(card.x, card.y, -200, obj_card_cast_animation);
-	anim.card = card;
 	var player = player_get_active();
 	if (instance_exists(obj_placeholderCard)) {
 		if (player.payForCard(card)) {
+			var anim = instance_create_depth(card.x, card.y, -200, obj_card_cast_animation);
+			anim.card = card;
 			card.setMovement(zone.movementMode);
 			zone.insertCard(drag.getCard(), zone.getIndexAtX(mouse_x));
 			drag.removeCardAtIndex(0);

@@ -12,8 +12,6 @@ if (on_board) {
 	image_alpha = fade_in_alpha;
 }
 
-draw_self();
-
 if (face == CardFace.Up) {
 	if (on_board) {
 		sprite_index = on_board_sprite;
@@ -23,6 +21,8 @@ if (face == CardFace.Up) {
 	} else {
 		sprite_index = face_up_sprite;
 	}
+	
+	draw_self();
 	
 	draw_set_font(global.labelFont);
 	
@@ -61,5 +61,8 @@ if (face == CardFace.Up) {
 	if (has_actions()) {
 		draw_text_shadow(x + stats_offset_x, y + sprite_height - 9, actions_string);
 	}
+} else {
+	image_index = face_down_sprite;
+	draw_self();
 }
 draw_reset();

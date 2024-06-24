@@ -7,6 +7,9 @@ max_size = 30;
 hidden = false;
 face = CardFace.Down;
 label = "Deck";
+shuffling = false;
+shuffle_timer = 0;
+shuffle_timer_max = 30;
 
 // Override
 function refresh() {
@@ -19,6 +22,9 @@ function refresh() {
 
 function shuffle() {
 	cards = array_shuffle(cards);
+	shuffle_timer = 20;
+	shuffling = true;
+	audio_play_sound(snd_shuffle, 1, false);
 }
 
 function init() {

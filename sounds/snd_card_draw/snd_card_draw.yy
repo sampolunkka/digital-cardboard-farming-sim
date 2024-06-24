@@ -12,8 +12,8 @@
   "duration":0.357333,
   "name":"snd_card_draw",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"cabin",
+    "path":"cabin.yyp",
   },
   "preload":false,
   "resourceType":"GMSound",

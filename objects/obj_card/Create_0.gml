@@ -36,7 +36,7 @@ target_type = TargetType.None;
 // VISUAL
 image_speed = 0;
 face_up_sprite = spr_cardBack;
-faceDownSprite = spr_cardBack;
+face_down_sprite = spr_cardBack;
 face_up_sprite = spr_cardBack
 on_board_sprite = spr_cardBack;
 face = CardFace.Up;
@@ -126,7 +126,7 @@ function hover() {
 
 function refresh() {
 	if (face == CardFace.Down) {
-		sprite_index = faceDownSprite;
+		sprite_index = face_down_sprite;
 	} else if (face == CardFace.Up) {
 		sprite_index = face_up_sprite;
 	}
