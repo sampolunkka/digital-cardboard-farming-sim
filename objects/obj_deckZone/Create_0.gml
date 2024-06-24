@@ -3,7 +3,7 @@
 event_inherited();
 randomize();
 // Override
-max_size = 30;
+max_size = 100;
 hidden = false;
 face = CardFace.Down;
 label = "Deck";
@@ -17,6 +17,7 @@ function refresh() {
 		cards[i].anchorX = x;
 		cards[i].anchorY = round(y - i * 0.2);
 		cards[i].depth = -i;
+		cards[i].face = CardFace.Down;
 	}
 }
 
@@ -27,9 +28,8 @@ function shuffle() {
 	audio_play_sound(snd_shuffle, 1, false);
 }
 
-function init() {
-	show_debug_message("Init deck cards");
-	var _card_ids = global.active_deck;
+function init_with(_card_ids) {
+	show_debug_message("Init deck cards with card ids: " + string(_card_ids));
 		
 	for (var i = 0; i < array_length(_card_ids); i++) {
 		var _card_object = card_get(_card_ids[i]);
@@ -38,9 +38,13 @@ function init() {
 		cards[i].set_depth(-i);
 		show_debug_message("Added to deck:" + cards[i].label);
 	}
-	//show_message("Deck created!");
+	cards = array_shuffle(cards);
 }
 
-init();
-shuffle();
-refresh();
+function on_add(_card) {
+	_card.face = CardFace.Down;
+}
+
+function on_insert(_card) {
+	_card.face = CardFace.Down;
+}

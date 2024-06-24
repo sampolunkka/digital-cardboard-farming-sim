@@ -6,15 +6,22 @@ var tx2;
 var ty2;
 
 // Get constraints
-tx1 = card.x;
-tx2 = card.x + string_width(formattedText);
-ty1 = card.y - 4 - string_height(formattedText);
-ty2 = card.y - 4;
+if (!fixed) {
+	tx1 = card.x;
+	tx2 = card.x + string_width(formattedText);
+	ty1 = card.y - 4 - string_height(formattedText);
+	ty2 = card.y - 4;
 	
-// Prevent out of screen box
-if (ty1 < 0) {
-	ty1 += 2 * card.sprite_height;
-	ty2 += 2 * card.sprite_height;
+	// Prevent out of screen box
+	if (ty1 < 0) {
+		ty1 += 2 * card.sprite_height;
+		ty2 += 2 * card.sprite_height;
+	}
+} else {
+	tx2 = room_width - 2;
+	tx1 = tx2 - string_width(formattedText);
+	ty1 = room_height/2 - string_height(formattedText)/2;
+	ty2 = ty1 + string_height(formattedText);
 }
 
 // Draw box

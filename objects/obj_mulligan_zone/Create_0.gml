@@ -58,7 +58,7 @@ function confirm() {
 		selected_zone.move_all_cards(hand);
 		self.move_all_cards(deck);
 		deck.shuffle();
-		turn_controller.startTurn();
+		turn_controller.start_turn();
 		instance_destroy(selected_zone);
 		instance_destroy(confirm_button);
 		instance_destroy();

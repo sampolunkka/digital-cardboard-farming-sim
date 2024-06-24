@@ -7,6 +7,7 @@ hp = baseHp;
 max_hp = baseHp;
 baseAttack = 1;
 attack = baseAttack;
+target_type = TargetType.Enemies;
 
 function start_combat(target) {
 	target.onDamage(attack);

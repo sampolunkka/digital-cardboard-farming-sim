@@ -10,6 +10,7 @@ max_size = 4;
 movementMode = CardMovementMode.Slow;
 cards = [];
 destroy_cards = [];
+owner = noone;
 
 //image_xscale = 6;
 //image_yscale = 2;
@@ -24,6 +25,14 @@ slotWidth = 34;
 function on_insert(card) {
 	card.on_play();
 	card.interaction = Interaction.None;
+	card.setMovement(movementMode);
+	card.set_face(CardFace.Up);
+	card.on_board = true;
+	card.owner = owner;
+}
+
+function on_add(card) {
+	on_insert(card);
 }
 
 // Override
@@ -34,10 +43,12 @@ function refresh() {
 	var ay = y;
 	
 	for (var i = 0; i < getSize(); i++) {
-		temp[i].set_position(ax + (i * slotWidth), ay);
-		if (temp[i].hp <= 0) {
-			array_push(destroy_cards, temp[i]);
-			temp[i].destroy();
+		if (instance_exists(temp[i])) {
+			temp[i].set_position(ax + (i * slotWidth), ay);
+			if (temp[i].hp <= 0) {
+				array_push(destroy_cards, temp[i]);
+				temp[i].destroy();
+			}
 		}
 	}
 	
@@ -49,6 +60,8 @@ function refresh() {
 
 function remove_fatigue() {
 	for (var i = 0; i < array_length(cards); i++) {
-		cards[i].fatigued = false;
+		if (instance_exists(cards[i])) {
+			cards[i].fatigued = false;
+		}
 	}
 }

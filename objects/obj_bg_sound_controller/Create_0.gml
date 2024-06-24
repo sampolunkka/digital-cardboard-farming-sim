@@ -5,11 +5,20 @@ bgm = noone;
 bgs = noone;
 
 fading_sounds = array_create();
-fade_time = 1000;
+fade_time = 2000;
 
 // TODO: fix bug
 
 function switch_tracks(_bgm, _bgs) {
+	
+	// Reset fading sounds if one is already fading
+	if (array_length(fading_sounds) > 0) {
+		for (var i = 0; i < array_length(fading_sounds); i++) {
+			audio_stop_sound(fading_sounds[i]);
+		}
+		fading_sounds = array_create();
+	}
+	
 	if (bgm == _bgm && bgs == _bgs) {
 		return;
 	}
@@ -39,11 +48,4 @@ function switch_tracks(_bgm, _bgs) {
 		audio_sound_gain(_bgs, 1, fade_time);
 		bgs = _bgs;
 	}
-}
-
-function sound_fade_out(_sound) {
-	audio_sound_gain(_sound, 0, fade_time);
-	array_push(fading_sounds, _sound);
-	alarm[0] = 60/1000 * fade_time;
-	show_debug_message("Fade out sounds: " + string(fading_sounds));
 }

@@ -5,6 +5,7 @@ formattedText = "";
 maxWidth = 60;
 lifetime = 2;
 timer = 0;
+fixed = true;
 	
 function formatText() {
 	var infoString = card.get_info();

@@ -12,8 +12,10 @@ function init() {
 	
 	addAction(instance_create_layer(0,0,"Instances",obj_drawAction), origin, targets);
 	addAction(instance_create_layer(0,0,"Instances",act_gainResource), origin, targets);
-	origin.getController().board.remove_fatigue();
+	origin.get_controller().board.remove_fatigue();
 }
 
 init();
 onPhaseBegin();
+
+alarm[0] = 120;

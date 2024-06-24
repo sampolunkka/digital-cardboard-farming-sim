@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_turnController",
+  "%Name":"obj_turn_controller",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_turnController",
+  "name":"obj_turn_controller",
   "overriddenProperties":[],
   "parent":{
     "name":"Battle",

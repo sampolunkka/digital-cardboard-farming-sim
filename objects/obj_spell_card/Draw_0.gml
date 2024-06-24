@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
 if (face == CardFace.Up) {
 	var effect_offset_x = 6;
 	var effect_offset_y = sprite_height - 9;

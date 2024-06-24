@@ -13,14 +13,16 @@ if (drag.isFull()) {
 
 // Hand hover behaviour
 } else {
-	drag_hand_index = -1;
-	var card = getHoveredCardInZone(hand);
+	drag_hand_index = -1; // TODO: ??
+	var card = collision_point(mouse_x, mouse_y, obj_card, false, true);
 	if (card != noone) {
-		card.hover();
+		
+		if (hand.getCardIndex(card) > -1) {
+			card.hover();
+		}
 		if (!instance_exists(obj_cardInfoController)) {
 			var infoControl = instance_create_depth(0,0,0,obj_cardInfoController);
 			infoControl.init(card);
 		} 
-	} 
-	// TODO: should we make hover for battlers also?
+	}
 }

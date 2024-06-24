@@ -12,7 +12,7 @@ mulligan = noone;
 drag_hand_index = -1;
 
 // CONTROLLERS
-turnController = noone;
+turn_controller = noone;
 
 function draw() {
 	audio_play_sound(snd_card_draw, 1, false);
@@ -31,7 +31,7 @@ function select(card) {
 	} else if (board.hasCard(card)) {
 		if (!card.fatigued && !instance_exists(obj_targeting_controller)) {
 			var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
-			trgt_con.init(card);
+			trgt_con.init(card, card.target_type);
 		}
 	}
 }
@@ -56,7 +56,7 @@ function place() {
 function play_card() {
 	var card = drag.getCard();
 	var zone = board;
-	var player = player_get_active();
+	var player = player_get_active(); // TODO: refactor this
 	if (instance_exists(obj_placeholderCard)) {
 		if (player.payForCard(card)) {
 			var anim = instance_create_depth(card.x, card.y, -200, obj_card_cast_animation);
@@ -132,10 +132,9 @@ function init() {
 	grave = instance_create_depth(x, y, 0, obj_hiddenZone);
 	highlight_zone = instance_create_depth(4, y - room_height/2, 0, obj_highlight_zone);
 	
-	mulligan = instance_create_layer(x, y, "Instances", obj_mulligan_zone);
-	turnController = instance_create_depth(x, y, 0, obj_turnController);
-	
-	mulligan.init_with(deck, hand, turnController);
+	// Init deck
+	deck.init_with(global.active_deck);
+	deck.refresh();
 	
 	// Set ownership of zones
 	deck.owner = obj_player;
@@ -143,6 +142,12 @@ function init() {
 	hand.owner = obj_player;
 	board.owner = obj_player;
 	grave.owner = obj_player;
+	
+	// Init mulligan and turn controller
+	mulligan = instance_create_layer(x, y, "Instances", obj_mulligan_zone);
+	turn_controller = instance_create_depth(x, y, 0, obj_turn_controller);
+	
+	mulligan.init_with(deck, hand, turn_controller);
 }
 
 init();

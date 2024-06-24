@@ -10,7 +10,7 @@ function drawMultiple(times) {
 	}
 }
 
-function getController() {
+function get_controller() {
 	return controller;
 }
 
@@ -26,7 +26,7 @@ function payForCard(card) {
 	return payResource(card.cost);
 }
 
-function addResourceFull() {
+function add_resource_full() {
 	resourceMax++;
 	resource++;
 }

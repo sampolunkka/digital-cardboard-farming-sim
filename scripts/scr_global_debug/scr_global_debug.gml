@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-global.debugEnabled = false;
+global.debugEnabled = true;
 global.debugZoneCardInfo = true && global.debugEnabled;
 global.debugCardDepth = false && global.debugEnabled;
 global.debugShowPlaceholder = true && global.debugEnabled;

@@ -9,6 +9,8 @@ enum TargetType {
 	Opponent,
 	Commander,
 	Unit,
+	Enemies,
+	Allies,
 	None
 }
 
@@ -44,6 +46,7 @@ function cast_spell(_target) {
 }
 
 function init(_card, _target_type, _hand, _grave) {
+	target_type = TargetType.Enemies;
 	target_type = _target_type;
 	targeting_card = _card;
 	hand = _hand ?? noone;

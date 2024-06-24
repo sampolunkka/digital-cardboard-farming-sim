@@ -4,25 +4,43 @@ deck = instance_create_layer(7, -20, "Instances", obj_deckZone);
 drag = noone;
 hand = instance_create_layer(x, y, "Instances", obj_opponent_hand_zone);
 board = instance_nearest(x, y, obj_boardZone);
-/*
-hand.addCard(instance_create_layer(x, y, "Instances", card_acolyte));
-hand.addCard(instance_create_layer(x, y, "Instances", card_acolyte));
-*/
+
 deck.owner = obj_opponent;
-//drag.owner = obj_opponent;
 hand.owner = obj_opponent;
 board.owner = obj_opponent;
 
 deck.x = 0;
 deck.y = 0;
-/*
-board.addCard(instance_create_depth(0,0,0,card_acolyte));
-board.addCard(instance_create_depth(0,0,0,card_acolyte));
-board.addCard(instance_create_depth(0,0,0,card_acolyte));
-board.addCard(instance_create_depth(0,0,0,card_acolyte));
-*/
+
 for (var i = 0; i < array_length(board.cards); i++) {
 	board.cards[i].onSummon();
 }
 
 board.sprite_index = spr_redHitbox;
+
+function start_turn() {
+	if (!board.isFull()) {
+		play_card();
+	}
+}
+
+function draw() {
+	audio_play_sound(snd_card_draw, 1, false);
+	var topCard = deck.getTopCard();
+	if (topCard != undefined && topCard != noone) {
+		deck.moveCard(deck.getTopCard(), hand);
+	}
+}
+
+function play_card() {
+	var card = hand.getTopCard();
+	card.face = CardFace.Up;
+	var anim = instance_create_depth(card.x, card.y, -200, obj_card_cast_animation);
+	anim.card = card;
+	card.setMovement(board.movementMode);
+	hand.moveCard(card, board);
+}
+
+function init_with(_card_ids) {
+	deck.init_with(_card_ids);
+}
