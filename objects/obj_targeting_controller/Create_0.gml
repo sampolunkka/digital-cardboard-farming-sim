@@ -45,7 +45,7 @@ function cast_spell(_target) {
 	targeting_card.on_cast(_target, hand, grave);
 }
 
-function init(_card, _target_type, _hand, _grave) {
+function init_with(_card, _target_type, _hand, _grave) {
 	target_type = TargetType.Enemies;
 	target_type = _target_type;
 	targeting_card = _card;
@@ -54,7 +54,7 @@ function init(_card, _target_type, _hand, _grave) {
 	
 	switch (targeting_card.type) {
 		case CardType.Spell: target_mode = TargetMode.Spell; break;
-		case CardType.Unit: target_mode = TargetMode.Attack; break;
+		case CardType.Unit: target_mode = TargetMode.Attack; audio_play_sound(_card.on_attack_sound, 0, false); break;
 		default: show_message("Error, cannot resolve targeting mode for card " + string(_card));
 	}
 }

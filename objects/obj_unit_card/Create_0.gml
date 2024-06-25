@@ -9,6 +9,10 @@ baseAttack = 1;
 attack = baseAttack;
 target_type = TargetType.Enemies;
 
+on_play_sound = snd_card_move_alt;
+on_attack_sound = snd_card_move;
+on_death_sound = snd_card_draw;
+
 function start_combat(target) {
 	target.onDamage(attack);
 	self.onDamage(target.attack);
@@ -39,6 +43,7 @@ function onDamage(damage) {
 function onSummon() {
 	on_board = true;
 	fatigued = true;
+	audio_play_sound(on_play_sound, 0, false);
 }
 
 

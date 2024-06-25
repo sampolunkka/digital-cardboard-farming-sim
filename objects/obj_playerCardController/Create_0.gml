@@ -8,6 +8,7 @@ grave = noone;
 highlight_zone = noone;
 board = instance_nearest(x, y, obj_boardZone);
 mulligan = noone;
+player = noone;
 
 drag_hand_index = -1;
 
@@ -31,7 +32,7 @@ function select(card) {
 	} else if (board.hasCard(card)) {
 		if (!card.fatigued && !instance_exists(obj_targeting_controller)) {
 			var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
-			trgt_con.init(card, card.target_type);
+			trgt_con.init_with(card, card.target_type);
 		}
 	}
 }
@@ -51,6 +52,37 @@ function place() {
 		audio_play_sound(snd_card_move, 1, false);
 		placeAtPlaceholder(hand);
 	}
+}
+
+function play_unit(_card) {
+	if (instance_exists(obj_placeholderCard)) {
+		if (player.payForCard(_card)) {
+			var anim = instance_create_depth(_card.x, _card.y, -200, obj_card_cast_animation);
+			anim.card = _card;
+			board.insertCard(_card, board.getIndexAtX(mouse_x));
+			drag.removeCardAtIndex(0);
+			instance_destroy(obj_placeholderController);
+		}
+	}
+}
+
+function play_spell(_card) {
+	if (_card.targeted) {
+		drag.moveCard(_card, highlight_zone);
+		var targeting_controller = instance_create_layer(highlight_zone.x, highlight_zone.y, "Instances", obj_targeting_controller);
+		targeting_controller.init_with(_card, _card.target_type, hand, grave);
+	} else {
+		if (player.payForCard(_card)) {
+			_card.on_cast(noone, hand, grave);
+		}
+	}
+}
+
+function place_in_hand(_card) {
+		audio_play_sound(snd_card_move, 1, false);
+		hand.insertCard(_card, hand.getIndexAtX(mouse_x));
+		drag.removeCardAtIndex(0);
+		instance_destroy(obj_placeholderController);
 }
 
 function play_card() {
@@ -125,7 +157,8 @@ function getHoveredCardInZone(zone) {
 	}
 }
 
-function init() {
+function init_with(_player) {
+	player = _player;
 	deck = instance_create_depth(203, 118, 0, obj_deckZone);
 	drag = instance_create_depth(x, y, 0, obj_dragZone);
 	hand = instance_create_depth(x, y, 0, obj_handZone);
@@ -149,5 +182,3 @@ function init() {
 	
 	mulligan.init_with(deck, hand, turn_controller);
 }
-
-init();
