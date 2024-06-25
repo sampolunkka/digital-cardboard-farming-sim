@@ -21,7 +21,7 @@ if (drag.isFull()) {
 			card.hover();
 		}
 		if (!instance_exists(obj_cardInfoController)) {
-			var infoControl = instance_create_depth(0,0,0,obj_cardInfoController);
+			var infoControl = instance_create_layer(0,0,"Overlay",obj_cardInfoController);
 			infoControl.init(card);
 		} 
 	}

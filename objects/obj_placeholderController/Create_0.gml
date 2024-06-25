@@ -6,10 +6,10 @@ placeholder = noone;
 
 function createPlaceholder() {
 	index = zone.getIndexAtX(mouse_x);
-	placeholder = instance_create_depth(
+	placeholder = instance_create_layer(
 		mouse_x,
 		mouse_y,
-		0,
+		"Board",
 		obj_placeholderCard
 	);
 	zone.insertCard(placeholder, index);

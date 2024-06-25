@@ -13,7 +13,7 @@ hp = max_hp;
 controller = noone;
 
 function init() {
-	controller = instance_create_depth(x,y,0,obj_playerCardController);
+	controller = instance_create_layer(x, y, "Instances", obj_playerCardController);
 	controller.init_with(id);
 }
 

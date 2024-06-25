@@ -6,7 +6,7 @@ drag = noone;
 hand = noone;
 grave = noone;
 highlight_zone = noone;
-board = instance_nearest(x, y, obj_boardZone);
+board = noone;
 mulligan = noone;
 player = noone;
 
@@ -31,7 +31,7 @@ function select(card) {
 	// Check if on board
 	} else if (board.hasCard(card)) {
 		if (!card.fatigued && !instance_exists(obj_targeting_controller)) {
-			var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
+			var trgt_con = instance_create_layer(card_get_center_x(card), card_get_center_y(card), "Overlay", obj_targeting_controller);
 			trgt_con.init_with(card, card.target_type);
 		}
 	}
@@ -57,7 +57,7 @@ function place() {
 function play_unit(_card) {
 	if (instance_exists(obj_placeholderCard)) {
 		if (player.payForCard(_card)) {
-			var anim = instance_create_depth(_card.x, _card.y, -200, obj_card_cast_animation);
+			var anim = instance_create_layer(_card.x, _card.y, "Underlay", obj_card_cast_animation);
 			anim.card = _card;
 			board.insertCard(_card, board.getIndexAtX(mouse_x));
 			drag.removeCardAtIndex(0);
@@ -91,7 +91,7 @@ function play_card() {
 	var player = player_get_active(); // TODO: refactor this
 	if (instance_exists(obj_placeholderCard)) {
 		if (player.payForCard(card)) {
-			var anim = instance_create_depth(card.x, card.y, -200, obj_card_cast_animation);
+			var anim = instance_create_layer(card.x, card.y, "Underlay", obj_card_cast_animation);
 			anim.card = card;
 			card.setMovement(zone.movementMode);
 			zone.insertCard(drag.getCard(), zone.getIndexAtX(mouse_x));
@@ -116,7 +116,7 @@ function createPlaceholderController(zone) {
 		return;
 	}
 	if (!instance_exists(obj_placeholderController)) {
-		var ph = instance_create_depth(x, y, 0, obj_placeholderController);
+		var ph = instance_create_layer(x, y, "Instances", obj_placeholderController);
 		ph.zone = zone;
 		ph.createPlaceholder();
 	}
@@ -159,11 +159,19 @@ function getHoveredCardInZone(zone) {
 
 function init_with(_player) {
 	player = _player;
-	deck = instance_create_depth(203, 118, 0, obj_deckZone);
-	drag = instance_create_depth(x, y, 0, obj_dragZone);
-	hand = instance_create_depth(x, y, 0, obj_handZone);
-	grave = instance_create_depth(x, y, 0, obj_hiddenZone);
-	highlight_zone = instance_create_depth(4, y - room_height/2, 0, obj_highlight_zone);
+	deck = instance_create_layer(203, 118, "Board", obj_deckZone);
+	drag = instance_create_layer(x, y, "Drag", obj_dragZone);
+	hand = instance_create_layer(x, y, "Hand", obj_handZone);
+	grave = instance_create_layer(x, y, "Instances", obj_hiddenZone);
+	highlight_zone = instance_create_layer(4, y - room_height/2, "Hand", obj_highlight_zone);
+	board = instance_create_layer(8, 71, "Board", obj_boardZone);
+	
+	// Init board
+	board.image_xscale = 28;
+	board.image_yscale = 4;
+	
+	// Init highlight zone
+	highlight_zone.init_with(grave);
 	
 	// Init deck
 	deck.init_with(global.active_deck);
@@ -177,8 +185,8 @@ function init_with(_player) {
 	grave.owner = obj_player;
 	
 	// Init mulligan and turn controller
-	mulligan = instance_create_layer(x, y, "Instances", obj_mulligan_zone);
-	turn_controller = instance_create_depth(x, y, 0, obj_turn_controller);
+	mulligan = instance_create_layer(x, y, "Board", obj_mulligan_zone);
+	turn_controller = instance_create_layer(x, y, "Instances", obj_turn_controller);
 	
 	mulligan.init_with(deck, hand, turn_controller);
 }

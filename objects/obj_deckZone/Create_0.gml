@@ -33,9 +33,10 @@ function init_with(_card_ids) {
 		
 	for (var i = 0; i < array_length(_card_ids); i++) {
 		var _card_object = card_get(_card_ids[i]);
-		addCard(instance_create_depth(0,0,0,_card_object));
+		addCard(instance_create_layer(0, 0, "Board", _card_object));
 		cards[i].set_position(x, round(y - i * 0.2));
-		cards[i].set_depth(-i);
+		layer_add_instance(layer, cards[i]);
+		cards[i].set_depth(depth-i);
 		show_debug_message("Added to deck:" + cards[i].label);
 	}
 	cards = array_shuffle(cards);

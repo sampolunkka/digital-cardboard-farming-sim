@@ -68,7 +68,7 @@ function destroy() {
 	fade_in_alpha = 0.2;
 	alarm[0] = 10;
 	alarm[1] = 30;
-	instance_create_layer(x, y, "Instances", obj_card_destroy_animation);
+	instance_create_layer(x, y, "Animations", obj_card_destroy_animation);
 }
 
 function has_actions() {

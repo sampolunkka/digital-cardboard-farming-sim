@@ -12,8 +12,8 @@
   "name":"obj_card_destroy_animation",
   "overriddenProperties":[],
   "parent":{
-    "name":"Card",
-    "path":"folders/Objects/Card.yy",
+    "name":"Animations",
+    "path":"folders/Objects/Animations.yy",
   },
   "parentObjectId":null,
   "persistent":false,

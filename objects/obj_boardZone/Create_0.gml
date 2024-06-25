@@ -12,13 +12,6 @@ cards = [];
 destroy_cards = [];
 owner = noone;
 
-//image_xscale = 6;
-//image_yscale = 2;
-depth = 20;
-//x = 0;
-//y = 66;
-
-
 slotWidth = 34;
 
 // Override

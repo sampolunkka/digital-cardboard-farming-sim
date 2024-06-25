@@ -8,10 +8,10 @@ if (zone != noone) {
 			if (!card.is_placeholder()) {
 				zone.deleteCard(placeholder);
 				index = ind;
-				placeholder = instance_create_depth(
+				placeholder = instance_create_layer(
 					card.anchorX,
 					card.anchorY,
-					0,
+					"Board",
 					obj_placeholderCard
 				);
 				zone.insertCard(placeholder, index);

@@ -3,7 +3,7 @@
 
 global.debugEnabled = true;
 global.debugZoneCardInfo = true && global.debugEnabled;
-global.debugCardDepth = false && global.debugEnabled;
+global.debugCardDepth = true && global.debugEnabled;
 global.debugShowPlaceholder = true && global.debugEnabled;
 global.debugShowZoneHitbox = true && global.debugEnabled;
 

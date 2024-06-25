@@ -15,35 +15,49 @@ function hoverCard(card) {
 	card.hover();
 }
 
-function moveCard(card, zone) {
-	show_debug_message("Moving card: " + string(card,id));
+function on_enter_zone(_card) {
+	// Set depth
+	layer_add_instance(layer, _card);
+	var depth_offset = 100 - _card.baseDepth % 100;
+	show_debug_message(depth_offset);
+	var target_depth = layer_get_depth(layer) - depth_offset;
+	show_debug_message("Target depth: " + string(target_depth));
+	_card.set_depth(target_depth);
+	_card.depth = target_depth;
+	
+	// Set zone rules
+	_card.face = face;
+	_card.hidden = hidden;
+	_card.setMovement(movementMode);
+	
+	// Set ownership
+	_card.owner = owner;
+}
+
+function moveCard(_card, zone) {
+	show_debug_message("Moving _card: " + string(_card,id));
 	if (zone.isFull()) {
 		show_debug_message("Zone " + zone.label + " is full!");
 		return;
 	}
 	
-	var ind = array_get_index(cards, card);
+	var ind = array_get_index(cards, _card);
 	if (ind >= 0) {
-		removeCardAtIndex(getCardIndex(card));
-		zone.addCard(card);
-		show_debug_message("Moved card: " + string(card.id) + " to zone: " + zone.label );
+		removeCardAtIndex(getCardIndex(_card));
+		zone.addCard(_card);
+		show_debug_message("Moved card: " + string(_card.id) + " to zone: " + zone.label );
 	}
 }
 
-function addCard(card) {
+function addCard(_card) {
 	//show_message("adding card: " + string(card.id) + "to zone: " + label);
 	if (self.isFull()) {
 		show_debug_message("Zone " + label + " is full!");
 		return;
 	}
-	
-	card.face = CardFace.Up;
-	card.hidden = hidden;
-	card.setMovement(movementMode);
-	
-	array_push(cards, card);
-	card.owner = owner;
-	on_add(card);
+	on_enter_zone(_card);	
+	array_push(cards, _card);
+	on_add(_card);
 	refresh();
 }
 
@@ -66,13 +80,13 @@ function replace_card_at_index(index, replacement) {
 	instance_destroy(card);
 }
 
-function insertCard(card, index) {
+function insertCard(_card, index) {
 	var temp = cards;
-	show_debug_message("insert card: " + mask_instance_ref(card) + " " + card.label + " to zone: " + mask_instance_ref(self) + " " + label);
-	array_insert(temp, index, card);
+	show_debug_message("insert card: " + mask_instance_ref(_card) + " " + _card.label + " to zone: " + mask_instance_ref(self) + " " + label);
+	array_insert(temp, index, _card);
 	cards = temp;
-	card.owner = owner;
-	on_insert(card);
+	on_enter_zone(_card);	
+	on_insert(_card);
 	refresh();
 }
 

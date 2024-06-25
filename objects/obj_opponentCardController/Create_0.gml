@@ -3,7 +3,11 @@
 deck = instance_create_layer(7, -20, "Instances", obj_deckZone);
 drag = noone;
 hand = instance_create_layer(x, y, "Instances", obj_opponent_hand_zone);
-board = instance_nearest(x, y, obj_boardZone);
+board = instance_create_layer(8, 34, "Board", obj_boardZone);
+	
+// Init board
+board.image_xscale = 28;
+board.image_yscale = 4;
 
 deck.owner = obj_opponent;
 hand.owner = obj_opponent;
@@ -35,7 +39,7 @@ function draw() {
 function play_card() {
 	var card = hand.getTopCard();
 	card.face = CardFace.Up;
-	var anim = instance_create_depth(card.x, card.y, -200, obj_card_cast_animation);
+	var anim = instance_create_layer(card.x, card.y, "Underlay", obj_card_cast_animation);
 	anim.card = card;
 	card.setMovement(board.movementMode);
 	hand.moveCard(card, board);

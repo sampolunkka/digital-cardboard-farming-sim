@@ -10,7 +10,7 @@ controller = noone;
 deck = [0, 1, 0, 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0];
 
 function init() {
-	controller = instance_create_depth(x,y,0,obj_opponentCardController);
+	controller = instance_create_layer(x,y,"Instances",obj_opponentCardController);
 	controller.init_with(deck);
 }
 

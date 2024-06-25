@@ -10,11 +10,11 @@ face = CardFace.Up;
 x = room_width/2;
 y = room_height/2 - 44;
 
-selected_zone = instance_create_layer(x, y, "Instances", obj_mulligan_selected_zone);
+selected_zone = instance_create_layer(x, y, "Board", obj_mulligan_selected_zone);
 hand = noone;
 deck = noone;
 turn_controller = noone;
-confirm_button = instance_create_layer(x, y - 20, "Instances", obj_confirm_button);
+confirm_button = instance_create_layer(x, y - 20, "Overlay", obj_confirm_button);
 
 slot_width = 32;
 

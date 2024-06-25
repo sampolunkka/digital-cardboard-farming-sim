@@ -4,7 +4,7 @@
 for(var i = 0; i < array_length(cards); i++) {
 	var card = cards[i];
 	if(card.highlighted == true) {
-		card.depth = -1000;
+		card.depth = -100;
 		if(card.yOffset <= card.highlightMovementDistance) {
 			card.yOffset++;
 		}
