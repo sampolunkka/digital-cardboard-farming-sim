@@ -36,7 +36,6 @@ function start_opponent_turn() {
 	var controller = opponent.get_controller();
 	controller.board.remove_fatigue();
 	controller.start_turn();
-	end_turn();
 }
 
 function end_turn() {

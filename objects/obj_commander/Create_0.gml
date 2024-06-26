@@ -1,5 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+// STATS
+resource = 0;
+resourceMax = resource;
+resource_cap = 10;
+max_hp = 15;
+hp = max_hp;
+attack = 0;
+
 function draw() {
 	controller.draw();
 }
@@ -33,6 +42,21 @@ function add_resource_full() {
 
 function addResourceEmpty() {
 	resourceMax++;
+}
+
+function on_damage(_damage) {
+	hp-=_damage;
+}
+
+function deal_damage(_damage) {
+	on_damage(_damage);
+}
+
+function heal_damage(_heal) {
+	hp = min(max_hp, hp + _heal);
+}
+
+function after_damage() {
 }
 
 function refresh() {

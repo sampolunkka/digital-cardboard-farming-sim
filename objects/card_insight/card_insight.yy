@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Spells",
-    "path":"folders/Objects/Card/Spells.yy",
+    "path":"folders/Objects/Cards/Spells.yy",
   },
   "parentObjectId":{
     "name":"obj_spell_card",

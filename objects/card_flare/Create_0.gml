@@ -13,7 +13,7 @@ face_up_sprite = spr_card_flare;
 
 // Targeting
 targeted = true;
-target_type = TargetType.Unit;
+target_type = TargetType.Any;
 target = noone;
 
 

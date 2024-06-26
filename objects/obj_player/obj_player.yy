@@ -9,8 +9,8 @@
   "name":"obj_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Commanders",
+    "path":"folders/Objects/Commanders.yy",
   },
   "parentObjectId":{
     "name":"obj_commander",

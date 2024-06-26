@@ -8,7 +8,7 @@ grave = noone;
 highlight_zone = noone;
 board = noone;
 mulligan = noone;
-player = noone;
+commander = noone;
 
 drag_hand_index = -1;
 
@@ -56,7 +56,7 @@ function place() {
 
 function play_unit(_card) {
 	if (instance_exists(obj_placeholderCard)) {
-		if (player.payForCard(_card)) {
+		if (commander.payForCard(_card)) {
 			var anim = instance_create_layer(_card.x, _card.y, "Underlay", obj_card_cast_animation);
 			anim.card = _card;
 			board.insertCard(_card, board.getIndexAtX(mouse_x));
@@ -72,8 +72,10 @@ function play_spell(_card) {
 		var targeting_controller = instance_create_layer(highlight_zone.x, highlight_zone.y, "Instances", obj_targeting_controller);
 		targeting_controller.init_with(_card, _card.target_type, hand, grave);
 	} else {
-		if (player.payForCard(_card)) {
+		if (commander.payForCard(_card)) {
+			drag.moveCard(_card, highlight_zone);
 			_card.on_cast(noone, hand, grave);
+			highlight_zone.move_to_grave_delayed();
 		}
 	}
 }
@@ -88,9 +90,8 @@ function place_in_hand(_card) {
 function play_card() {
 	var card = drag.getCard();
 	var zone = board;
-	var player = player_get_active(); // TODO: refactor this
 	if (instance_exists(obj_placeholderCard)) {
-		if (player.payForCard(card)) {
+		if (commander.payForCard(card)) {
 			var anim = instance_create_layer(card.x, card.y, "Underlay", obj_card_cast_animation);
 			anim.card = card;
 			card.setMovement(zone.movementMode);
@@ -157,8 +158,8 @@ function getHoveredCardInZone(zone) {
 	}
 }
 
-function init_with(_player) {
-	player = _player;
+function init_with(_card_ids, _commander) {
+	commander = _commander;
 	deck = instance_create_layer(203, 118, "Board", obj_deckZone);
 	drag = instance_create_layer(x, y, "Drag", obj_dragZone);
 	hand = instance_create_layer(x, y, "Hand", obj_handZone);
@@ -174,7 +175,7 @@ function init_with(_player) {
 	highlight_zone.init_with(grave);
 	
 	// Init deck
-	deck.init_with(global.active_deck);
+	deck.init_with(_card_ids);
 	deck.refresh();
 	
 	// Set ownership of zones
@@ -183,6 +184,7 @@ function init_with(_player) {
 	hand.owner = obj_player;
 	board.owner = obj_player;
 	grave.owner = obj_player;
+	highlight_zone.owner = obj_player;
 	
 	// Init mulligan and turn controller
 	mulligan = instance_create_layer(x, y, "Board", obj_mulligan_zone);

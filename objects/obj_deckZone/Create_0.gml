@@ -49,3 +49,12 @@ function on_add(_card) {
 function on_insert(_card) {
 	_card.face = CardFace.Down;
 }
+
+function draw(_hand, _n) {
+	_n = _n ?? 1;
+	for (var i = 0; i < _n; i++) {
+		var card = getTopCard();
+		moveCard(card, _hand);
+		_hand.refresh();
+	}
+}

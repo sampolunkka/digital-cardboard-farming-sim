@@ -11,6 +11,18 @@ enum Zone {
 	Board
 }
 
+enum Tag {
+	Early,
+	Mid,
+	Late,
+	SpotRemoval,
+	Ping,
+	BoardClear,
+	Draw,
+	Heal,
+	Reach
+}
+
 // ATTRIBUTES
 type = CardType.Unique;
 label = "card";
@@ -63,6 +75,9 @@ index = 0;
 
 // Interaction
 interaction = Interaction.None;
+
+// Tags for sorting and AI
+tags = [];
 
 function set_face(face) {
 	self.face = face;

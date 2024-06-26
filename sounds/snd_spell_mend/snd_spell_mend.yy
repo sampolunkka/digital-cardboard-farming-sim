@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_spell_mend",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":3.75,
+  "name":"snd_spell_mend",
+  "parent":{
+    "name":"Spells",
+    "path":"folders/Sounds/Spells.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_spell_mend.wav",
+  "type":0,
+  "volume":0.8,
+}

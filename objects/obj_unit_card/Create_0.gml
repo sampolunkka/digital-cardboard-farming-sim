@@ -2,9 +2,9 @@ event_inherited();
 
 type = CardType.Unit;
 
-baseHp = 1;
-hp = baseHp;
-max_hp = baseHp;
+base_hp = 1;
+hp = base_hp;
+max_hp = base_hp;
 baseAttack = 1;
 attack = baseAttack;
 target_type = TargetType.Enemies;
@@ -14,14 +14,16 @@ on_attack_sound = snd_card_move;
 on_death_sound = snd_card_draw;
 
 function start_combat(target) {
-	target.onDamage(attack);
-	self.onDamage(target.attack);
+	target.on_damage(attack);
+	self.on_damage(target.attack);
 	
-	target.afterDamage();
-	self.afterDamage();
+	target.after_damage();
+	self.after_damage();
+	
+	self.after_attack();
 }
 
-function onDamage(damage) {
+function on_damage(damage) {
 	var total_damage = damage;
 	
 	for (var i = 0; i < array_length(before_damage_actions); i++) {
@@ -47,7 +49,7 @@ function onSummon() {
 }
 
 
-function afterDamage() {
+function after_damage() {
 	// Check if dies
 	if (hp <= 0) {
 		zone = collision_point(x, y, obj_zone, false, true);
@@ -55,9 +57,13 @@ function afterDamage() {
 	}
 }
 
+function after_attack() {
+	fatigued = true;
+}
+
 function deal_damage(_damage) {
-	onDamage(_damage);
-	afterDamage();
+	on_damage(_damage);
+	after_damage();
 }
 
 function heal_damage(_heal) {
@@ -68,7 +74,7 @@ function destroy() {
 	fade_in_alpha = 0.2;
 	alarm[0] = 10;
 	alarm[1] = 30;
-	instance_create_layer(x, y, "Animations", obj_card_destroy_animation);
+	instance_create_layer(x, y, "Underlay", obj_card_destroy_animation);
 }
 
 function has_actions() {

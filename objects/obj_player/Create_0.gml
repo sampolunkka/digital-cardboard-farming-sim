@@ -14,7 +14,7 @@ controller = noone;
 
 function init() {
 	controller = instance_create_layer(x, y, "Instances", obj_playerCardController);
-	controller.init_with(id);
+	controller.init_with(global.active_deck, id);
 }
 
 init();

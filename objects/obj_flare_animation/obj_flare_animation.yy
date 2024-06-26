@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spell_flare",
-    "path":"sprites/spr_spell_flare/spr_spell_flare.yy",
+    "name":"spr_flare_spell",
+    "path":"sprites/spr_flare_spell/spr_flare_spell.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Units",
-    "path":"folders/Objects/Card/Units.yy",
+    "path":"folders/Objects/Cards/Units.yy",
   },
   "parentObjectId":{
     "name":"obj_unit_card",

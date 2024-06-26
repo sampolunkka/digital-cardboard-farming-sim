@@ -6,8 +6,8 @@ event_inherited();
 
 label = "Miner";
 cost = 4;
-baseHp = 2;
-hp = baseHp;
+base_hp = 2;
+hp = base_hp;
 baseAttack = 3;
 attack = baseAttack;
 on_play_actions = [act_gainResourceEmpty];

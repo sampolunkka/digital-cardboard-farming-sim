@@ -7,11 +7,11 @@ resource = 0;
 resourceMax = resource;
 controller = noone;
 
-deck = [0, 1, 0, 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0, 1, 0 , 1, 0, 1, 0];
+deck = [6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6];
 
 function init() {
 	controller = instance_create_layer(x,y,"Instances",obj_opponentCardController);
-	controller.init_with(deck);
+	controller.init_with(deck, id);
 }
 
 init();

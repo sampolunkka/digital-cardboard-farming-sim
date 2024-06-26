@@ -10,7 +10,7 @@ if (drag.isFull()) {
 		place_in_hand(card);
 	
 	// Play card on board
-	} else if (zone == board && player.resource >= card.cost) {
+	} else if (zone == board && commander.resource >= card.cost) {
 		if (card.type == CardType.Unit) {
 			play_unit(card);
 		} else if (card.type == CardType.Spell) {

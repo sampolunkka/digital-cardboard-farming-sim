@@ -9,8 +9,8 @@
   "name":"obj_card",
   "overriddenProperties":[],
   "parent":{
-    "name":"Card",
-    "path":"folders/Objects/Card.yy",
+    "name":"Cards",
+    "path":"folders/Objects/Cards.yy",
   },
   "parentObjectId":{
     "name":"obj_interactable",
