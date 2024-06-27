@@ -55,9 +55,15 @@ function determine_next_action() {
 	if (highest_playable != noone) {
 		play_card(highest_playable);
 		took_action = true;
+		
 	// Attack if able
 	} else {
-
+		var attacking_units = get_attacking_units();
+		if (array_length(attacking_units) > 0) {
+			var attack_target = get_favorable_attack_for(attacking_units[0]);
+			attacking_units[0].start_combat(attack_target);
+			took_action = true;
+		}
 	}
 	
 	if (took_action == false) {
@@ -81,6 +87,60 @@ function get_highest_playable() {
 		}
 	}
 	return highest_playable;
+}
+
+function get_attacking_units() {
+	var non_fatigued_units = array_create();
+	for (var i = 0; i < board.getSize(); i++) {
+		var unit = board.cards[i];
+		if (!unit.fatigued) {
+			array_push(non_fatigued_units, unit);
+		}
+	}
+	return non_fatigued_units;
+}
+
+function get_favorable_attack_for(_unit) {
+	var player = instance_nearest(x, y, obj_player);
+	var player_board = player.controller.board;
+	var target = noone;
+	
+	if (player_board.getSize() > 0) {
+		var value_trades = array_create();
+		var chump_trades = array_create();
+		
+		for (var i = 0; i < player_board.getSize(); i++) {
+			var player_unit = player_board.getIndex(i);
+			
+			// Value trades
+			if (player_unit.hp <= _unit.attack && player_unit.attack < _unit.hp) {
+				array_push(value_trades, player_unit);
+			
+			// Chump trades
+			} else if (player_unit.hp <= _unit.attack) {
+				array_push(chump_trades, player_unit);
+			}
+		}
+		
+		// Sort for highest stat total
+		var _sort = function(unit1, unit2){
+			var stats1 = unit1.hp + unit1.attack;
+			var stats2 = unit2.hp + unit2.attack;
+			return stats2 - stats1;
+		}
+		
+		array_sort(value_trades, _sort);
+		array_sort(chump_trades, _sort);
+		
+		// Priority: value trade -> chump trade -> face
+		if (array_length(value_trades) > 0) {
+			show_debug_message()
+			target = value_trades[0];
+		} else if (array_length(chump_trades) > 0) {
+			target = chump_trades[0];
+		}
+	}
+	return target ?? player;
 }
 
 function play_card(_card) {
