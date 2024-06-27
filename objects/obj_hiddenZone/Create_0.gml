@@ -3,6 +3,7 @@
 event_inherited();
 
 hidden = true;
+max_size = 1000;
 
 
 function on_insert(card) {

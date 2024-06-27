@@ -2,6 +2,7 @@ event_inherited();
 
 type = CardType.Unit;
 
+cost = 0;
 base_hp = 1;
 hp = base_hp;
 max_hp = base_hp;
@@ -52,8 +53,11 @@ function onSummon() {
 function after_damage() {
 	// Check if dies
 	if (hp <= 0) {
-		zone = collision_point(x, y, obj_zone, false, true);
-		zone.refresh();
+		var n = instance_number(obj_boardZone);
+		for (var i = 0; i < n; i++) {
+			var board = instance_find(obj_boardZone, i);
+			board.set_destroy(id);
+		}
 	}
 }
 

@@ -20,3 +20,8 @@ actions_string = "§+$"
 on_play_sound = vox_acolyte_play;
 on_attack_sound = vox_acolyte_attack;
 on_death_sound = vox_acolyte_death;
+
+function trigger_on_play() {
+	var commander = instance_nearest(0, 0, owner);
+	owner.draw();
+}

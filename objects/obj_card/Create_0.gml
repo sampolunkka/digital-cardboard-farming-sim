@@ -117,12 +117,14 @@ function is_placeholder() {
 function on_play() {
 	if (type == CardType.Unit) {
 		onSummon();
+		trigger_on_play();
 	}
-	
-	for (var i = 0; i < array_length(on_play_actions); i++) {
-		var action = action_create(on_play_actions[i], self, [player_get_active()]);
-		action.trigger();
-	}
+}
+
+function trigger_on_play() {
+}
+
+function trigger_on_death() {
 }
 
 // TODO: smooth hover movement

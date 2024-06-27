@@ -19,14 +19,15 @@
   "height":42,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"16f8a5bf-c871-4caf-b030-49bfbc10002c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"16f8a5bf-c871-4caf-b030-49bfbc10002c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"ab8a51ed-d05c-44c6-bd80-2235605be6e8","blendMode":0,"displayName":"default","isLocked":false,"name":"ab8a51ed-d05c-44c6-bd80-2235605be6e8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_card_purify",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Card",
-    "path":"folders/Sprites/Card.yy",
+    "name":"Spells",
+    "path":"folders/Sprites/Card/Spells.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

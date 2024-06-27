@@ -9,8 +9,10 @@ label = "Board";
 max_size = 4;
 movementMode = CardMovementMode.Slow;
 cards = [];
-destroy_cards = [];
+destroyed_cards = [];
+destroy_delay = 40;
 owner = noone;
+grave = noone;
 
 slotWidth = 34;
 
@@ -39,14 +41,14 @@ function refresh() {
 		if (instance_exists(temp[i])) {
 			temp[i].set_position(ax + (i * slotWidth), ay);
 			if (temp[i].hp <= 0) {
-				array_push(destroy_cards, temp[i]);
+				array_push(destroyed_cards, temp[i]);
 				temp[i].destroy();
 			}
 		}
 	}
 	
-	if (array_length(destroy_cards) > 0) {
-		alarm[0] = 50;
+	if (array_length(destroyed_cards) > 0) {
+		alarm[0] = destroy_delay;
 	}
 	cards = temp;
 }
@@ -57,4 +59,10 @@ function remove_fatigue() {
 			cards[i].fatigued = false;
 		}
 	}
+}
+
+function set_destroy(_card) {
+	array_push(destroyed_cards, _card);
+	_card.destroy();
+	alarm[0] = destroy_delay;
 }

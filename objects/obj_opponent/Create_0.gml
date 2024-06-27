@@ -7,7 +7,7 @@ resource = 0;
 resourceMax = resource;
 controller = noone;
 
-deck = [6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6];
+deck = [6,6,6,6,7,7,7,7,8,8,8,8,0,0,0,0,6,6,6,6];
 
 function init() {
 	controller = instance_create_layer(x,y,"Instances",obj_opponentCardController);

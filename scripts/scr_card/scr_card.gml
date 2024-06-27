@@ -9,7 +9,9 @@ global.library[3] = card_purify;
 global.library[4] = card_gallant;
 global.library[5] = card_mend;
 global.library[6] = card_ghoul;
-global.library[7] = card_ronin;
+global.library[7] = card_terror;
+global.library[8] = card_lich;
+global.library[9] = card_ronin;
 
 enum CardFace {
 	Up,

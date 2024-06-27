@@ -1,14 +1,18 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-global.debugEnabled = false;
+global.debugEnabled = true;
 global.debugZoneCardInfo = true && global.debugEnabled;
 global.debugCardDepth = true && global.debugEnabled;
 global.debugShowPlaceholder = true && global.debugEnabled;
 global.debugShowZoneHitbox = true && global.debugEnabled;
 
-function scr_global_debug(){
-
+function debug_toggle() {
+	global.debugEnabled = !global.debugEnabled;
+	global.debugZoneCardInfo = true && global.debugEnabled;
+	global.debugCardDepth = true && global.debugEnabled;
+	global.debugShowPlaceholder = true && global.debugEnabled;
+	global.debugShowZoneHitbox = true && global.debugEnabled;
 }
 
 function debug_show_zone_card_info() {

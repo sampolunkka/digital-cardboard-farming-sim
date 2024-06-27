@@ -22,3 +22,17 @@ tags = [Tag.Mid, Tag.Ping];
 on_play_sound = vox_undead_1_play;
 on_attack_sound = vox_undead_1_attack;
 on_death_sound = vox_undead_1_death;
+
+// On play
+damage = 1;
+
+function trigger_on_play() {
+	for (var i = 0; i < instance_number(obj_unit_card); i++) {
+		var unit = instance_find(obj_unit_card, i);
+		if (unit.owner != owner && unit.on_board) {
+			unit.deal_damage(damage);
+		}
+	}
+	var anim = instance_create_layer(card_get_center_x(id), card_get_center_y(id), "Animations", obj_lich_on_play_animation);
+	anim.card = id;
+}
