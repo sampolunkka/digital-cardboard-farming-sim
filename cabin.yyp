@@ -302,6 +302,7 @@
     {"id":{"name":"spr_deck_highlight","path":"sprites/spr_deck_highlight/spr_deck_highlight.yy",},},
     {"id":{"name":"spr_deck_save_button_1","path":"sprites/spr_deck_save_button_1/spr_deck_save_button_1.yy",},},
     {"id":{"name":"spr_deck","path":"sprites/spr_deck/spr_deck.yy",},},
+    {"id":{"name":"spr_draw_draft","path":"sprites/spr_draw_draft/spr_draw_draft.yy",},},
     {"id":{"name":"spr_draw","path":"sprites/spr_draw/spr_draw.yy",},},
     {"id":{"name":"spr_fade_black","path":"sprites/spr_fade_black/spr_fade_black.yy",},},
     {"id":{"name":"spr_farm","path":"sprites/spr_farm/spr_farm.yy",},},

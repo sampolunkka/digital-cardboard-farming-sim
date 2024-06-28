@@ -24,7 +24,8 @@ function on_cast(_target, _hand, _grave) {
 	_target.deal_damage(damage);
 }
 
-function draw_effect() {
+function draw_effect(_x, _y) {
+		draw_damage(_x, _y, damage);
 }
 
 

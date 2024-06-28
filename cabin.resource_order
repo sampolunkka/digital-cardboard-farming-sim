@@ -242,6 +242,7 @@
     {"name":"spr_deck_highlight","order":8,"path":"sprites/spr_deck_highlight/spr_deck_highlight.yy",},
     {"name":"spr_deck_save_button_1","order":6,"path":"sprites/spr_deck_save_button_1/spr_deck_save_button_1.yy",},
     {"name":"spr_deck","order":2,"path":"sprites/spr_deck/spr_deck.yy",},
+    {"name":"spr_draw_draft","order":16,"path":"sprites/spr_draw_draft/spr_draw_draft.yy",},
     {"name":"spr_draw","order":8,"path":"sprites/spr_draw/spr_draw.yy",},
     {"name":"spr_farm","order":3,"path":"sprites/spr_farm/spr_farm.yy",},
     {"name":"spr_fatigue_symbol","order":10,"path":"sprites/spr_fatigue_symbol/spr_fatigue_symbol.yy",},

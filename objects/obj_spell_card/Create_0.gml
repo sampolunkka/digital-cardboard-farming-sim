@@ -9,3 +9,7 @@ targeted = true;
 function on_cast(_target, _hand, _grave) {
 	_hand.deleteCard(self);
 }
+
+function draw_effect() {
+	
+}

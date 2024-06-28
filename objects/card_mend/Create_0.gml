@@ -6,9 +6,7 @@ event_inherited();
 label = "Mend";
 cost = 1;
 
-info = "Spell\nHeal 1, draw a card";
 portrait = noone;
-actions_string = "+#\n+$"
 face_up_sprite = spr_card_mend;
 
 // Targeting
@@ -17,7 +15,9 @@ target_type = TargetType.Any;
 target = noone;
 
 heal = 1;
+card_draw = 1;
 
+info = "Spell\nHeal " + string(heal) + ". Draw " + string(card_draw) + ".";
 
 // @Override
 function on_cast(_target, _hand, _grave) {
@@ -28,6 +28,11 @@ function on_cast(_target, _hand, _grave) {
 	_target.heal_damage(heal);
 }
 
+function draw_effect(_x, _y) {
+		draw_heal(_x, _y, heal);
+		var draw_x = _x + 8;
+		draw_card_draw(draw_x, _y, card_draw);
+}
 
 
 

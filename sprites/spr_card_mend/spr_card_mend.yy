@@ -19,7 +19,9 @@
   "height":42,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"89634d1f-50c2-48f1-9555-1992320b2d51","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"89634d1f-50c2-48f1-9555-1992320b2d51","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"89634d1f-50c2-48f1-9555-1992320b2d51","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"89634d1f-50c2-48f1-9555-1992320b2d51","opacity":70.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"cc985d0e-e450-4777-9a8a-1558ad2144e9","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"cc985d0e-e450-4777-9a8a-1558ad2144e9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"18e45199-4507-4513-bac9-08ce4f42d191","blendMode":0,"displayName":"Layer 3","isLocked":false,"name":"18e45199-4507-4513-bac9-08ce4f42d191","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"dd747493-cb11-406e-87ef-0bb1973430c3","blendMode":0,"displayName":"default","isLocked":false,"name":"dd747493-cb11-406e-87ef-0bb1973430c3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_card_mend",
