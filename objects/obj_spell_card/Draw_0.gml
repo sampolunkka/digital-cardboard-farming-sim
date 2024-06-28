@@ -8,9 +8,13 @@ if (face == CardFace.Up) {
 	// Draw card sprite
 	sprite_index = face_up_sprite;
 	draw_self();
+	draw_sprite(spr_card_stats_underlay, on_board ? 1 : 0, x, y);
 
-	// Draw cost	
-	draw_text_color(x + 3, y + 1, cost, c_white, c_white, c_yellow, c_white, 1);
+	// Draw cost and label
+	if (!on_board) {
+		draw_text_shadow(x + 4, y + 1, label, 0.6);
+		draw_mana(x + 1, y + 10, string(cost));
+	}
 	
 	// Draw effect
 	draw_effect(x + effect_offset_x, y + effect_offset_y);

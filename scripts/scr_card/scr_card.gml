@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 global.library = [];
-global.library[0] = card_acolyte;
+global.library[0] = card_novice;
 global.library[1] = card_ronin;
 global.library[2] = card_flare;
 global.library[3] = card_purify;

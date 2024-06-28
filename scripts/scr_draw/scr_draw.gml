@@ -11,7 +11,7 @@ enum OverlayType {
 	Heal,
 	Hp,
 	Mana,
-	
+	NamePlate,
 }
 
 function draw_text_shadow(tx, ty, str, _alpha) {
@@ -77,6 +77,7 @@ function draw_overlay_value(_x, _y, _amount, _type) {
 		case OverlayType.Hp: sprite = spr_hp; break;
 		case OverlayType.Heal: sprite = spr_heal; break;
 		case OverlayType.Mana: sprite = spr_mana; break;
+		case OverlayType.NamePlate: sprite = spr_name_plate; break;
 	}
 	
 	var draw_x = _x;
@@ -98,4 +99,8 @@ function draw_hp(_x, _y, _amount) {
 
 function draw_mana(_x, _y, _amount) {
 	draw_overlay_value(_x, _y, _amount, OverlayType.Mana);
+}
+
+function draw_name_plate(_x, _y, _string) {
+	draw_overlay_value(_x, _y, _string, OverlayType.NamePlate);
 }

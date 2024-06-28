@@ -38,6 +38,7 @@ function trigger_on_play() {
 }
 
 function draw_effect(_x, _y) {
-	draw_text_shadow(_x, _y, "E");
-	draw_damage(_x + 5, _y, "!1");
+	//draw_text_shadow(_x, _y, "E");
+	draw_sprite_ext(spr_effect_underlay, 0, x, y + sprite_height - sprite_get_height(spr_effect_underlay), 1, 1, 0, c_white, 0.6);
+	draw_damage(_x, _y, "E!1");
 }

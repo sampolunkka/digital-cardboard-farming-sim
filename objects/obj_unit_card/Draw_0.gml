@@ -26,17 +26,18 @@ if (face == CardFace.Up) {
 	// Card effect will cause stats to shift north
 	var stats_offset_y = 7;
 	
-	// Draw cost
 	if (!on_board) {
-		draw_mana(x + 1, y + 8, string(cost));
+		// Label
+		draw_text_shadow(x + 4, y + 1, label, 0.6);
+		// Cost
+		draw_mana(x + 1, y + 10, string(cost));
+		// Effect
+		draw_effect(x + 7 + string_width(attack), y + sprite_height - 9);
 	}
 
 	// Draw stats
 	draw_attack(x + 1, y + sprite_height - 17, string(attack));
 	draw_hp(x + 1, y + sprite_height - 9, string(hp));
-	
-	// Draw effect
-	draw_effect(x + stats_offset_x, y + sprite_height - 25);
 	
 	if (fatigued) {
 		draw_sprite(spr_fatigue_symbol, 0, x + sprite_width, y);

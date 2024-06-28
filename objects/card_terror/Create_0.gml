@@ -4,7 +4,7 @@
 event_inherited();
 
 type = CardType.Unit;
-label = "Ghoul";
+label = "Terror";
 cost = 4;
 baseAttack = 5;
 base_hp = 4;

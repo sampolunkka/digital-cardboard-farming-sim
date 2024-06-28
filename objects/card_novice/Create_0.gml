@@ -4,16 +4,16 @@
 event_inherited();
 
 type = CardType.Unit;
-label = "Acolyte";
+label = "Novice";
 cost = 3;
 baseAttack = 2;
 base_hp = 1;
 attack = baseAttack;
 hp = base_hp;
 on_play_actions = [obj_drawAction];
-info = "Acolyte\nUnit: 2/1\nOn play: draw a card";
-face_up_sprite = spr_card_acolyte;
-on_board_sprite = spr_card_acolyte_small;
+info = "Novice\nUnit: 2/1\nOn play: draw a card";
+face_up_sprite = spr_card_novice;
+on_board_sprite = spr_card_novice_small;
 actions_string = "§+$"
 
 // Sounds
