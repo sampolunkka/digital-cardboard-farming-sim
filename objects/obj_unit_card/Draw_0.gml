@@ -19,9 +19,8 @@ if (face == CardFace.Up) {
 	} else {
 		sprite_index = face_up_sprite;
 	}
-	
 	draw_self();
-	
+	draw_sprite(spr_card_stats_underlay, on_board ? 1 : 0, x, y);
 	draw_set_font(global.labelFont);
 	
 	// Card effect will cause stats to shift north
@@ -29,12 +28,12 @@ if (face == CardFace.Up) {
 	
 	// Draw cost
 	if (!on_board) {
-		draw_text_color(x + 3, y + 1, cost, c_white, c_white, c_yellow, c_white, 1);
+		draw_mana(x + 1, y + 8, string(cost));
 	}
-	
+
 	// Draw stats
-	draw_attack(x + 2, y + sprite_height - 8, string(attack));
-	draw_hp(x + 7 + string_width(attack), y + sprite_height - 8, string(hp));
+	draw_attack(x + 1, y + sprite_height - 17, string(attack));
+	draw_hp(x + 1, y + sprite_height - 9, string(hp));
 	
 	// Draw effect
 	draw_effect(x + stats_offset_x, y + sprite_height - 25);
