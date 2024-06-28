@@ -26,10 +26,10 @@ if (!fixed) {
 
 // Draw box
 draw_set_color(c_black);
-draw_set_alpha(0.6);
+draw_set_alpha(0.8);
 draw_rectangle(tx1, ty1, tx2, ty2, false);
 draw_set_alpha(1);
 
 // Draw text
 draw_set_color(c_white);
-draw_text(tx1 + 1, ty1, formattedText);
+draw_text_shadow(tx1 + 1, ty1, formattedText);

@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"vox_undead_1_attack.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.62,
 }

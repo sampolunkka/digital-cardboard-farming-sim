@@ -21,6 +21,10 @@ deck.y = 0;
 
 commander = noone;
 
+// For attack delay
+attack_target = noone;
+attacking_unit = noone;
+
 for (var i = 0; i < array_length(board.cards); i++) {
 	board.cards[i].onSummon();
 }
@@ -60,8 +64,9 @@ function determine_next_action() {
 	} else {
 		var attacking_units = get_attacking_units();
 		if (array_length(attacking_units) > 0) {
-			var attack_target = get_favorable_attack_for(attacking_units[0]);
-			attacking_units[0].start_combat(attack_target);
+			attack_target = get_favorable_attack_for(attacking_units[0]);
+			attacking_unit = attacking_units[0];
+			alarm[2] = 20;
 			took_action = true;
 		}
 	}
@@ -103,7 +108,7 @@ function get_attacking_units() {
 function get_favorable_attack_for(_unit) {
 	var player = instance_nearest(x, y, obj_player);
 	var player_board = player.controller.board;
-	var target = noone;
+	var target = undefined;
 	
 	if (player_board.getSize() > 0) {
 		var value_trades = array_create();
@@ -118,7 +123,9 @@ function get_favorable_attack_for(_unit) {
 			
 			// Chump trades
 			} else if (player_unit.hp <= _unit.attack) {
-				array_push(chump_trades, player_unit);
+				if (player_unit.hp + player_unit.attack > _unit.hp + _unit.attack) {
+					array_push(chump_trades, player_unit);
+				}
 			}
 		}
 		

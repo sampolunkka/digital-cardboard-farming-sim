@@ -19,6 +19,6 @@ actions_string = ""
 tags = [Tag.Mid];
 
 // Sounds
-on_play_sound = vox_undead_1_play;
-on_attack_sound = vox_undead_1_attack;
-on_death_sound = vox_undead_1_death;
+on_play_sound = vox_monster_1_play;
+on_attack_sound = vox_monster_1_attack;
+on_death_sound = vox_monster_1_death;
