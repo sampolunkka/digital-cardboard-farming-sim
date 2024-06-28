@@ -4,6 +4,14 @@ function scr_global_text(){
 
 }
 
+enum OverlayType {
+	Attack,
+	Damage,
+	Draw,
+	Heal,
+	Hp,
+}
+
 function draw_text_shadow(tx, ty, str, _alpha) {
 	_alpha = _alpha ?? 1;
 	if (!is_string(str)){
@@ -55,4 +63,32 @@ function draw_card_draw(_x, _y, _amount) {
 	draw_sprite_stretched(spr_draw, 1, draw_x, _y, string_w, sprite_get_height(spr_draw));
 	draw_sprite(spr_draw, 2, draw_x + string_w, _y);
 	draw_text_shadow(draw_x, _y, string(_amount), 0.6);
+}
+
+function draw_overlay_value(_x, _y, _amount, _type) {
+	var sprite;
+	
+	switch (_type) {
+		case OverlayType.Attack: sprite = spr_attack; break;
+		case OverlayType.Damage: sprite = spr_damage; break;
+		case OverlayType.Draw: sprite = spr_draw; break;
+		case OverlayType.Hp: sprite = spr_hp; break;
+		case OverlayType.Heal: sprite = spr_heal; break;
+	}
+	
+	var draw_x = _x;
+	var string_w = string_width(_amount) - 1;
+	draw_sprite(sprite, 0, draw_x, _y);
+	draw_x += sprite_get_width(sprite);
+	draw_sprite_stretched(sprite, 1, draw_x, _y, string_w, sprite_get_height(sprite));
+	draw_sprite(sprite, 2, draw_x + string_w, _y);
+	draw_text_shadow(draw_x, _y, string(_amount), 0.6);
+}
+
+function draw_attack(_x, _y, _amount) {
+	draw_overlay_value(_x, _y, _amount, OverlayType.Attack)
+}
+
+function draw_hp(_x, _y, _amount) {
+	draw_overlay_value(_x, _y, _amount, OverlayType.Hp)
 }

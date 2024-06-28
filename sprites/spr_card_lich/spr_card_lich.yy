@@ -19,7 +19,7 @@
   "height":42,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"068ee633-50bf-4ff3-b4ec-5b3dced4f7ac","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"068ee633-50bf-4ff3-b4ec-5b3dced4f7ac","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"068ee633-50bf-4ff3-b4ec-5b3dced4f7ac","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"068ee633-50bf-4ff3-b4ec-5b3dced4f7ac","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"2f0ba40d-c21d-4e36-852c-7477080db027","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"2f0ba40d-c21d-4e36-852c-7477080db027","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_card_lich",

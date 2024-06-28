@@ -5,8 +5,8 @@ event_inherited();
 
 label = "Gallant";
 cost = 4;
-baseAttack = 4;
-base_hp = 5;
+baseAttack = 14;
+base_hp = 10;
 max_hp = base_hp;
 attack = baseAttack;
 hp = base_hp;

@@ -11,7 +11,6 @@ fontString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 + "@#§¤*>€$£"
 + "*";
 // @attack, #health, §on_play, ¤ondeath, *on_damage, >onattack, $draw, £mana
-// *target
 
 global.labelFont = font_add_sprite_ext(spr_font_card_label, fontString, true, 1);
 

@@ -6,13 +6,13 @@ event_inherited();
 type = CardType.Unit;
 label = "Lich";
 cost = 3;
-baseAttack = 2;
-base_hp = 2;
+baseAttack = 1;
+base_hp = 1;
 max_hp = base_hp;
 attack = baseAttack;
 hp = base_hp;
 on_play_actions = [];
-info = label + "\nUnit: " + string(attack) + "/" + string(hp);
+info = "Lich\nOn play: Deal 1 damage to all enemies.";
 face_up_sprite = spr_card_lich;
 on_board_sprite = spr_card_lich_small;
 actions_string = ""
@@ -35,4 +35,9 @@ function trigger_on_play() {
 	}
 	var anim = instance_create_layer(card_get_center_x(id), card_get_center_y(id), "Animations", obj_lich_on_play_animation);
 	anim.card = id;
+}
+
+function draw_effect(_x, _y) {
+	draw_text_shadow(_x, _y, "E");
+	draw_damage(_x + 5, _y, "!1");
 }

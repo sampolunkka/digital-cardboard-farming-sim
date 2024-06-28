@@ -25,40 +25,19 @@ if (face == CardFace.Up) {
 	draw_set_font(global.labelFont);
 	
 	// Card effect will cause stats to shift north
-	var stats_offset_y = has_actions() ? -1 : 7;
+	var stats_offset_y = 7;
 	
 	// Draw cost
 	if (!on_board) {
 		draw_text_color(x + 3, y + 1, cost, c_white, c_white, c_yellow, c_white, 1);
 	}
 	
-	// Draw digit underlay for stats
-	draw_sprite_stretched(
-		spr_card_digit_background,
-		0,
-		x + stats_offset_x + string_width("@") - 1,
-		y + sprite_height - 25 + stats_offset_y,
-		string_width(attack) + 1,
-		sprite_get_height(spr_card_digit_background)
-	);
-	
-	draw_sprite_stretched(
-		spr_card_digit_background,
-		0,
-		x + stats_offset_x + string_width("#") - 1,
-		y + sprite_height - 16 + stats_offset_y,
-		string_width(hp) + 1,
-		sprite_get_height(spr_card_digit_background)
-	);	
-	
 	// Draw stats
-	draw_text(x + stats_offset_x, y + sprite_height - 25 + stats_offset_y, "@" + string(attack));
-	draw_text(x + stats_offset_x, y + sprite_height - 16 + stats_offset_y, "#" + string(hp));
+	draw_attack(x + 2, y + sprite_height - 8, string(attack));
+	draw_hp(x + 7 + string_width(attack), y + sprite_height - 8, string(hp));
 	
 	// Draw effect
-	if (has_actions()) {
-		draw_text_shadow(x + stats_offset_x, y + sprite_height - 9, actions_string);
-	}
+	draw_effect(x + stats_offset_x, y + sprite_height - 25);
 	
 	if (fatigued) {
 		draw_sprite(spr_fatigue_symbol, 0, x + sprite_width, y);

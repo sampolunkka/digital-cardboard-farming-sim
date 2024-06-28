@@ -148,3 +148,6 @@ function refresh() {
 		sprite_index = noone;
 	}
 }
+
+function draw_effect(_x, _y) {
+}

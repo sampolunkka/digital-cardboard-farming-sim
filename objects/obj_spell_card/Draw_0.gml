@@ -4,7 +4,7 @@ event_inherited();
 if (face == CardFace.Up) {
 	draw_set_font(global.labelFont);
 	var effect_offset_x = 10;
-	var effect_offset_y = sprite_height - 8;
+	var effect_offset_y = sprite_height - 9;
 	// Draw card sprite
 	sprite_index = face_up_sprite;
 	draw_self();
