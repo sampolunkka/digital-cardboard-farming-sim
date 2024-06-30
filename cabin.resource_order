@@ -128,6 +128,7 @@
     {"name":"obj_opponentCardController","order":3,"path":"objects/obj_opponentCardController/obj_opponentCardController.yy",},
     {"name":"obj_placeHolder","order":9,"path":"objects/obj_placeHolder/obj_placeHolder.yy",},
     {"name":"obj_placeholderController","order":4,"path":"objects/obj_placeholderController/obj_placeholderController.yy",},
+    {"name":"obj_play_unit_event","order":3,"path":"objects/obj_play_unit_event/obj_play_unit_event.yy",},
     {"name":"obj_playerCardController","order":5,"path":"objects/obj_playerCardController/obj_playerCardController.yy",},
     {"name":"obj_roomFadeIn","order":3,"path":"objects/obj_roomFadeIn/obj_roomFadeIn.yy",},
     {"name":"obj_spell_card","order":6,"path":"objects/obj_spell_card/obj_spell_card.yy",},

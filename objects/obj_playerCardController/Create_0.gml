@@ -57,9 +57,12 @@ function place() {
 function play_unit(_card) {
 	if (instance_exists(obj_placeholderCard)) {
 		if (commander.payForCard(_card)) {
-			var anim = instance_create_layer(_card.x, _card.y, "Underlay", obj_card_cast_animation);
-			anim.card = _card;
-			board.insertCard(_card, board.getIndexAtX(mouse_x));
+			var turn_controller = instance_nearest(x, y, obj_turn_controller);
+			var play_unit_event = instance_create_layer(x, y, "Instances", obj_play_unit_event);
+			play_unit_event.board = board;
+			play_unit_event.unit = _card;
+			play_unit_event.board_index = board.getIndexAtX(mouse_x);
+			turn_controller.push_event(play_unit_event);
 			drag.removeCardAtIndex(0);
 			instance_destroy(obj_placeholderController);
 		}

@@ -31,35 +31,3 @@ if (drag.isFull()) {
 		select(card);
 	}
 }
-
-/*
-if (drag.isEmpty()) {
-	var card = getTopmostHoveredCard();
-	//show_message("left pressed on card: " + string(card.id));
-	if (card != noone) {
-		select(card);
-	}
-} else {
-	var card = drag.getTopCard();
-	if (card.type == CardType.Spell) {
-		var zone = collision_point(mouse_x, mouse_y, obj_zone, false, true);
-		if (zone != hand) {
-			if (card.targeted) {
-				if (player.resource >= card.cost) {
-					drag.moveCard(card, highlight_zone);
-					var trgt_con = instance_create_depth(card_get_center_x(card), card_get_center_y(card) ,0,obj_targeting_controller);
-					trgt_con.init(card, card.target_type, hand, grave);
-				}
-			} else {
-				if (player.resource >= card.cost) {
-					player.payForCard(card);
-					card.on_cast(noone, hand, grave);
-				}
-			} 
-		} else {
-			place();
-		}
-	} else if (card.type == CardType.Unit) {
-		place();
-	}
-}*/

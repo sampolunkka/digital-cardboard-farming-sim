@@ -169,6 +169,7 @@
     {"id":{"name":"obj_placeHolder","path":"objects/obj_placeHolder/obj_placeHolder.yy",},},
     {"id":{"name":"obj_placeholderCard","path":"objects/obj_placeholderCard/obj_placeholderCard.yy",},},
     {"id":{"name":"obj_placeholderController","path":"objects/obj_placeholderController/obj_placeholderController.yy",},},
+    {"id":{"name":"obj_play_unit_event","path":"objects/obj_play_unit_event/obj_play_unit_event.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerCardController","path":"objects/obj_playerCardController/obj_playerCardController.yy",},},
     {"id":{"name":"obj_playerPhase","path":"objects/obj_playerPhase/obj_playerPhase.yy",},},
