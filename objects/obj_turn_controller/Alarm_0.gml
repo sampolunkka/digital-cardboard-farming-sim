@@ -6,5 +6,8 @@ if (array_length(events) > 0) {
 	alarm[0] = event_timer;
 } else {
 	show_debug_message("Event chain stopped");
+	for (var i = 0; i < instance_number(obj_board); i++) {
+		instance_find(obj_board, i).refresh();
+	}
 	event_chain_running = false
 }

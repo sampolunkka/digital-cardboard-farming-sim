@@ -54,11 +54,10 @@ function onSummon() {
 function after_damage() {
 	// Check if dies
 	if (hp <= 0) {
-		var n = instance_number(obj_boardZone);
-		for (var i = 0; i < n; i++) {
-			var board = instance_find(obj_boardZone, i);
-			board.set_destroy(id);
-		}
+		var turn_controller = instance_nearest(x, y, obj_turn_controller);
+		var destroy_event = instance_create_layer(x, y, "Instances", obj_destroy_unit_event);
+		destroy_event.unit = id;
+		turn_controller.push_event(destroy_event);
 	}
 }
 
@@ -79,7 +78,7 @@ function destroy() {
 	fade_in_alpha = 0.2;
 	alarm[0] = 10;
 	alarm[1] = 30;
-	instance_create_layer(x, y, "Underlay", obj_card_destroy_animation);
+	//instance_create_layer(x, y, "Underlay", obj_card_destroy_animation);
 }
 
 function has_actions() {

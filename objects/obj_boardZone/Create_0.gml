@@ -40,15 +40,10 @@ function refresh() {
 	for (var i = 0; i < getSize(); i++) {
 		if (instance_exists(temp[i])) {
 			temp[i].set_position(ax + (i * slotWidth), ay);
-			if (temp[i].hp <= 0) {
-				array_push(destroyed_cards, temp[i]);
-				temp[i].destroy();
-			}
+		} else {
+			array_delete(temp, i, 1);
+			i--;
 		}
-	}
-	
-	if (array_length(destroyed_cards) > 0) {
-		alarm[0] = destroy_delay;
 	}
 	cards = temp;
 }
@@ -59,10 +54,4 @@ function remove_fatigue() {
 			cards[i].fatigued = false;
 		}
 	}
-}
-
-function set_destroy(_card) {
-	array_push(destroyed_cards, _card);
-	_card.destroy();
-	alarm[0] = destroy_delay;
 }
