@@ -25,6 +25,8 @@ commander = noone;
 attack_target = noone;
 attacking_unit = noone;
 
+think_time = 30;
+
 for (var i = 0; i < array_length(board.cards); i++) {
 	board.cards[i].onSummon();
 }
@@ -51,6 +53,14 @@ function init_with(_card_ids, _commander) {
 }
 
 function determine_next_action() {
+	
+	// Wait for all events to resolve
+	var turn_controller = instance_nearest(x, y, obj_turn_controller);
+	if (array_length(turn_controller.events) > 0) {
+		alarm[1] = think_time;
+		return;
+	}
+	
 	var hand_cards = hand.cards;
 	var highest_playable = get_highest_playable();
 	var took_action = false;
@@ -72,9 +82,9 @@ function determine_next_action() {
 	}
 	
 	if (took_action == false) {
-		alarm[0] = 30;
+		alarm[0] = think_time;
 	} else {
-		alarm[1] = 30;
+		alarm[1] = think_time;
 	}
 }
 

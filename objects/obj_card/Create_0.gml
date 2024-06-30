@@ -29,6 +29,7 @@ label = "card";
 cost = 1;
 on_board = false;
 fatigued = false;
+attacking = false;
 
 // INFO
 info = "Card info here";

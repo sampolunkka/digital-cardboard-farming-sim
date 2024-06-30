@@ -15,13 +15,14 @@ on_attack_sound = snd_card_move;
 on_death_sound = snd_card_draw;
 
 function start_combat(target) {
-	target.on_damage(attack);
-	self.on_damage(target.attack);
 	
-	target.after_damage();
-	self.after_damage();
-	
-	self.after_attack();
+	var attack_event = instance_create_layer(x, y, "Instances", obj_attack_event);
+	attack_event.attacker = id;
+	attack_event.defender = target;
+	var turn_controller = instance_nearest(x, y, obj_turn_controller);
+	turn_controller.push_event(attack_event);
+	fatigued = true;
+	attacking = true;
 }
 
 function on_damage(damage) {
