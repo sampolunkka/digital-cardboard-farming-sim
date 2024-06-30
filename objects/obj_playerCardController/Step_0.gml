@@ -20,7 +20,7 @@ if (drag.isFull()) {
 		if (hand.getCardIndex(card) > -1) {
 			card.hover();
 		}
-		if (!instance_exists(obj_cardInfoController)) {
+		if (card.face != CardFace.Down && !instance_exists(obj_cardInfoController)) {
 			var infoControl = instance_create_layer(0,0,"Overlay",obj_cardInfoController);
 			infoControl.init(card);
 		} 

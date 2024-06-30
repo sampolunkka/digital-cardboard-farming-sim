@@ -104,3 +104,21 @@ function draw_mana(_x, _y, _amount) {
 function draw_name_plate(_x, _y, _string) {
 	draw_overlay_value(_x, _y, _string, OverlayType.NamePlate);
 }
+
+function draw_pip_path(_path) {
+	var _pathLength = path_get_length(_path);
+	var _spacing = 8;
+	var _dots = _pathLength / _spacing;
+
+	var i = 0;
+	repeat(_dots) {
+		draw_set_alpha(max(0.6, 1 - i/_dots));
+	    var _pos = i / _dots;
+	    draw_sprite(spr_targeting_bip, 0, path_get_x(_path, _pos), path_get_y(_path, _pos));
+	    ++i;
+	}
+	draw_set_alpha(1);
+	var reticule_x = path_get_point_x(_path, 1);
+	var reticule_y = path_get_point_y(_path, 1);
+	draw_sprite(spr_targeting_end, 0, reticule_x, reticule_y);
+}

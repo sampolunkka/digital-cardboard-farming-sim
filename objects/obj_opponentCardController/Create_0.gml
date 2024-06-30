@@ -22,10 +22,13 @@ deck.y = 0;
 commander = noone;
 
 // For attack delay
-attack_target = noone;
+defender = noone;
 attacking_unit = noone;
 
 think_time = 30;
+
+// Visual
+targeting_path = noone;
 
 for (var i = 0; i < array_length(board.cards); i++) {
 	board.cards[i].onSummon();
@@ -74,9 +77,16 @@ function determine_next_action() {
 	} else {
 		var attacking_units = get_attacking_units();
 		if (array_length(attacking_units) > 0) {
-			attack_target = get_favorable_attack_for(attacking_units[0]);
+			defender = get_favorable_attack_for(attacking_units[0]);
 			attacking_unit = attacking_units[0];
+			
+			targeting_path = path_add();
+			path_add_point(targeting_path, card_get_center_x(attacking_unit), card_get_center_y(attacking_unit), 100);
+			path_add_point(targeting_path, defender.x + defender.sprite_width/2, defender.y + defender.sprite_height/2, 100);
+			path_set_closed(targeting_path, false);
+			
 			alarm[2] = 20;
+			
 			took_action = true;
 		}
 	}
