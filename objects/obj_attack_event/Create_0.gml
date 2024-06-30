@@ -6,14 +6,13 @@ event_inherited();
 
 show_debug_message("Attack event created");
 
-defender = noone;
-attacker = noone;
 path = path_add();
-timer = 10;
+attacker = noone;
+defender = noone;
+timer = 30;
 
 function trigger() {
 	show_debug_message("Attack event started for " + attacker.label);
-	var distance = point_distance(attacker.x, attacker.y, defender.x, defender.y);
 	var spd = 10;
 	path_add_point(path, attacker.x, attacker.y, 100);
 	path_add_point(path, defender.x, defender.y, 100);
@@ -21,5 +20,6 @@ function trigger() {
 	with (attacker) {
 		path_start(_path, spd, path_action_stop, true);
 	}
-	alarm[0] = distance/5;
+	timer = path_get_length(path)/spd;
+	alarm[0] = timer;
 }

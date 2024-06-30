@@ -34,7 +34,7 @@ for (var i = 0; i < array_length(board.cards); i++) {
 board.sprite_index = spr_redHitbox;
 
 function start_turn() {
-	determine_next_action();
+	alarm[3] = think_time;
 }
 
 function draw() {

@@ -12,7 +12,7 @@ player = instance_nearest(0, 0, obj_player);
 opponent = instance_nearest(0, 0, obj_opponent);
 
 events = array_create();
-event_timer = 60;
+start_event_timer = 1;
 event_chain_running = false;
 
 function start_turn() {
@@ -56,5 +56,5 @@ function push_event(_event) {
 
 function start_event_chain() {
 	event_chain_running = true;
-	alarm[0] = event_timer;
+	alarm[0] = start_event_timer;
 }
