@@ -70,8 +70,10 @@ function after_attack() {
 }
 
 function deal_damage(_damage) {
-	on_damage(_damage);
-	after_damage();
+	if (hp > 1) {
+		on_damage(_damage);
+		after_damage();
+	}
 }
 
 function heal_damage(_heal) {
