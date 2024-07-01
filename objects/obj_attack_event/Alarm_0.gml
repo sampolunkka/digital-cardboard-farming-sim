@@ -9,4 +9,11 @@ attacker.after_damage();
 attacker.after_attack();
 attacker.attacking = false;
 path_delete(path);
+
+if (attacker.hp > 0) {
+	attacker.locked = false;
+}
+if (defender.hp > 0) {
+	defender.locked = false;
+}
 instance_destroy();

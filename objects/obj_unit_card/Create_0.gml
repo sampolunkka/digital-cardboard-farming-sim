@@ -19,6 +19,8 @@ function start_combat(target) {
 	var attack_event = instance_create_layer(x, y, "Instances", obj_attack_event);
 	attack_event.attacker = id;
 	attack_event.defender = target;
+	locked = true;
+	target.locked = true;
 	
 	var turn_controller = instance_nearest(x, y, obj_turn_controller);
 	turn_controller.push_event(attack_event);

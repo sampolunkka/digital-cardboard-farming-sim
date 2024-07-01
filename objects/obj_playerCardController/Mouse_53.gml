@@ -27,7 +27,7 @@ if (drag.isFull()) {
 } else if (drag.isEmpty()) {
 	var card = getTopmostHoveredCard();
 	//show_message("left pressed on card: " + string(card.id));
-	if (card != noone) {
+	if (card != noone && !card.locked) {
 		select(card);
 	}
 }

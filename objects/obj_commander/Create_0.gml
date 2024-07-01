@@ -8,6 +8,7 @@ resource_cap = 10;
 max_hp = 15;
 hp = max_hp;
 attack = 0;
+locked = false;
 
 function draw() {
 	controller.draw();

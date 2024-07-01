@@ -34,9 +34,11 @@ switch (target_type) {
 }
 
 if (target != noone) {
-	switch (target_mode) {
-		case TargetMode.Attack: attack_card(target); break;
-		case TargetMode.Spell: cast_spell(target); break;
+	if (!targeting_card.locked) {
+		switch (target_mode) {
+			case TargetMode.Attack: attack_card(target); break;
+			case TargetMode.Spell: cast_spell(target); break;
+		}
+		instance_destroy();
 	}
-	instance_destroy();
 }
