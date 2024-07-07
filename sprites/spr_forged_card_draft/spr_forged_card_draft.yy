@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_cardBack",
+  "%Name":"spr_forged_card_draft",
   "bboxMode":0,
-  "bbox_bottom":41,
+  "bbox_bottom":49,
   "bbox_left":0,
-  "bbox_right":29,
-  "bbox_top":0,
+  "bbox_right":37,
+  "bbox_top":2,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -16,12 +16,17 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":42,
+  "height":50,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"57282459-3e31-46fb-8a6c-8559b1a3f9d4","blendMode":0,"displayName":"default","isLocked":false,"name":"57282459-3e31-46fb-8a6c-8559b1a3f9d4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"e27c48b2-f813-4cfd-b0bb-5e39ec033fbf","blendMode":0,"displayName":"Gem 1","isLocked":false,"name":"e27c48b2-f813-4cfd-b0bb-5e39ec033fbf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"560cf1d0-40ab-482c-ab7f-3ff54c5b245b","blendMode":0,"displayName":"Gem 2","isLocked":false,"name":"560cf1d0-40ab-482c-ab7f-3ff54c5b245b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"3df0e4bb-a296-4620-9ca0-2df51dbc0b5e","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"3df0e4bb-a296-4620-9ca0-2df51dbc0b5e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"36e83bae-9044-4763-816e-5ac3904cb109","blendMode":0,"displayName":"Empty Gem Slots","isLocked":false,"name":"36e83bae-9044-4763-816e-5ac3904cb109","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"1e0b7ee8-1288-4920-a390-b6f4e4a0ac5f","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"1e0b7ee8-1288-4920-a390-b6f4e4a0ac5f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"92614597-5da7-4bc0-9719-f8877b96286e","blendMode":0,"displayName":"default","isLocked":false,"name":"92614597-5da7-4bc0-9719-f8877b96286e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
-  "name":"spr_cardBack",
+  "name":"spr_forged_card_draft",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +38,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_cardBack",
+    "%Name":"spr_forged_card_draft",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +62,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_cardBack",
+    "name":"spr_forged_card_draft",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,7 +74,7 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6623477a-2897-4cc6-a87f-5ccae304ef95","path":"sprites/spr_cardBack/spr_cardBack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6623477a-2897-4cc6-a87f-5ccae304ef95","path":"sprites/spr_forged_card_draft/spr_forged_card_draft.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"3bc4b729-bbe2-4b25-8ebf-a09638229386","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
@@ -86,5 +91,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":30,
+  "width":38,
 }

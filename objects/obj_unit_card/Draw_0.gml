@@ -30,14 +30,14 @@ if (face == CardFace.Up) {
 		// Label
 		draw_text_shadow(x + 4, y + 1, label, 0.6);
 		// Cost
-		draw_mana(x + 1, y + 10, string(cost));
+		draw_mana(x -2, y + 10, string(cost));
 		// Effect
 		draw_effect(x + 7 + string_width(attack), y + sprite_height - 9);
 	}
 
 	// Draw stats
-	draw_attack(x + 1, y + sprite_height - 17, string(attack));
-	draw_hp(x + 1, y + sprite_height - 9, string(hp));
+	draw_attack(x -2, y + sprite_height - 17, string(attack));
+	draw_hp(x -2, y + sprite_height - 9, string(hp));
 	
 	if (fatigued) {
 		draw_sprite(spr_fatigue_symbol, 0, x + sprite_width, y);
