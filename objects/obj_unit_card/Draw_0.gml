@@ -17,9 +17,10 @@ if (face == CardFace.Up) {
 	if (on_board) {
 		sprite_index = on_board_sprite;
 	} else {
-		sprite_index = face_up_sprite;
+		sprite_index = spr_forged_card_draft_copy;
 	}
 	draw_self();
+	/*
 	draw_sprite(spr_card_stats_underlay, on_board ? 1 : 0, x, y);
 	draw_set_font(global.labelFont);
 	
@@ -42,6 +43,7 @@ if (face == CardFace.Up) {
 	if (fatigued) {
 		draw_sprite(spr_fatigue_symbol, 0, x + sprite_width, y);
 	}
+	*/
 } else {
 	sprite_index = face_down_sprite;
 	draw_self();
